@@ -3,6 +3,12 @@ import './Results.css'
 
 const Results = () => {
   return (
+    <>
+      <header>
+      </header>
+      <section>
+      </section>
+    </>
   )
 
 }
