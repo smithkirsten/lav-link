@@ -1,1 +1,11 @@
-/*# sourceMappingURL=Results.css.map */
+.cards-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(234, 245, 246, 0.83);
+  border-radius: 20px;
+  justify-content: space-evenly;
+  height: 58vh;
+  width: 98%;
+}/*# sourceMappingURL=Results.css.map */

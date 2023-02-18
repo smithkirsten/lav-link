@@ -1,0 +1,39 @@
+@use '../../../abstract/variables' as *;
+
+.results-header {
+  height: 40vh;
+  width: 90vw;
+  @include highlightBackground;
+  @include centered(column);
+  h1 {
+    @include logoFont;
+  }
+  img {
+    height: 3vh;
+  }
+  .showing {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .zip {
+    font-size: 26px;
+  }
+
+}
+
+.filterForm {
+  height: 15vh;
+  width: 95%;
+  div {
+    @include centered(row);
+    justify-content: space-between;
+    .zip-input {
+      width: 15vw;
+    }
+  }
+  .changeButton {
+    @include pillButton;
+    height: 4vh;
+    width: 25vw;
+  }
+}

@@ -1,1 +1,8 @@
-@use '../../../abstract/variables'
+@use '../../../abstract/variables' as *;
+.cards-display {
+  @include centered(column);
+  @include highlightBackground;
+  justify-content: space-evenly;
+  height: 58vh;
+  width: 98%;
+}
