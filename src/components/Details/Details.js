@@ -1,7 +1,4 @@
 import React from "react";
-import wheelchair from "../../assets/wheelchair.png";
-import transgender from "../../assets/transgender.png";
-import baby from "../../assets/baby.png";
 import "./Details.css";
 
 const Details = () => {
@@ -12,9 +9,9 @@ const Details = () => {
           <p>Dairy queen</p>
           <p className="distance" >.45 mi</p>
           <div className="icon-container">
-            <img alt="Wheelchair" className="icon" src={wheelchair}></img>
-            <img alt="Unisex" className="icon" src={transgender}></img>
-            <img alt="Changing Table" className="icon" src={baby}></img>
+            <img alt="Wheelchair" className="icon" src="../../../public/assets/wheelchair.png"></img>
+            <img alt="Unisex" className="icon" src="../../../public/assets/transgender.png"></img>
+            <img alt="Changing Table" className="icon" src="../../../public/assets/baby.png"></img>
           </div>
         </section>
         <section className="background details-map">
@@ -32,9 +29,9 @@ const Details = () => {
       <section className="background conclusion">
         <p className="comment">Between Chipotle and Cocola Bakery near the 19th Ave. mall entrance on the east side</p>
         <div className="votes" >
-          <p>0</p>
-          <p>0</p>
-          <p>Last Updated: </p>
+          <p>Upvote: 0</p>
+          <p>Downvote: 0</p>
+          <p>Last Updated: 12/21/2022</p>
         </div>
       </section>
     </section>
