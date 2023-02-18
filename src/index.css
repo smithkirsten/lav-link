@@ -1,6 +1,5 @@
 body {
-  background-image: url('./assets/tile-wallpaper.jpg');
+  background-image: url('../public/assets/tile-wallpaper.jpg');
   margin: 0;
   padding: 0;
 }
-
