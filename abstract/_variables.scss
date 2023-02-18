@@ -30,6 +30,7 @@ $opaque: rgb(234, 245, 246, 83%);
   background-color: $buttonTeal;
   border: none;
   border-radius: 50px;
+  border: none;
 }
 
 @mixin pillHighlight($radius) {
