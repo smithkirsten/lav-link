@@ -5,10 +5,10 @@ $borderYellow: #F6C28B;
 $buttonTeal: #31C6E0;
 $opaque: rgb(234, 245, 246, .83);
 
-@mixin centered($direction) {
+@mixin centered($direction, $justifyContent) {
   display: flex;
   flex-direction: $direction;
-  justify-content: center;
+  justify-content: $justifyContent;
   align-items: center;
 }
 

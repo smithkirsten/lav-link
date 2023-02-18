@@ -17,8 +17,7 @@ h1{
 }
 
 .landing-content {
-  @include centered(column);
-  justify-content: space-evenly;
+  @include centered(column, space-evenly);
   @include highlightBackground;
   height: 92vh;
   width: 80vw;
@@ -35,8 +34,7 @@ h1{
 
 .current-location-button {
   @include pillHighlight(22px);
-  @include centered(row);
-  justify-content: space-evenly;
+  @include centered(row, space-evenly);
   background-color: rgba(255, 255, 255, 0);
   height: 40px;
   width: 200px;
@@ -51,8 +49,7 @@ h1{
 }
 
 .filter-section {
-  @include centered(row);
-  justify-content: space-evenly;
+  @include centered(row, space-evenly);
   width: 75vw;
 }
 
@@ -65,8 +62,7 @@ h1{
 .unisex-filter,
 .changing-table-filter,
 .ada-filter {
-  @include centered(column);
-  justify-content: space-evenly;
+  @include centered(column, space-evenly);
   height: 25vh;
 }
 
