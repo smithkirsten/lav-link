@@ -5,6 +5,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  justify-content: space-between;
   background-color: #FDF5FB;
   height: 6vh;
   width: 80vw;
