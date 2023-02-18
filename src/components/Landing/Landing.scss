@@ -1,1 +1,73 @@
-@use '../../../abstract/variables'
+@use '../../../abstract/variables' as *;
+
+* {
+  @include bodyFont;
+  text-align: center;
+}
+
+h1{
+  @include logoFont;
+  color: $mainTextNavy;
+}
+
+.landing-main {
+  height: 100vh;
+  width: 100vw;
+  @include centered(column);
+}
+
+.landing-content {
+  @include centered(column, space-evenly);
+  @include highlightBackground;
+  height: 92vh;
+  width: 80vw;
+}
+
+.landing-header {
+  @include centered(column);
+}
+
+.landing-toilet-icon {
+  height: 10vh;
+  margin-top: 5vh;
+}
+
+.current-location-button {
+  @include pillHighlight(22px);
+  @include centered(row, space-evenly);
+  background-color: rgba(255, 255, 255, 0);
+  height: 40px;
+  width: 200px;
+}
+
+.zipcode-input {
+  border: none;
+  border-radius: 4px;
+  height: 3vh;
+  width: 45vw;
+  text-align: center;
+}
+
+.filter-section {
+  @include centered(row, space-evenly);
+  width: 75vw;
+}
+
+.wheelchair-icon,
+.unisex-icon,
+.baby-icon {
+  height: 6vh;
+}
+
+.unisex-filter,
+.changing-table-filter,
+.ada-filter {
+  @include centered(column, space-evenly);
+  height: 25vh;
+}
+
+.search-button {
+  @include pillButton;
+  height: 40px;
+  width: 200px;
+}
