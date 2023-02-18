@@ -1,1 +1,25 @@
-@use '../../../abstract/variables'
+@use '../../../abstract/variables' as *;
+
+
+.top {
+  display: flex;
+  justify-content: space-around
+}
+
+.details {
+  @include highlightBackground;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon {
+  width: 8vw;
+  margin: 7%;
+}
+
+.details-map {
+  @include highlightBackground;
+}

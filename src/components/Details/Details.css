@@ -1,1 +1,24 @@
-/*# sourceMappingURL=Details.css.map */
+.top {
+  display: flex;
+  justify-content: space-around;
+}
+
+.details {
+  background-color: rgb(234, 245, 246);
+  border-radius: 20px;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon {
+  width: 8vw;
+  margin: 7%;
+}
+
+.details-map {
+  background-color: rgb(234, 245, 246);
+  border-radius: 20px;
+}/*# sourceMappingURL=Details.css.map */
