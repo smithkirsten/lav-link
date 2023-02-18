@@ -78,4 +78,22 @@
 
 .directions {
   max-width: 45vw;
+}
+
+.comment {
+  padding: 5%;
+}
+
+.votes {
+  border: 4px solid #FFA69E;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 720px) {
+  .icon-container {
+    flex-direction: row;
+  }
+  .icon {
+    margin: 3vw;
+  }
 }/*# sourceMappingURL=Details.css.map */
