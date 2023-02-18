@@ -1,25 +1,93 @@
 @use '../../../abstract/variables' as *;
 
+// whole page
+.Details-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+.background {
+  @include highlightBackground;
+}
+
+// top 
 
 .top {
   display: flex;
-  justify-content: space-around
+  justify-content: space-between;
+  height: 45%;
+  width: 95vw;
 }
 
 .details {
-  @include highlightBackground;
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.distance {
+  @include pillHighlight(20px);
+  padding: 10px
 }
 
 .icon-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .icon {
-  width: 8vw;
-  margin: 7%;
+  width: 2em;
+  margin: 1vh;
 }
 
 .details-map {
-  @include highlightBackground;
+  width: 55vw;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
 }
+
+.back-to-main-button {
+  @include pillButton;
+  height: 2.5vh;
+  margin: 5px;
+}
+
+// bottom
+
+.summary, .conclusion {
+  height: 22vh;
+  width: 95vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.address {
+  @include pillHighlight(55px);
+  max-width: 40vw;
+  padding: 1vh 2vw;
+  p {
+   margin: .5vh; 
+  }
+}
+
+.directions {
+  max-width: 45vw;
+}
+
+// .comment {
+
+// }
+
+// .votes {
+
+// }
+
+
