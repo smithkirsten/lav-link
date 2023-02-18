@@ -3,7 +3,7 @@ $mainTextNavy: #034277;
 $highlightSalmon: #FFA69E;
 $borderYellow: #F6C28B;
 $buttonTeal: #31C6E0;
-$opaque: rgb(234, 245, 246, 83);
+$opaque: rgb(234, 245, 246, 83%);
 
 @mixin bodyFont {
   font-family: $mainFont;
