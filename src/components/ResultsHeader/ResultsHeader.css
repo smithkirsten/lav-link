@@ -7,11 +7,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #034277;
-  font-family: "Dosis", sans-serif;
-  font-size: 16px;
-  padding: 0;
-  margin: 0;
 }
 .results-header h1 {
   color: #034277;
@@ -33,8 +28,16 @@
 
 .filterForm {
   height: 15vh;
+  width: 95%;
 }
-.filterForm .zip-input {
+.filterForm div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.filterForm div .zip-input {
   width: 15vw;
 }
 .filterForm .changeButton {

@@ -3,4 +3,9 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #034277;
+  font-family: "Dosis", sans-serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
 }/*# sourceMappingURL=App.css.map */

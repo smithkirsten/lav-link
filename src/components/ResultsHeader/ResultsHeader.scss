@@ -5,7 +5,6 @@
   width: 90vw;
   @include highlightBackground;
   @include centered(column);
-  @include bodyFont;
   h1 {
     @include logoFont;
   }
@@ -24,9 +23,13 @@
 
 .filterForm {
   height: 15vh;
-
-  .zip-input {
-    width: 15vw;
+  width: 95%;
+  div {
+    @include centered(row);
+    justify-content: space-between;
+    .zip-input {
+      width: 15vw;
+    }
   }
   .changeButton {
     @include pillButton;
