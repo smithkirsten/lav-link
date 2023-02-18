@@ -1,0 +1,49 @@
+.results-header {
+  height: 40vh;
+  width: 90vw;
+  background-color: rgba(234, 245, 246, 0.83);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.results-header h1 {
+  color: #034277;
+  font-family: "Dosis", sans-serif;
+  font-size: 70px;
+  padding: 0;
+  margin: 0;
+}
+.results-header img {
+  height: 3vh;
+}
+.results-header .showing {
+  font-weight: bold;
+  font-size: 20px;
+}
+.results-header .zip {
+  font-size: 26px;
+}
+
+.filterForm {
+  height: 15vh;
+  width: 95%;
+}
+.filterForm div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.filterForm div .zip-input {
+  width: 15vw;
+}
+.filterForm .changeButton {
+  background-color: #31C6E0;
+  border: none;
+  border-radius: 50px;
+  height: 4vh;
+  width: 25vw;
+}/*# sourceMappingURL=ResultsHeader.css.map */

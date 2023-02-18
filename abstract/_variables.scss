@@ -13,12 +13,14 @@ $opaque: rgb(234, 245, 246, .83);
 }
 
 @mixin bodyFont {
+  color: $mainTextNavy;
   font-family: $mainFont;
   font-size: 16px;
   font-weight: 400;
 }
 
 @mixin logoFont {
+  color: $mainTextNavy;
   font-family: $mainFont;
   font-size: 70px;
   font-weight: 400;
@@ -31,6 +33,7 @@ $opaque: rgb(234, 245, 246, .83);
 
 @mixin pillButton {
   background-color: $buttonTeal;
+  border: none;
   border-radius: 50px;
   border: none;
 }
@@ -38,4 +41,11 @@ $opaque: rgb(234, 245, 246, .83);
 @mixin pillHighlight($radius) {
   border: 2px solid $highlightSalmon;
   border-radius: $radius;
+}
+
+@mixin centered($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
 }

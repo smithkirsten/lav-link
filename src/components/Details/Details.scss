@@ -1,1 +1,102 @@
-@use '../../../abstract/variables'
+@use '../../../abstract/variables' as *;
+
+// whole page
+.Details-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+.background {
+  @include highlightBackground;
+}
+
+// top 
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  height: 45%;
+  width: 95vw;
+}
+
+.details {
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.distance {
+  @include pillHighlight(20px);
+  padding: 10px
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  width: 2em;
+  margin: 1vh;
+}
+
+.details-map {
+  width: 55vw;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.back-to-main-button {
+  @include pillButton;
+  height: 2.5vh;
+  margin: 5px;
+}
+
+// bottom
+
+.summary, .conclusion {
+  height: 22vh;
+  width: 95vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.address {
+  @include pillHighlight(55px);
+  max-width: 40vw;
+  padding: 1vh 2vw;
+  p {
+   margin: .5vh; 
+  }
+}
+
+.directions {
+  max-width: 45vw;
+}
+
+.comment {
+  padding: 5%;
+}
+
+.votes {
+  @include pillHighlight(10px);
+  // padding: 0 2%;
+}
+
+
+@media screen and (min-width: 720px) {
+  .icon-container {
+    flex-direction: row;
+  }
+  .icon{
+    margin: 3vw;
+  }
+}
