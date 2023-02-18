@@ -1,5 +1,18 @@
 .results-header {
   height: 40vh;
+  width: 90vw;
   background-color: rgba(234, 245, 246, 0.83);
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #034277;
+  font-family: "Dosis", sans-serif;
+  font-size: 16px;
+}
+.results-header h1 {
+  color: #034277;
+  font-family: "Dosis", sans-serif;
+  font-size: 70px;
 }/*# sourceMappingURL=ResultsHeader.css.map */

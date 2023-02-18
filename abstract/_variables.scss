@@ -6,11 +6,13 @@ $buttonTeal: #31C6E0;
 $opaque: rgb(234, 245, 246, 83%);
 
 @mixin bodyFont {
+  color: $mainTextNavy;
   font-family: $mainFont;
   font-size: 16px;
 }
 
 @mixin logoFont {
+  color: $mainTextNavy;
   font-family: $mainFont;
   font-size: 70px;
 }

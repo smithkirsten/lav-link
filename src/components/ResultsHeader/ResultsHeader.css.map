@@ -1,1 +1,1 @@
-{"version":3,"sources":["ResultsHeader.scss","../../../abstract/_variables.scss","ResultsHeader.css"],"names":[],"mappings":"AAEA;EACE,YAAA;ECeA,2CAbO;EAcP,mBAAA;ACfF","file":"ResultsHeader.css"}
+{"version":3,"sources":["ResultsHeader.scss","../../../abstract/_variables.scss","ResultsHeader.css"],"names":[],"mappings":"AAEA;EACE,YAAA;EACA,WAAA;ECgBA,2CAfO;EAgBP,mBAAA;EAcA,aAAA;EACA,sBD9BkB;EC+BlB,uBAAA;EACA,mBAAA;EA9BA,cAPa;EAQb,gCATQ;EAUR,eAAA;ACEF;AFJE;ECMA,cAba;EAcb,gCAfQ;EAgBR,eAAA;ACCF","file":"ResultsHeader.css"}
