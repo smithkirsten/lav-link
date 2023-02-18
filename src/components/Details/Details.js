@@ -6,28 +6,36 @@ import "./Details.css";
 
 const Details = () => {
   return (
-    <section>
+    <section className="Details-page">
       <section className="top">
-        <section className="details">
-          <p>Name</p>
-          <p>Distance</p>
+        <section className="background details">
+          <p>Dairy queen</p>
+          <p className="distance" >.45 mi</p>
           <div className="icon-container">
-            <img className="icon wheelchair" src={wheelchair}></img>
-            <img className="icon transgender" src={transgender}></img>
-            <img className="icon baby" src={baby}></img>
+            <img alt="Wheelchair" className="icon" src={wheelchair}></img>
+            <img alt="Unisex" className="icon" src={transgender}></img>
+            <img alt="Changing Table" className="icon" src={baby}></img>
           </div>
         </section>
-        <section className="details-map">This is a map... trust me</section>
+        <section className="background details-map">
+          This is a map... trust me
+          <button className="back-to-main-button" >X</button>
+        </section>
       </section>
-      <summary className="summary">
-        <p>address</p>
-        <p>description</p>
+      <summary className="background summary">
+        <div className="address" >
+          <p>3335 Arapahoe rd.STE 10</p> 
+          <p>Erie, CO</p>
+        </div>
+        <p className="directions" >Go through the electronic doors, walk forward three steps and turn right</p>
       </summary>
-      <section className="conclusion">
-        <p>comment</p>
-        <p>Upvotes</p>
-        <p>Downvotes</p>
-        <p>Last Updated</p>
+      <section className="background conclusion">
+        <p className="comment">Between Chipotle and Cocola Bakery near the 19th Ave. mall entrance on the east side</p>
+        <div className="votes" >
+          <p>0</p>
+          <p>0</p>
+          <p>Last Updated: </p>
+        </div>
       </section>
     </section>
   );
