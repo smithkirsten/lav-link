@@ -9,6 +9,9 @@
   h1 {
     @include logoFont;
   }
+  img {
+    height: 3vh;
+  }
   .showing {
     font-weight: bold;
     font-size: 20px;

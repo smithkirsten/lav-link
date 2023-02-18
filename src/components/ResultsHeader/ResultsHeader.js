@@ -12,14 +12,14 @@ const ResultsHeader = () => {
       <form className='filterForm'>
         <label for='zipcode' className='hidden input-label text-label'>zipcode</label>
         <input type='text' name='zipcode' placeholder='zipcode...' className='zip-input'></input>
-        <label for='ada' className='input-label'>image here</label>
+        <label for='ada' className='input-label'><img src='/assets/wheelchair.png'/></label>
         <input type='checkbox' name='ada'></input>
-        <label for='unisex' className='input-label'>image here</label>
+        <label for='unisex' className='input-label'><img src='/assets/transgender.png'/></label>
         <input type='checkbox' name='unisex'></input>
-        <label for='unisex' className='input-label'>image here</label>
-        <input type='checkbox' name='family'></input>
-        <label for='numResults' className='input-label text-label'>max results</label>
-        <input type='number' name='numResults' min='5' max='100' className='num-input'></input>
+        <label for='changingTable' className='input-label'><img src='/assets/baby.png'/></label>
+        <input type='checkbox' name='changingTable'></input>
+        <label for='numResults' className='input-label text-label'>show</label>
+        <input type='number' name='numResults' min='5' max='100' className='num-input' placeholder='5'></input>
         <button className='changeButton'>change</button>
       </form>
     </header>
