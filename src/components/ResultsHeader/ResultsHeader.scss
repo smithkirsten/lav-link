@@ -9,4 +9,25 @@
   h1 {
     @include logoFont;
   }
+  .showing {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .zip {
+    font-size: 26px;
+  }
+
+}
+
+.filterForm {
+  height: 15vh;
+
+  .zip-input {
+    width: 15vw;
+  }
+  .changeButton {
+    @include pillButton;
+    height: 4vh;
+    width: 25vw;
+  }
 }
