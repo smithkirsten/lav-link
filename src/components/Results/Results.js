@@ -9,6 +9,7 @@ const dummyResults = [ dummyBathroom, dummyBathroom, dummyBathroom, dummyBathroo
 
 //did not insert props because....store vs props?
 const Results = () => {
+  //put links around individual cards
   const cards = dummyResults.map(result => <ResultCard />).sort((a, b) => a.distance - b.distance)
   return (
     <>
