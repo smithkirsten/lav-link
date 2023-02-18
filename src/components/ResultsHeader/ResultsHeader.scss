@@ -1,3 +1,6 @@
+@use '../../../abstract/variables' as *;
+
 .results-header {
-  
+  height: 40vh;
+  @include highlightBackground;
 }

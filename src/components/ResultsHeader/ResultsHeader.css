@@ -1,1 +1,5 @@
-/*# sourceMappingURL=ResultsHeader.css.map */
+.results-header {
+  height: 40vh;
+  background-color: rgba(234, 245, 246, 0.83);
+  border-radius: 20px;
+}/*# sourceMappingURL=ResultsHeader.css.map */

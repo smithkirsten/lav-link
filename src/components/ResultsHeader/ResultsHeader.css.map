@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"ResultsHeader.css"}
+{"version":3,"sources":["ResultsHeader.scss","../../../abstract/_variables.scss","ResultsHeader.css"],"names":[],"mappings":"AAEA;EACE,YAAA;ECeA,2CAbO;EAcP,mBAAA;ACfF","file":"ResultsHeader.css"}
