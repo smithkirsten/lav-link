@@ -1,1 +1,13 @@
 @use '../../../abstract/variables' as *;
+
+.result-card {
+  @include pillHighlight(3px);
+  @include centered(row);
+  background-color: #FDF5FB;
+  height: 6vh;
+  width: 80vw;
+  img {
+    height: 5vh;
+  }
+
+}
