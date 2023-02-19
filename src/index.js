@@ -5,8 +5,9 @@ import App from './components/App/App';
 import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const basename = "localhost:3000";
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename={basename}>
     <React.StrictMode>
       <App />
     </React.StrictMode>

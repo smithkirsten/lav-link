@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 
 const dummyBathroom = { name: 'Establishment', distance: '0.5', upvote: '2'}
 
-
 const ResultCard = () => {
   return (
     <NavLink to={`/results/${dummyBathroom.name}`}>
@@ -15,7 +14,6 @@ const ResultCard = () => {
         <p className="result-upvote">{dummyBathroom.upvote} ⬆️ </p>
       </article>
     </NavLink>
-
   );
 }
 
