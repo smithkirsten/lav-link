@@ -9,7 +9,7 @@ function App() {
     <main>
       <Routes>
         <Route
-          path=""
+          path="/"
           element={ <Landing />}
         />
         <Route
