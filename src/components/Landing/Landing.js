@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Landing.css'
+import { NavLink } from "react-router-dom";
 
 
 export default function Landing() {
@@ -45,7 +46,9 @@ export default function Landing() {
             <label htmlFor='changingTable'>changing table</label>
           </div>
         </section>
-        <button name='searchButton' className='search-button'>search</button>
+        <NavLink to="/results" >
+          <button name='searchButton' className='search-button'>search</button>
+        </NavLink>
       </section>
     </section>
   )
