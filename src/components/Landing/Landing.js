@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./Landing.css";
 import { NavLink } from "react-router-dom";
+import { updateFilters } from './landingSlice'
+import { useDispatch } from 'react-redux'
 
 export default function Landing() {
   const [currentLocation, setCurrentLocation] = useState(false);
@@ -8,6 +10,8 @@ export default function Landing() {
   const [adaAccessible, setAdaAccessible] = useState(false);
   const [unisex, setUnisex] = useState(false);
   const [changingTable, setChangingTable] = useState(false);
+
+  const dispatch = useDispatch();
 
   return (
     <section className="landing-main">
@@ -76,7 +80,10 @@ export default function Landing() {
           </div>
         </section>
         <NavLink to="/results">
-          <button name="searchButton" className="search-button">
+          <button name="searchButton" className="search-button" onClick={() =>  {
+            dispatch(updateFilters( { currentLocation, zipcode, adaAccessible, unisex, changingTable }))
+          }}
+            >
             search
           </button>
         </NavLink>
