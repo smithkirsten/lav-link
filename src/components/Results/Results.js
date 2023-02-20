@@ -13,14 +13,25 @@ const dummyResults = [ dummyBathroom, dummyBathroom, dummyBathroom, dummyBathroo
 const Results = () => {
   //put links around individual cards
   const gpsCoordinates = useSelector((state) => state.landing.gpsCoordinates)
-  const getLavs = useGetLavsQuery(gpsCoordinates);
+  // const getLavs = useGetLavsQuery(gpsCoordinates);
 
-  useEffect(() => {
-    console.log(getLavs)
-    // eslint-disable-next-line
-  }, [gpsCoordinates])
+  // useEffect(() => {
+  //   console.log(getLavs)
+
+  //   // eslint-disable-next-line
+  // }, [gpsCoordinates])
 
   const cards = dummyResults.map(result => <ResultCard />).sort((a, b) => a.distance - b.distance)
+
+  const {
+    data: results,
+    isLoading,
+    isSuccess,
+    isError,
+    error,
+  } = useGetLavsQuery(gpsCoordinates);
+
+
   return (
     <>
       <ResultsHeader />
