@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from 'react-redux'
 import './ResultsHeader.css'
 //want forms to hold state for onChange (user typing) but send that state to the store onClick 
 //should display checkboxes as user selected them on homepage(will get that info from store and display accordingly on update)
@@ -6,7 +7,7 @@ import './ResultsHeader.css'
 
 
 const ResultsHeader = () => {
-  const [ zipcode, setZipcode ] = useState('')
+  const [ zipcode, setZipcode ] = useState(useSelector( state => state.landing.zipcode))
   const [ ada, setAda ] = useState(false) //will be grabbed from store
   const [ unisex, setUnisex ] = useState(false) //will be grabbed from store
   const [ changingTable, setChangingTable ] = useState(false) //will be grabbed from store
@@ -15,7 +16,6 @@ const ResultsHeader = () => {
     <header className='results-header'>
       <h1 className='heading'>LavLink</h1>
       <p className='showing'>showing results for...</p>
-      <p className='zip'>{zip}</p>
       <form className='filterForm'>
         <div>
           <label htmlFor='zipcode' className='hidden input-label text-label'>zipcode</label>
