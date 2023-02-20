@@ -2,10 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import './ResultsHeader.css'
 import { updateFilters } from "../Landing/landingSlice";
-//want forms to hold state for onChange (user typing) but send that state to the store onClick 
-//should display checkboxes as user selected them on homepage(will get that info from store and display accordingly on update)
-
-
 
 const ResultsHeader = () => {
   const [ zipcode, setZipcode ] = useState(useSelector( state => state.landing.zipcode))
@@ -80,7 +76,5 @@ const ResultsHeader = () => {
     </header>
   );
 }
-//currently checkboxes can be checked but not unchecked
-  //state reads as "on"
 
 export default ResultsHeader
