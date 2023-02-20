@@ -82,7 +82,6 @@ export default function Landing() {
         <NavLink to="/results">
           <button name="searchButton" className="search-button" onClick={() =>  {
             dispatch(updateFilters( { currentLocation, zipcode, adaAccessible, unisex, changingTable }))
-            console.log("hi")
           }}
             >
             search
