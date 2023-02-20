@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { zipConverter } from "../../util";
 
 const initialState = {
   currentLocation: false,
@@ -16,7 +17,7 @@ export const landingSlice = createSlice({
     updateFilters: (state, action) => {
       state.currentLocation = action.payload.currentLocation;
       state.zipcode = action.payload.zipcode;
-      state.gpsCoordinates = //
+      state.gpsCoordinates = zipConverter(action.payload.zipcode)
       state.adaAccessible = action.payload.adaAccessible;
       state.unisex = action.payload.unisex;
       state.changingTable = action.payload.changingTable;
