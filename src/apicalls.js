@@ -1,0 +1,21 @@
+// import { useSelector } from 'react-redux'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+
+// const gps = useSelector((state) => state.landing.gpsCoordinates.value)
+
+export const apiSlice = createApi({
+  reducerPath: 'api',
+  baseQuery: fetchBaseQuery(),
+  // tagTypes: ['Post'],
+  endpoints: builder => ({
+    getLavs: builder.query({
+      query: (gps) => `www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=30&offset=0&lat=${gps.lat}&lng=${gps.long}`,
+      // providesTags: ['Post']
+    })
+  })
+  
+})
+
+export const {
+  useGetLavsQuery
+} = apiSlice

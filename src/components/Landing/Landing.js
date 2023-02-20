@@ -3,6 +3,7 @@ import "./Landing.css";
 import { NavLink } from "react-router-dom";
 import { updateFilters } from './landingSlice'
 import { useDispatch } from 'react-redux'
+// import { useGetLavsQuery } from "../../apicalls";
 
 export default function Landing() {
   const [currentLocation, setCurrentLocation] = useState(false);
@@ -12,6 +13,10 @@ export default function Landing() {
   const [changingTable, setChangingTable] = useState(false);
 
   const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   console.log(useGetLavsQuery(zipcode))
+  // }, [zipcode])
 
   return (
     <section className="landing-main">
@@ -81,7 +86,7 @@ export default function Landing() {
         </section>
         <NavLink to="/results">
           <button name="searchButton" className="search-button" onClick={() =>  {
-            dispatch(updateFilters( { currentLocation, zipcode, adaAccessible, unisex, changingTable }))
+            dispatch(updateFilters({ currentLocation, zipcode, adaAccessible, unisex, changingTable }));
           }}
             >
             search
