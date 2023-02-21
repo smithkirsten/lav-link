@@ -21,7 +21,7 @@ const Results = () => {
   //   // eslint-disable-next-line
   // }, [gpsCoordinates])
 
-  const cards = dummyResults.map(result => <ResultCard />).sort((a, b) => a.distance - b.distance)
+  // const cards = dummyResults.map(result => <ResultCard />).sort((a, b) => a.distance - b.distance)
 
   const {
     data: results,
@@ -31,12 +31,23 @@ const Results = () => {
     error,
   } = useGetLavsQuery(gpsCoordinates);
 
+let content
 
+if (isLoading) {
+  content = <h2>Loading ...</h2>;
+} else if (isSuccess) {
+  content = results
+  // content = results.map((result) => <ResultCard />);
+  console.log(content)
+} else if (isError) {
+  content = <h2>Error city</h2>
+}
   return (
     <>
       <ResultsHeader />
       <section className='cards-display'>
-        {cards}
+        {/* {cards} */}
+        {content}
       </section>
     </>
   )
