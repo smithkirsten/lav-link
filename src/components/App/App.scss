@@ -1,6 +1,6 @@
 @use '../../../abstract/variables' as *;
 
 main {
-  @include centered(column);
+  @include centered(column, center);
   @include bodyFont;
 }

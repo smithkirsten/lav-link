@@ -1,11 +1,16 @@
 .cards-display {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   background-color: rgba(234, 245, 246, 0.83);
   border-radius: 20px;
   justify-content: space-evenly;
   height: 58vh;
   width: 98%;
+}
+
+.cards-container {
+  overflow-y: scroll;
+  height: 50vh;
 }/*# sourceMappingURL=Results.css.map */

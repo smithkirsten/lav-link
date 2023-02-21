@@ -2,7 +2,7 @@
 
 .result-card {
   @include pillHighlight(3px);
-  @include centered(row);
+  @include centered(row, center);
   justify-content: space-between;
   background-color: #FDF5FB;
   height: 6vh;
