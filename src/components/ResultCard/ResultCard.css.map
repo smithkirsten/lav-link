@@ -1,1 +1,1 @@
-{"version":3,"sources":["ResultCard.scss","../../../abstract/_variables.scss","ResultCard.css"],"names":[],"mappings":"AAEA;ECuCE,yBAAA;EACA,kBDvCuB;EC2CvB,aAAA;EACA,mBD3CkB;EC4ClB,uBAAA;EACA,mBAAA;ED5CA,8BAAA;EACA,yBAAA;EACA,WAAA;EACA,WAAA;AEGF;AFFE;EACE,WAAA;AEIJ","file":"ResultCard.css"}
+{"version":3,"sources":["ResultCard.scss","../../../abstract/_variables.scss","ResultCard.css"],"names":[],"mappings":"AAEA;ECuCE,yBAAA;EACA,kBDvCuB;ECKvB,aAAA;EACA,mBDLkB;ECMlB,uBDNuB;ECOvB,mBAAA;EDNA,8BAAA;EACA,yBAAA;EACA,WAAA;EACA,WAAA;AEGF;AFFE;EACE,WAAA;AEIJ","file":"ResultCard.css"}

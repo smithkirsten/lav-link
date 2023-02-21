@@ -1,6 +1,6 @@
 @use '../../../abstract/variables' as *;
 .cards-display {
-  @include centered(column);
+  @include centered(column, space-evenly);
   @include highlightBackground;
   justify-content: space-evenly;
   height: 58vh;

@@ -22,7 +22,7 @@ export default function Landing() {
     <section className="landing-main">
       <section className="landing-content">
         <section className="landing-header">
-          <h1>Lav Link</h1>
+          <h1 className="site-title">Lav Link</h1>
           <p>find safer relief near you</p>
           <img
             className="landing-toilet-icon"

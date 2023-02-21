@@ -1,15 +1,9 @@
 * {
+  color: #034277;
   font-family: "Dosis", sans-serif;
   font-size: 16px;
   font-weight: 400;
   text-align: center;
-}
-
-h1 {
-  font-family: "Dosis", sans-serif;
-  font-size: 70px;
-  font-weight: 400;
-  color: #034277;
 }
 
 .landing-main {
@@ -24,9 +18,8 @@ h1 {
 .landing-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   justify-content: space-evenly;
+  align-items: center;
   background-color: rgba(234, 245, 246, 0.83);
   border-radius: 20px;
   height: 92vh;
@@ -40,9 +33,19 @@ h1 {
   align-items: center;
 }
 
+.site-title {
+  color: #034277;
+  font-family: "Dosis", sans-serif;
+  font-size: 70px;
+  font-weight: 400;
+  color: #034277;
+  font-size: 15vmin;
+}
+
 .landing-toilet-icon {
-  height: 10vh;
-  margin-top: 5vh;
+  height: 15vmin;
+  margin-top: 2vh;
+  margin-bottom: 1vh;
 }
 
 .current-location-button {
@@ -50,28 +53,34 @@ h1 {
   border-radius: 22px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
   justify-content: space-evenly;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0);
-  height: 40px;
-  width: 200px;
+  height: 8vmin;
+  width: 42vmin;
 }
 
 .zipcode-input {
   border: none;
   border-radius: 4px;
-  height: 3vh;
-  width: 45vw;
+  height: 5vmin;
+  width: 42vmin;
   text-align: center;
+}
+
+.zipcode-input::-moz-placeholder {
+  font-size: 3.5vmin;
+}
+
+.zipcode-input::placeholder {
+  font-size: 3.5vmin;
 }
 
 .filter-section {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
   justify-content: space-evenly;
+  align-items: center;
   width: 75vw;
 }
 
@@ -86,16 +95,25 @@ h1 {
 .ada-filter {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   justify-content: space-evenly;
+  align-items: center;
   height: 25vh;
 }
 
 .search-button {
   background-color: #31C6E0;
+  border: none;
   border-radius: 50px;
   border: none;
   height: 40px;
-  width: 200px;
+  width: 35vmin;
+  margin-bottom: 1vh;
+}
+
+p {
+  font-size: 4vmin;
+}
+
+label {
+  font-size: 3.5vmin;
 }/*# sourceMappingURL=Landing.css.map */
