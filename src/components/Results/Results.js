@@ -37,7 +37,7 @@ if (isLoading) {
   content = <h2>Loading ...</h2>;
 } else if (isSuccess) {
   content = results
-  // content = results.map((result) => <ResultCard />);
+  content = results.map((result) => <ResultCard data={result} />);
   console.log(content)
 } else if (isError) {
   content = <h2>Error city</h2>
@@ -46,8 +46,9 @@ if (isLoading) {
     <>
       <ResultsHeader />
       <section className='cards-display'>
-        {/* {cards} */}
-        {content}
+        <div className="cards-container">
+          {content}
+        </div>
       </section>
     </>
   )

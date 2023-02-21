@@ -27,7 +27,7 @@
 }
 
 .distance {
-  border: 4px solid #FFA69E;
+  border: 2px solid #FFA69E;
   border-radius: 20px;
   padding: 10px;
 }
@@ -52,6 +52,7 @@
 
 .back-to-main-button {
   background-color: #31C6E0;
+  border: none;
   border-radius: 50px;
   border: none;
   height: 2.5vh;
@@ -67,7 +68,7 @@
 }
 
 .address {
-  border: 4px solid #FFA69E;
+  border: 2px solid #FFA69E;
   border-radius: 55px;
   max-width: 40vw;
   padding: 1vh 2vw;
@@ -85,7 +86,7 @@
 }
 
 .votes {
-  border: 4px solid #FFA69E;
+  border: 2px solid #FFA69E;
   border-radius: 10px;
 }
 
