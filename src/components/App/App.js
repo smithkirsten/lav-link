@@ -1,7 +1,8 @@
 import Landing from "../Landing/Landing";
 import Results from "../Results/Results";
-import "./App.css";
 import Details from "../Details/Details";
+import Error from '../Error/Error'
+import "./App.css";
 import { Route, Routes } from "react-router";
 
 function App() {
@@ -19,6 +20,10 @@ function App() {
         <Route
           path="/results/:name"
           element={ <Details />}
+        />
+        <Route
+          path="/error"
+          element={ <Error />}
         />
       </Routes>
     </main>
