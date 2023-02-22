@@ -4,14 +4,13 @@ import { useSelector } from "react-redux";
 import { roundDistance, reformatDate } from "../../util";
 
 const Details = () => {
-   const bathroom = useSelector((state) => state.result.selectedBathroom);
-   console.log("br", bathroom)
+  const bathroom = useSelector((state) => state.result.selectedBathroom);
   return (
     <section className="Details-page">
       <section className="top">
         <section className="background details">
           <p>{`${bathroom.name}`}</p>
-          <p className="distance">{roundDistance(bathroom)}</p>
+          <p className="distance">{`${roundDistance(bathroom)} miles`}</p>
           <div className="icon-container">
             <img
               alt="Wheelchair"
@@ -40,10 +39,10 @@ const Details = () => {
           <p>{`${bathroom.street}`}</p>
           <p>{`${bathroom.city}, ${bathroom.state}`}</p>
         </div>
-        <p className="directions">{`${bathroom.directions}`}</p>
+        <p className="directions">{`Directions: ${bathroom.directions}`}</p>
       </summary>
       <section className="background conclusion">
-        <p className="comment">{`${bathroom.comment}`}</p>
+        <p className="comment">{`Comments: ${bathroom.comment}`}</p>
         <div className="votes">
           <p>{`Upvotes: ${bathroom.upvote}`}</p>
           <p>{`Downvotes: ${bathroom.downvote}`}</p>

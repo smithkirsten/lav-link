@@ -1,6 +1,5 @@
 let convert = require('convert-zip-to-gps');
 
-
 export const zipConverter = (zipcode) => {
   const coordinates = convert.zipConvert(zipcode).split(',');
   return {
@@ -17,6 +16,8 @@ export const roundDistance = (bathroom) => {
 export const reformatDate = (bathroom) => {
   const date = bathroom["updated_at"];
   const newDate = new Date(date)
-  console.log(newDate)
-  return `${newDate.getDay()}/${newDate.getMonth()}/${newDate.getFullYear()}`
+  console.log("new date", newDate)
+  console.log("day", newDate.getDate())
+  console.log("month", newDate.getMonth()+1)
+  return `${newDate.getMonth()+1}/${newDate.getDate()}/${newDate.getFullYear()}`
 };
