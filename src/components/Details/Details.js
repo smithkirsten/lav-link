@@ -4,7 +4,9 @@ import { useSelector } from "react-redux";
 import { roundDistance, reformatDate } from "../../util";
 
 const Details = () => {
+
   const bathroom = useSelector((state) => state.result.selectedBathroom);
+  
   return (
     <section className="Details-page">
       <section className="top">
@@ -39,10 +41,14 @@ const Details = () => {
           <p>{`${bathroom.street}`}</p>
           <p>{`${bathroom.city}, ${bathroom.state}`}</p>
         </div>
-        <p className="directions">{`Directions: ${bathroom.directions}`}</p>
+        {bathroom.directions && (
+          <p className="directions">{`Directions: ${bathroom.directions}`}</p>
+        )}
       </summary>
       <section className="background conclusion">
-        <p className="comment">{`Comments: ${bathroom.comment}`}</p>
+        {bathroom.comment && (
+          <p className="comment">{`Comments: ${bathroom.comment}`}</p>
+        )}
         <div className="votes">
           <p>{`Upvotes: ${bathroom.upvote}`}</p>
           <p>{`Downvotes: ${bathroom.downvote}`}</p>

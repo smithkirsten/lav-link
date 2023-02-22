@@ -16,8 +16,5 @@ export const roundDistance = (bathroom) => {
 export const reformatDate = (bathroom) => {
   const date = bathroom["updated_at"];
   const newDate = new Date(date)
-  console.log("new date", newDate)
-  console.log("day", newDate.getDate())
-  console.log("month", newDate.getMonth()+1)
   return `${newDate.getMonth()+1}/${newDate.getDate()}/${newDate.getFullYear()}`
 };
