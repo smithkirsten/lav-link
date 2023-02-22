@@ -12,8 +12,7 @@
   color: #034277;
   font-family: "Dosis", sans-serif;
   font-size: 70px;
-  padding: 0;
-  margin: 0;
+  font-weight: 400;
 }
 .results-header img {
   height: 3vh;
@@ -21,9 +20,6 @@
 .results-header .showing {
   font-weight: bold;
   font-size: 20px;
-}
-.results-header .zip {
-  font-size: 26px;
 }
 
 .filterForm {
@@ -44,6 +40,7 @@
   background-color: #31C6E0;
   border: none;
   border-radius: 50px;
+  border: none;
   height: 4vh;
   width: 25vw;
 }/*# sourceMappingURL=ResultsHeader.css.map */
