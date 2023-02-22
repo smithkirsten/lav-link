@@ -21,11 +21,13 @@ const Details = () => {
                 src="/assets/wheelchair.png"
               ></img>
             )}
-            <img
-              alt="Unisex"
-              className="icon"
-              src="/assets/transgender.png"
-            ></img>
+            {bathroom.unisex && (
+              <img
+                alt="Unisex"
+                className="icon"
+                src="/assets/transgender.png"
+              ></img>
+            )}
             <img
               alt="Changing Table"
               className="icon"
