@@ -5,11 +5,6 @@ import './Results.css'
 import { useSelector } from 'react-redux'
 import { useGetLavsQuery } from "../../apicalls";
 
-const dummyBathroom = { name: 'Establishment Name', distance: '0.5', upvote: '2'}
-const dummyResults = [ dummyBathroom, dummyBathroom, dummyBathroom, dummyBathroom, dummyBathroom ]
-//order results by distance or by upvote? but Rae said a lot of them dont have upvotes
-
-//did not insert props because....store vs props?
 const Results = () => {
   //put links around individual cards
   const gpsCoordinates = useSelector((state) => state.landing.gpsCoordinates)
@@ -34,12 +29,13 @@ const Results = () => {
 let content
 
 if (isLoading) {
+  //loading page is later problem
   content = <h2>Loading ...</h2>;
 } else if (isSuccess) {
-  content = results
-  content = results.map((result) => <ResultCard data={result} />);
-  console.log(content)
+  console.log(results)
+  content = results.map((result) => <ResultCard key={result.id} data={result} />);
 } else if (isError) {
+  //Rae is making error page
   content = <h2>Error city</h2>
 }
   return (
