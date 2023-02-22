@@ -1,6 +1,7 @@
 import React from "react";
 import "./Details.css";
 import { useSelector } from "react-redux";
+import { roundDistance } from "../../util";
 
 const Details = () => {
    const bathroom = useSelector((state) => state.result.selectedBathroom);
@@ -10,7 +11,7 @@ const Details = () => {
       <section className="top">
         <section className="background details">
           <p>{`${bathroom.name}`}</p>
-          <p className="distance">{`${bathroom.distance}`}</p>
+          <p className="distance">{roundDistance(bathroom)}</p>
           <div className="icon-container">
             <img
               alt="Wheelchair"
