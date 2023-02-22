@@ -2,18 +2,23 @@ import React, { useEffect, useState } from "react";
 import ResultsHeader from '../ResultsHeader/ResultsHeader'
 import ResultCard from "../ResultCard/ResultCard";
 import './Results.css'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useGetLavsQuery } from "../../apicalls";
+import { updateSearchResults } from "./searchSlice";
+
 
 
 const Results = () => {
   //global state data
+  //add currentCoordinates
+  const dispatch = useDispatch();
   const gpsCoordinates = useSelector((state) => state.landing.gpsCoordinates)
   const adaAccessible = useSelector((state) => state.landing.adaAccessible)
   const unisex = useSelector((state) => state.landing.unisex)
   const changingTable = useSelector((state) => state.landing.changingTable)
-  
-  const [ allResults, setAllResults ] = useState([]) //this will change to a dispatch to update global instead
+  const searchResults = useSelector((state) => state.search.searchResults)
+
+  //const [ allResults, setAllResults ] = useState([]) //this will change to a dispatch to update global instead
   const [filteredResults, setFilteredResults] = useState([]);
   //fetch request data
   const {
@@ -23,7 +28,7 @@ const Results = () => {
     isError,
     error,
   } = useGetLavsQuery(gpsCoordinates);
-  
+
 let temp
 
 useEffect(() => {
@@ -32,23 +37,18 @@ useEffect(() => {
   } else if(isError) {
     temp = <p>Error City</p>
   } else if(isSuccess) {
-    setAllResults(results)
+    dispatch(updateSearchResults(results))
+    //setAllResults(results)
   }
 })
 
 useEffect(() => {
-  setFilteredResults(filter(allResults))
-}, [allResults]) //eventually listen to global
+  setFilteredResults(filter(searchResults))
+}, [searchResults])
 
 const createCards = () => {
   return filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
 }
-
-// useEffect(() => {
-  
-// }, [filteredResults])
-
-
 
 const filter = (results) => {
   //make more dynamic... pass in an array of what to filter instead of referencing the global variables?
