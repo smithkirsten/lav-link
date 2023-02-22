@@ -6,9 +6,9 @@ import { roundDistance, reformatDate } from "../../util";
 const Details = () => {
 
   const bathroom = useSelector((state) => state.result.selectedBathroom);
-  console.log("b", bathroom)
   return (
     <section className="Details-page">
+      <button className="go-back-button">Back to All Results</button>
       <section className="top">
         <section className="background details">
           <p>{`${bathroom.name}`}</p>
