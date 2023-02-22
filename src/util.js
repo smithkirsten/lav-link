@@ -18,3 +18,7 @@ export const reformatDate = (bathroom) => {
   const newDate = new Date(date)
   return `${newDate.getMonth()+1}/${newDate.getDate()}/${newDate.getFullYear()}`
 };
+
+export const validateZip = zip => {
+  return /^\d{5}$/.test(zip);
+}
