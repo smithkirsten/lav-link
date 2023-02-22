@@ -3,6 +3,7 @@ import "./Landing.css";
 import { NavLink } from "react-router-dom";
 import { updateFilters } from './landingSlice'
 import { useDispatch } from 'react-redux'
+import { validateZip } from "../../util";
 // import { useGetLavsQuery } from "../../apicalls";
 
 export default function Landing() {
@@ -40,6 +41,8 @@ export default function Landing() {
           <label htmlFor="currentLocation">use current location</label>
         </div>
         <p>or</p>
+        {/* this is one way */}
+        {!validateZip(zipcode) && <p>Please input valid zipcode</p>} 
         <input
           name="zipcodeInput"
           type="text"
@@ -84,8 +87,9 @@ export default function Landing() {
             <label htmlFor="changingTable">changing table</label>
           </div>
         </section>
+        {/* Also disabled button until valid zipcode is entered. Should we still render 'Please input valid zipcode' */}
         <NavLink to="/results">
-          <button name="searchButton" className="search-button" onClick={() =>  {
+          <button disabled={!validateZip(zipcode)} name="searchButton" className="search-button" onClick={() =>  {
             dispatch(updateFilters({ currentLocation, zipcode, adaAccessible, unisex, changingTable }));
           }}
             >
