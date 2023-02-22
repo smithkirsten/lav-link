@@ -9,22 +9,12 @@ function App() {
   return (
     <main>
       <Routes>
-        <Route
-          path="/"
-          element={ <Landing />}
-        />
-        <Route
-          path="/results"
-          element={ <Results />}
-        />
-        <Route
-          path="/results/:name"
-          element={ <Details />}
-        />
-        <Route
-          path="/error"
-          element={ <Error />}
-        />
+        <Route path="/" element={<Landing />} />
+        <Route path="/results" element={<Results />} />
+        <Route path="/results/:name" element={<Details />} />
+        <Route path="*" element={<Error />} />
+        <Route path="/results/*" element={<Error />} />
+        <Route path="/results/:name/*" element={<Error />} />
       </Routes>
     </main>
   );
