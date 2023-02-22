@@ -2,13 +2,16 @@ import React from "react";
 import "./Details.css";
 import { useSelector } from "react-redux";
 import { roundDistance, reformatDate } from "../../util";
+import { NavLink } from "react-router-dom";
 
 const Details = () => {
 
   const bathroom = useSelector((state) => state.result.selectedBathroom);
   return (
     <section className="Details-page">
-      <button className="back-to-main-button">Back to All Results</button>
+      <NavLink to={'/results'} >
+        <button className="back-to-main-button">Back to All Results</button>
+      </NavLink>
       <section className="top">
         <section className="background details">
           <p>{`${bathroom.name}`}</p>
