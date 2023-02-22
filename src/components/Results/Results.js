@@ -7,16 +7,14 @@ import { useGetLavsQuery } from "../../apicalls";
 
 
 const Results = () => {
-
-  const [filteredResults, setFilteredResults] = useState(false);
-  //add a local state that listens for changes to any of the below variables
-    //state will hold filtered results
-
   //global state data
   const gpsCoordinates = useSelector((state) => state.landing.gpsCoordinates)
   const adaAccessible = useSelector((state) => state.landing.adaAccessible)
   const unisex = useSelector((state) => state.landing.unisex)
   const changingTable = useSelector((state) => state.landing.changingTable)
+
+  //add a local state that listens for changes to any of the below variables
+    //state will hold filtered results
   //fetch request data
   const {
     data: results,
@@ -42,10 +40,16 @@ const filter = (results) => {
     results = results.filter(result => result.changing_table)
     console.log(results)
   }
-  
   console.log(filtered)
   return filtered;
 }
+  //local state
+const [filteredResults, setFilteredResults] = useState([]);
+  
+useEffect(() => {
+  //call filter function
+  //setFilteredRestults with return from that
+}, [ gpsCoordinates, adaAccessible, unisex, changingTable ])
 
 //display logic
 let content
