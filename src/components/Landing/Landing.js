@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux'
 
 export default function Landing() {
   const [currentLocation, setCurrentLocation] = useState(false);
+  const [currentCoords, setCurrentCoords] = useState("")
   const [zipcode, setZipcode] = useState("");
   const [adaAccessible, setAdaAccessible] = useState(false);
   const [unisex, setUnisex] = useState(false);
@@ -14,9 +15,26 @@ export default function Landing() {
 
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   console.log(useGetLavsQuery(zipcode))
-  // }, [zipcode])
+  const successCallback = (position) => {
+    console.log(position.coords.latitude, position.coords.longitude);
+    setCurrentLocation(true)
+    setCurrentCoords({ 'lat':`${position.coords.latitude}`, 'long':`${position.coords.longitude}`})
+  };
+  
+  const errorCallback = (error) => {
+    alert(error);
+  };
+
+  const getUserLocation = () => {
+    if (currentCoords) {
+      setCurrentLocation(false);
+      setCurrentCoords("");
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    // Probably will need to invoke a loading state here as it seems to take about 5 seconds to return location
+    // Also will need to block form submission with a checker function
+  }
 
   return (
     <section className="landing-main">
@@ -35,7 +53,7 @@ export default function Landing() {
             name="currentLocation"
             type="checkbox"
             checked={currentLocation}
-            onChange={(event) => setCurrentLocation(event.target.checked)}
+            onChange={() => getUserLocation()}
           />
           <label htmlFor="currentLocation">use current location</label>
         </div>
@@ -86,7 +104,7 @@ export default function Landing() {
         </section>
         <NavLink to="/results">
           <button name="searchButton" className="search-button" onClick={() =>  {
-            dispatch(updateFilters({ currentLocation, zipcode, adaAccessible, unisex, changingTable }));
+            dispatch(updateFilters({ currentLocation, currentCoords, zipcode, adaAccessible, unisex, changingTable }));
           }}
             >
             search
