@@ -18,5 +18,5 @@ export const reformatDate = (bathroom) => {
   const date = bathroom["updated_at"];
   const newDate = new Date(date)
   console.log(newDate)
-  return newDate
+  return `${newDate.getDay()}/${newDate.getMonth()}/${newDate.getFullYear()}`
 };
