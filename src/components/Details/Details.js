@@ -36,23 +36,17 @@ const Details = () => {
       </section>
       <summary className="background summary">
         <div className="address">
-          <p>3335 Arapahoe rd.STE 10</p>
-          <p>Erie, CO</p>
+          <p>{`${bathroom.street}`}</p>
+          <p>{`${bathroom.city}, ${bathroom.state}`}</p>
         </div>
-        <p className="directions">
-          Go through the electronic doors, walk forward three steps and turn
-          right
-        </p>
+        <p className="directions">{`${bathroom.directions}`}</p>
       </summary>
       <section className="background conclusion">
-        <p className="comment">
-          Between Chipotle and Cocola Bakery near the 19th Ave. mall entrance on
-          the east side
-        </p>
+        <p className="comment">{`${bathroom.comment}`}</p>
         <div className="votes">
-          <p>Upvote: 0</p>
-          <p>Downvote: 0</p>
-          <p>Last Updated: 12/21/2022</p>
+          <p>{`Upvotes: ${bathroom.upvote}`}</p>
+          <p>{`Downvotes: ${bathroom.downvote}`}</p>
+          <p>{`Last Updated: ${bathroom["updated_at"]}`}</p>
         </div>
       </section>
     </section>
