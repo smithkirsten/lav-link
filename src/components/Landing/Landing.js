@@ -18,7 +18,6 @@ export default function Landing() {
 
   const successCallback = (position) => {
     console.log(position.coords.latitude, position.coords.longitude);
-    setCurrentLocation(true)
     setCurrentCoords({ 'lat':`${position.coords.latitude}`, 'long':`${position.coords.longitude}`})
   };
   
@@ -32,9 +31,19 @@ export default function Landing() {
       setCurrentCoords("");
       return;
     }
+    setCurrentLocation(true);
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
     // Probably will need to invoke a loading state here as it seems to take about 5 seconds to return location
-    // Also will need to block form submission with a checker function
+  }
+
+  const currentLocationDisplay = () => {
+    if (!currentLocation) {
+      return 'use current location';
+    } else if (currentLocation && !currentCoords) {
+      return 'finding your location...'
+    } else if (currentCoords) {
+      return `${(+currentCoords.lat).toFixed(5)}, ${(+currentCoords.long).toFixed(5)}`;
+    }
   }
 
   const checkInputs = () => {
@@ -66,7 +75,7 @@ export default function Landing() {
             checked={currentLocation}
             onChange={() => getUserLocation()}
           />
-          <label htmlFor="currentLocation">use current location</label>
+          <label htmlFor="currentLocation">{currentLocationDisplay()}</label>
         </div>
         <p>or</p>
         <input
