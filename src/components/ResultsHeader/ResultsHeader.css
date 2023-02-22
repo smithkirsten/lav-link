@@ -29,9 +29,8 @@
 .filterForm div {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 .filterForm div .zip-input {
   width: 15vw;

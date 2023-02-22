@@ -1,17 +1,18 @@
 import React from 'react'
 import './ResultCard.css'
 import { NavLink } from "react-router-dom";
+import { useDispatch } from 'react-redux'
+import { selectBathroom } from './resultSlice.js'
 
-const dummyBathroom = { name: 'Establishment', distance: '0.5', upvote: '2'}
-
-const ResultCard = () => {
+const ResultCard = ({data}) => {
+  const dispatch = useDispatch();
   return (
-    <NavLink to={`/results/${dummyBathroom.name}`}>
+    <NavLink to={`/results/${data.name}`} onClick={() => dispatch(selectBathroom(data))}>
       <article className="result-card">
         <img src="/assets/toilet.png" alt="toilet icon" />
-        <p className="result-name">{dummyBathroom.name}</p>
-        <p className="result-distance">{dummyBathroom.distance} miles away</p>
-        <p className="result-upvote">{dummyBathroom.upvote} ⬆️ </p>
+        <p className="result-name">{data.name}</p>
+        <p className="result-distance">{(data.distance).toFixed(2)} miles away</p>
+        <p className="result-upvote">{data.upvote} ⬆️ </p>
       </article>
     </NavLink>
   );

@@ -43,9 +43,3 @@ $opaque: rgb(234, 245, 246, .83);
   border-radius: $radius;
 }
 
-@mixin centered($direction) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: center;
-  align-items: center;
-}

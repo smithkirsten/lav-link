@@ -3,6 +3,7 @@ import "./Landing.css";
 import { NavLink } from "react-router-dom";
 import { updateFilters } from './landingSlice'
 import { useDispatch } from 'react-redux'
+// import { useGetLavsQuery } from "../../apicalls";
 
 export default function Landing() {
   const [currentLocation, setCurrentLocation] = useState(false);
@@ -13,11 +14,15 @@ export default function Landing() {
 
   const dispatch = useDispatch();
 
+  // useEffect(() => {
+  //   console.log(useGetLavsQuery(zipcode))
+  // }, [zipcode])
+
   return (
     <section className="landing-main">
       <section className="landing-content">
         <section className="landing-header">
-          <h1>Lav Link</h1>
+          <h1 className="site-title">Lav Link</h1>
           <p>find safer relief near you</p>
           <img
             className="landing-toilet-icon"
@@ -81,7 +86,7 @@ export default function Landing() {
         </section>
         <NavLink to="/results">
           <button name="searchButton" className="search-button" onClick={() =>  {
-            dispatch(updateFilters( { currentLocation, zipcode, adaAccessible, unisex, changingTable }))
+            dispatch(updateFilters({ currentLocation, zipcode, adaAccessible, unisex, changingTable }));
           }}
             >
             search
