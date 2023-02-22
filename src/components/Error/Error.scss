@@ -1,0 +1,39 @@
+@use '../../../abstract/variables' as *;
+
+.error-page {
+  height: 100vh;
+  width: 100vw;
+  @include centered(column);
+}
+
+.error-content {
+  @include centered(column);
+  @include highlightBackground;
+  justify-content: space-evenly; // Should be allowed to have two params for centered mixin but breaks sass compiler when more that one is input
+  height: 92vh;
+  width: 80vw;
+}
+
+
+
+.poop-emoji {
+  font-size: 90px;
+  margin: 0;
+}
+
+.not-found {
+  @include pillHighlight(36px);
+  @include centered(row); // Same as line 12
+  background-color: rgba(255, 255, 255, 0); 
+  font-size: 40px;
+  padding: 12px 20px;
+  // height: 40px;
+  // width: 200px;
+}
+
+.back-to-main-button {
+  @include pillButton;
+  height: 40px;
+  width: 200px;
+  cursor: pointer;
+}
