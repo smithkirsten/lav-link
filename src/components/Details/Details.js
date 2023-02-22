@@ -8,7 +8,7 @@ const Details = () => {
   const bathroom = useSelector((state) => state.result.selectedBathroom);
   return (
     <section className="Details-page">
-      <button className="go-back-button">Back to All Results</button>
+      <button className="back-to-main-button">Back to All Results</button>
       <section className="top">
         <section className="background details">
           <p>{`${bathroom.name}`}</p>
@@ -39,7 +39,6 @@ const Details = () => {
         </section>
         <section className="background details-map">
           This is a map... trust me
-          <button className="back-to-main-button">X</button>
         </section>
       </section>
       <summary className="background summary">
