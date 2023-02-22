@@ -1,22 +1,59 @@
 import { useState } from "react";
 import "./Landing.css";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { updateFilters } from './landingSlice'
 import { useDispatch } from 'react-redux'
-// import { useGetLavsQuery } from "../../apicalls";
 
 export default function Landing() {
   const [currentLocation, setCurrentLocation] = useState(false);
+  const [currentCoords, setCurrentCoords] = useState("")
   const [zipcode, setZipcode] = useState("");
   const [adaAccessible, setAdaAccessible] = useState(false);
   const [unisex, setUnisex] = useState(false);
   const [changingTable, setChangingTable] = useState(false);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   console.log(useGetLavsQuery(zipcode))
-  // }, [zipcode])
+  const successCallback = (position) => {
+    console.log(position.coords.latitude, position.coords.longitude);
+    setCurrentCoords({ 'lat':`${position.coords.latitude}`, 'long':`${position.coords.longitude}`})
+  };
+  
+  const errorCallback = (error) => {
+    alert(error);
+    // Need to remove this alert - Maybe use a dialog modal here instead?
+  };
+
+  const getUserLocation = () => {
+    if (currentCoords) {
+      setCurrentLocation(false);
+      setCurrentCoords("");
+      return;
+    }
+    setCurrentLocation(true);
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+  }
+
+  const currentLocationDisplay = () => {
+    if (!currentLocation) {
+      return 'use current location';
+    } else if (currentLocation && !currentCoords) {
+      return 'finding your location...'
+    } else if (currentCoords) {
+      return `${(+currentCoords.lat).toFixed(5)}, ${(+currentCoords.long).toFixed(5)}`;
+    }
+  }
+
+  const checkInputs = () => {
+    if (!(currentCoords || zipcode)) {
+      alert("Please make sure to select current location or enter a zipcode before searching.")
+      return;
+    } else {
+      dispatch(updateFilters({ currentLocation, currentCoords, zipcode, adaAccessible, unisex, changingTable }));
+      navigate('/results');
+    }
+  }
 
   return (
     <section className="landing-main">
@@ -35,9 +72,9 @@ export default function Landing() {
             name="currentLocation"
             type="checkbox"
             checked={currentLocation}
-            onChange={(event) => setCurrentLocation(event.target.checked)}
+            onChange={() => getUserLocation()}
           />
-          <label htmlFor="currentLocation">use current location</label>
+          <label htmlFor="currentLocation">{currentLocationDisplay()}</label>
         </div>
         <p>or</p>
         <input
@@ -84,14 +121,7 @@ export default function Landing() {
             <label htmlFor="changingTable">changing table</label>
           </div>
         </section>
-        <NavLink to="/results">
-          <button name="searchButton" className="search-button" onClick={() =>  {
-            dispatch(updateFilters({ currentLocation, zipcode, adaAccessible, unisex, changingTable }));
-          }}
-            >
-            search
-          </button>
-        </NavLink>
+        <button name="searchButton" className="search-button" onClick={() => checkInputs()} >search</button>
       </section>
     </section>
   );

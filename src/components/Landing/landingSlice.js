@@ -3,6 +3,7 @@ import { zipConverter } from "../../util";
 
 const initialState = {
   currentLocation: false,
+  currentCoords: "",
   zipcode: "",
   gpsCoordinates: "",
   adaAccessible: false,
@@ -16,8 +17,9 @@ export const landingSlice = createSlice({
   reducers: {
     updateFilters: (state, action) => {
       state.currentLocation = action.payload.currentLocation;
+      state.currentCoords = action.payload.currentCoords;
       state.zipcode = action.payload.zipcode;
-      state.gpsCoordinates = zipConverter(action.payload.zipcode)
+      state.gpsCoordinates = action.payload.currentCoords || zipConverter(action.payload.zipcode);
       state.adaAccessible = action.payload.adaAccessible;
       state.unisex = action.payload.unisex;
       state.changingTable = action.payload.changingTable;
