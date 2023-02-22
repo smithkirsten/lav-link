@@ -3,7 +3,6 @@ import "./Landing.css";
 import { useNavigate } from "react-router-dom";
 import { updateFilters } from './landingSlice'
 import { useDispatch } from 'react-redux'
-// import { useGetLavsQuery } from "../../apicalls";
 
 export default function Landing() {
   const [currentLocation, setCurrentLocation] = useState(false);
