@@ -12,6 +12,9 @@ const Results = () => {
   const adaAccessible = useSelector((state) => state.landing.adaAccessible)
   const unisex = useSelector((state) => state.landing.unisex)
   const changingTable = useSelector((state) => state.landing.changingTable)
+  
+  const [ allResults, setAllResults ] = useState([]) //this will change to a dispatch to update global instead
+  const [filteredResults, setFilteredResults] = useState([]);
   //fetch request data
   const {
     data: results,
@@ -20,6 +23,32 @@ const Results = () => {
     isError,
     error,
   } = useGetLavsQuery(gpsCoordinates);
+  
+let temp
+
+useEffect(() => {
+  if(isLoading) {
+    temp = <p>loading....</p>
+  } else if(isError) {
+    temp = <p>Error City</p>
+  } else if(isSuccess) {
+    setAllResults(results)
+  }
+})
+
+useEffect(() => {
+  setFilteredResults(filter(allResults))
+}, [allResults]) //eventually listen to global
+
+const createCards = () => {
+  return filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
+}
+
+// useEffect(() => {
+  
+// }, [filteredResults])
+
+
 
 const filter = (results) => {
   //make more dynamic... pass in an array of what to filter instead of referencing the global variables?
@@ -45,8 +74,50 @@ const filter = (results) => {
   console.log('returning: ', results)
   return results;
 }
-  //local state
-  const [filteredResults, setFilteredResults] = useState([]);
+
+
+
+  return (
+    <>
+      <ResultsHeader />
+      <section className='cards-display'>
+        <div className="cards-container">
+          {temp}
+          {filteredResults && createCards()}
+        </div>
+      </section>
+    </>
+
+    // <>
+    //   <ResultsHeader />
+    //   <section className='cards-display'>
+    //     <div className="cards-container">
+    //       {isError && <p>error city</p>}
+    //       {isLoading && <p>loading....</p>}
+    //       {filteredResults && content}
+    //     </div>
+    //   </section>
+    // </>
+
+    // <>
+    //   <ResultsHeader />
+    //   <section className='cards-display'>
+    //     <div className="cards-container">
+    //       {content}
+    //     </div>
+    //   </section>
+    // </>
+  )
+
+}
+
+export default Results
+
+
+
+
+
+
 
 // useEffect(() => {
 //   //trigger a re-get if gpsCoordinates change
@@ -62,10 +133,6 @@ const filter = (results) => {
 // }, [results])
 
 
-
-//add results to global state
-
-let content
 // content = filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
 
 // if (isSuccess) {
@@ -75,43 +142,18 @@ let content
 //   //put links around individual cards
 //   // content = filteredResults.map((result) => <ResultCard key={result.id} data={result} />);
 // } 
-
-// display logic
-if (isLoading) {
-  //loading page is later problem
-  content = <h2>Loading ...</h2>;
-} else if (isSuccess) {
-  setFilteredResults(filter(results))
-  const copy = filteredResults
-  content = copy.map((result) => <ResultCard key={result.id} data={result} />)
+// let temp;
+// // display logic
+// if (isLoading) {
+//   //loading page is later problem
+//   temp = <h2>Loading ...</h2>;
+// } else if (isError) {
+//   //Rae is making error page
+//   temp = <h2>Error city</h2>
+// } else if (isSuccess) {
+    // setFilteredResults(filter(results))
+  // const copy = filteredResults
+  // content = filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
   //put links around individual cards
   // content = filteredResults.map((result) => <ResultCard key={result.id} data={result} />);
-} else if (isError) {
-  //Rae is making error page
-  content = <h2>Error city</h2>
-}
-  return (
-    // <>
-    //   <ResultsHeader />
-    //   <section className='cards-display'>
-    //     <div className="cards-container">
-    //       {isError && <p>error city</p>}
-    //       {isLoading && <p>loading....</p>}
-    //       {filteredResults && content}
-    //     </div>
-    //   </section>
-    // </>
-
-    <>
-      <ResultsHeader />
-      <section className='cards-display'>
-        <div className="cards-container">
-          {content}
-        </div>
-      </section>
-    </>
-  )
-
-}
-
-export default Results
+//}
