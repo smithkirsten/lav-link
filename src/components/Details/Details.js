@@ -1,7 +1,8 @@
 import React from "react";
 import "./Details.css";
 
-const Details = () => {
+const Details = (event) => {
+  const selectedRestroom = 
   return (
     <section className="Details-page">
       <section className="top">

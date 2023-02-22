@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const ResultCard = ({data}) => {
   return (
-    <NavLink to={`/results/${data.name}`}>
+    <NavLink to={`/results/${data.id}`}>
       <article className="result-card">
         <img src="/assets/toilet.png" alt="toilet icon" />
         <p className="result-name">{data.name}</p>
