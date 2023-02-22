@@ -7,7 +7,7 @@ import { selectBathroom } from './resultSlice.js'
 const ResultCard = ({data}) => {
   const dispatch = useDispatch();
   return (
-    <NavLink to={`/results/${data.name}`} onClick={() => dispatch(selectBathroom(data))}>
+    <NavLink to={'/results/bathroom'} onClick={() => dispatch(selectBathroom(data))}>
       <article className="result-card">
         <img src="/assets/toilet.png" alt="toilet icon" />
         <p className="result-name">{data.name}</p>
