@@ -6,7 +6,7 @@ import { roundDistance, reformatDate } from "../../util";
 const Details = () => {
 
   const bathroom = useSelector((state) => state.result.selectedBathroom);
-  
+  console.log("b", bathroom)
   return (
     <section className="Details-page">
       <section className="top">
@@ -14,11 +14,13 @@ const Details = () => {
           <p>{`${bathroom.name}`}</p>
           <p className="distance">{`${roundDistance(bathroom)} miles`}</p>
           <div className="icon-container">
-            <img
-              alt="Wheelchair"
-              className="icon"
-              src="/assets/wheelchair.png"
-            ></img>
+            {bathroom.accessible && (
+              <img
+                alt="Wheelchair"
+                className="icon"
+                src="/assets/wheelchair.png"
+              ></img>
+            )}
             <img
               alt="Unisex"
               className="icon"
