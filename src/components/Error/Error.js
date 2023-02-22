@@ -13,7 +13,7 @@ export default function Error() {
         <p className="poop-emoji">💩</p>
         <p className="not-found">Page Not Found</p>
         <NavLink to={'/'}>
-          <button className="back-to-main-button">Back To Main</button>
+          <button className="return-to-main-button">Back To Main</button>
         </NavLink>
       </div>
     </section>
