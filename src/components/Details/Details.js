@@ -28,11 +28,13 @@ const Details = () => {
                 src="/assets/transgender.png"
               ></img>
             )}
-            <img
-              alt="Changing Table"
-              className="icon"
-              src="/assets/baby.png"
-            ></img>
+            {bathroom["changing_table"] && (
+              <img
+                alt="Changing Table"
+                className="icon"
+                src="/assets/baby.png"
+              ></img>
+            )}
           </div>
         </section>
         <section className="background details-map">
