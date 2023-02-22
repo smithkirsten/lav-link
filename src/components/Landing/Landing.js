@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Landing.css";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { updateFilters } from './landingSlice'
 import { useDispatch } from 'react-redux'
 // import { useGetLavsQuery } from "../../apicalls";
@@ -14,6 +14,7 @@ export default function Landing() {
   const [changingTable, setChangingTable] = useState(false);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const successCallback = (position) => {
     console.log(position.coords.latitude, position.coords.longitude);
@@ -34,6 +35,16 @@ export default function Landing() {
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
     // Probably will need to invoke a loading state here as it seems to take about 5 seconds to return location
     // Also will need to block form submission with a checker function
+  }
+
+  const checkInputs = () => {
+    if (!(currentCoords || zipcode)) {
+      alert("Please make sure to select current location or enter a zipcode before searching.")
+      return;
+    } else {
+      dispatch(updateFilters({ currentLocation, currentCoords, zipcode, adaAccessible, unisex, changingTable }));
+      navigate('/results');
+    }
   }
 
   return (
@@ -102,14 +113,9 @@ export default function Landing() {
             <label htmlFor="changingTable">changing table</label>
           </div>
         </section>
-        <NavLink to="/results">
-          <button name="searchButton" className="search-button" onClick={() =>  {
-            dispatch(updateFilters({ currentLocation, currentCoords, zipcode, adaAccessible, unisex, changingTable }));
-          }}
-            >
-            search
-          </button>
-        </NavLink>
+        {/* <NavLink to="/results"> */}
+          <button name="searchButton" className="search-button" onClick={() => checkInputs()} >search</button>
+        {/* </NavLink> */}
       </section>
     </section>
   );
