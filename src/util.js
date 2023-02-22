@@ -10,9 +10,8 @@ export const zipConverter = (zipcode) => {
 }
 
 export const roundDistance = (bathroom) => {
-  console.log(bathroom.bathroom)
-  const roundedDistance = bathroom.bathroom.distance.toFixed(2)
-  return {
-    roundedDistance
-  }
+  // console.log(bathroom.distance)
+  const rounded = bathroom.distance.toFixed(2)
+  return rounded
+  
 };

@@ -5,6 +5,8 @@ import { roundDistance } from "../../util";
 
 const Details = () => {
    const bathroom = useSelector((state) => state.result.selectedBathroom);
+  //  const distance = roundDistance(bathroom).roundedDistance
+  //  console.log("dista", distance)
    console.log("br", bathroom)
   return (
     <section className="Details-page">
