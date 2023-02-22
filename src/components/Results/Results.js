@@ -7,6 +7,11 @@ import { useGetLavsQuery } from "../../apicalls";
 
 
 const Results = () => {
+
+  const [filteredResults, setFilteredResults] = useState(false);
+  //add a local state that listens for changes to any of the below variables
+    //state will hold filtered results
+
   //global state data
   const gpsCoordinates = useSelector((state) => state.landing.gpsCoordinates)
   const adaAccessible = useSelector((state) => state.landing.adaAccessible)
@@ -23,22 +28,27 @@ const Results = () => {
 
 const filter = (results) => {
   if(adaAccessible){
-    results = results.filter()
+    console.log('filtering for ada')
+    results = results.filter(result => result.accessible)
+    console.log(results)
   }
   if(unisex) {
-    results = results.filter()
+    console.log('filtering for unisex')
+    results = results.filter(result => result.unisex)
+    console.log(results)
   }
   if(changingTable) {
-    results = results.filter()
+    console.log('filtering for big baby')
+    results = results.filter(result => result.changing_table)
+    console.log(results)
   }
   
   console.log(filtered)
   return filtered;
 }
 
-  //display logic
-
-
+//display logic
+let content
 if (isLoading) {
   //loading page is later problem
   content = <h2>Loading ...</h2>;
@@ -52,7 +62,7 @@ if (isLoading) {
 
   //put links around individual cards
 
-  let content = results.map((result) => <ResultCard key={result.id} data={result} />);
+  content = results.map((result) => <ResultCard key={result.id} data={result} />);
 } else if (isError) {
   //Rae is making error page
   content = <h2>Error city</h2>
