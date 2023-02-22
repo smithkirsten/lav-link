@@ -1,10 +1,11 @@
-import React from 'react'
-import './ResultCard.css'
+import React from 'react';
+import './ResultCard.css';
 import { NavLink } from "react-router-dom";
-import { useDispatch } from 'react-redux'
-import { selectBathroom } from './resultSlice.js'
+import { useDispatch } from 'react-redux';
+import { selectBathroom } from './resultSlice.js';
+import PropTypes from 'prop-types';
 
-const ResultCard = ({data}) => {
+const ResultCard = ({ data }) => {
   const dispatch = useDispatch();
   return (
     <NavLink to={'/results/details'} onClick={() => dispatch(selectBathroom(data))}>
@@ -18,4 +19,8 @@ const ResultCard = ({data}) => {
   );
 }
 
-export default ResultCard
+export default ResultCard;
+
+ResultCard.propTypes = {
+  data: PropTypes.object.isRequired
+};

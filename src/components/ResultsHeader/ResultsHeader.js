@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import './ResultsHeader.css'
 import { updateFilters } from "../Landing/landingSlice";
@@ -29,7 +29,7 @@ const ResultsHeader = () => {
             className="zip-input"
           ></input>
           <label htmlFor="adaAccessible" className="input-label">
-            <img src="/assets/wheelchair.png" />
+            <img src="/assets/wheelchair.png" alt="wheelchair icon" />
           </label>
           <input
             type="checkbox"
@@ -38,7 +38,7 @@ const ResultsHeader = () => {
             onChange={(event) => setAdaAccessible(event.target.checked)}
           ></input>
           <label htmlFor="unisex" className="input-label">
-            <img src="/assets/transgender.png" />
+            <img src="/assets/transgender.png" alt="unisex icon" />
           </label>
           <input
             type="checkbox"
@@ -47,7 +47,7 @@ const ResultsHeader = () => {
             onChange={(event) => setUnisex(event.target.checked)}
           ></input>
           <label htmlFor="changingTable" className="input-label">
-            <img src="/assets/baby.png" />
+            <img src="/assets/baby.png" alt="changing table icon"/>
           </label>
           <input
             type="checkbox"
