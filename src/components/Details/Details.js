@@ -1,12 +1,10 @@
 import React from "react";
 import "./Details.css";
 import { useSelector } from "react-redux";
-import { roundDistance } from "../../util";
+import { roundDistance, reformatDate } from "../../util";
 
 const Details = () => {
    const bathroom = useSelector((state) => state.result.selectedBathroom);
-  //  const distance = roundDistance(bathroom).roundedDistance
-  //  console.log("dista", distance)
    console.log("br", bathroom)
   return (
     <section className="Details-page">
@@ -49,7 +47,7 @@ const Details = () => {
         <div className="votes">
           <p>{`Upvotes: ${bathroom.upvote}`}</p>
           <p>{`Downvotes: ${bathroom.downvote}`}</p>
-          <p>{`Last Updated: ${bathroom["updated_at"]}`}</p>
+          <p>{`Last Updated: ${reformatDate(bathroom)}`}</p>
         </div>
       </section>
     </section>

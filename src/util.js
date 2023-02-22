@@ -10,8 +10,13 @@ export const zipConverter = (zipcode) => {
 }
 
 export const roundDistance = (bathroom) => {
-  // console.log(bathroom.distance)
   const rounded = bathroom.distance.toFixed(2)
   return rounded
-  
+}
+
+export const reformatDate = (bathroom) => {
+  const date = bathroom["updated_at"];
+  const newDate = new Date(date)
+  console.log(newDate)
+  return newDate
 };
