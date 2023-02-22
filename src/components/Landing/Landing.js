@@ -23,6 +23,7 @@ export default function Landing() {
   
   const errorCallback = (error) => {
     alert(error);
+    // Need to remove this alert - Maybe use a dialog modal here instead?
   };
 
   const getUserLocation = () => {
@@ -33,7 +34,6 @@ export default function Landing() {
     }
     setCurrentLocation(true);
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-    // Probably will need to invoke a loading state here as it seems to take about 5 seconds to return location
   }
 
   const currentLocationDisplay = () => {
@@ -122,9 +122,7 @@ export default function Landing() {
             <label htmlFor="changingTable">changing table</label>
           </div>
         </section>
-        {/* <NavLink to="/results"> */}
-          <button name="searchButton" className="search-button" onClick={() => checkInputs()} >search</button>
-        {/* </NavLink> */}
+        <button name="searchButton" className="search-button" onClick={() => checkInputs()} >search</button>
       </section>
     </section>
   );
