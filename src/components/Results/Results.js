@@ -25,6 +25,8 @@ const Results = () => {
   } = useGetLavsQuery(gpsCoordinates);
 
 const filter = (results) => {
+  //make more dynamic... pass in an array of what to filter instead of referencing the global variables?
+
   if(adaAccessible){
     console.log('filtering for ada')
     results = results.filter(result => result.accessible)
@@ -47,8 +49,7 @@ const filter = (results) => {
 const [filteredResults, setFilteredResults] = useState([]);
   
 useEffect(() => {
-  //call filter function
-  //setFilteredRestults with return from that
+  setFilteredResults(filter(results))
 }, [ gpsCoordinates, adaAccessible, unisex, changingTable ])
 
 //display logic
@@ -61,12 +62,9 @@ if (isLoading) {
   //filter results
     //grab filters from state and determine which to apply
       //create filter functions in util file
-  let filteredResults = filter(results)
-
-
   //put links around individual cards
 
-  content = results.map((result) => <ResultCard key={result.id} data={result} />);
+  content = filteredResults.map((result) => <ResultCard key={result.id} data={result} />);
 } else if (isError) {
   //Rae is making error page
   content = <h2>Error city</h2>
