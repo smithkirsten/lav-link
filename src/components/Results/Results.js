@@ -5,19 +5,14 @@ import './Results.css'
 import { useSelector } from 'react-redux'
 import { useGetLavsQuery } from "../../apicalls";
 
+
 const Results = () => {
-  //put links around individual cards
+  //global state data
   const gpsCoordinates = useSelector((state) => state.landing.gpsCoordinates)
-  // const getLavs = useGetLavsQuery(gpsCoordinates);
-
-  // useEffect(() => {
-  //   console.log(getLavs)
-
-  //   // eslint-disable-next-line
-  // }, [gpsCoordinates])
-
-  // const cards = dummyResults.map(result => <ResultCard />).sort((a, b) => a.distance - b.distance)
-
+  const adaAccessible = useSelector((state) => state.landing.adaAccessible)
+  const unisex = useSelector((state) => state.landing.unisex)
+  const changingTable = useSelector((state) => state.landing.changingTable)
+  //fetch request data
   const {
     data: results,
     isLoading,
@@ -26,14 +21,38 @@ const Results = () => {
     error,
   } = useGetLavsQuery(gpsCoordinates);
 
-let content
+const filter = (results) => {
+  if(adaAccessible){
+    results = results.filter()
+  }
+  if(unisex) {
+    results = results.filter()
+  }
+  if(changingTable) {
+    results = results.filter()
+  }
+  
+  console.log(filtered)
+  return filtered;
+}
+
+  //display logic
+
 
 if (isLoading) {
   //loading page is later problem
   content = <h2>Loading ...</h2>;
 } else if (isSuccess) {
   console.log(results)
-  content = results.map((result) => <ResultCard key={result.id} data={result} />);
+  //filter results
+    //grab filters from state and determine which to apply
+      //create filter functions in util file
+  let filteredResults = filter(results)
+
+
+  //put links around individual cards
+
+  let content = results.map((result) => <ResultCard key={result.id} data={result} />);
 } else if (isError) {
   //Rae is making error page
   content = <h2>Error city</h2>
