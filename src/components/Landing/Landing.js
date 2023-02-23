@@ -24,7 +24,8 @@ export default function Landing() {
   };
   
   const locationFetchFailure = () => {
-    setError("There was an error using your current location. Please try again.");
+    setError("There was an error using your current location. Please try again or enter zip.");
+    setCurrentLocation(false);
     setTimeout(() => {setError('')}, 2500);
   };
 
