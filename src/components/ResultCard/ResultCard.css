@@ -7,8 +7,10 @@
   align-items: center;
   justify-content: space-between;
   background-color: #FDF5FB;
-  height: 6vh;
+  height: 7vh;
   width: 80vw;
+  margin: 1em;
+  padding: 5px;
 }
 .result-card img {
   height: 5vh;
