@@ -21,7 +21,7 @@
   justify-content: space-evenly;
   align-items: center;
   background-color: rgba(234, 245, 246, 0.83);
-  border-radius: 20px;
+  border-radius: 15px;
   height: 92vh;
   width: 80vw;
 }
@@ -110,10 +110,25 @@
   margin-bottom: 1vh;
 }
 
-p {
+.landing-copy {
   font-size: 4vmin;
 }
 
-label {
-  font-size: 3.5vmin;
+.landing-labels {
+  font-size: 3.7vmin;
+}
+
+.error-div {
+  width: 45vw;
+  text-align: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #FFA69E;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.landing-error-message {
+  font-size: 3vmin;
+  font-weight: 700;
 }/*# sourceMappingURL=Landing.css.map */

@@ -6,6 +6,7 @@
   width: 90vw;
   @include highlightBackground;
   @include centered(column, center);
+  justify-content: space-around;
   h1 {
     @include logoFont;
   }
@@ -19,10 +20,15 @@
 }
 
 .filterForm {
+  @include centered(column, center);
+  justify-content: space-around;
   height: 15vh;
   width: 95%;
+
   div {
     @include centered(row, space-between);
+    align-items: space-between;
+    width: 80%;
     .zip-input {
       width: 15vw;
     }
