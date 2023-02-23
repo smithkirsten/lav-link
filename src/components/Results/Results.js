@@ -47,6 +47,7 @@ useEffect(() => {
 }, [searchResults])
 
 const createCards = () => {
+  console.log("cypyy", filteredResults)
   return filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
 }
 
@@ -80,10 +81,11 @@ const filter = (results) => {
   return (
     <>
       <ResultsHeader />
-      <section className='cards-display'>
+      <section className="cards-display">
         <div className="cards-container">
           {temp}
           {filteredResults && createCards()}
+          {isLoading && <p>loading....</p>}
         </div>
       </section>
     </>
@@ -107,7 +109,7 @@ const filter = (results) => {
     //     </div>
     //   </section>
     // </>
-  )
+  );
 
 }
 
