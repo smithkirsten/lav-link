@@ -17,8 +17,7 @@ const Results = () => {
   const unisex = useSelector((state) => state.landing.unisex)
   const changingTable = useSelector((state) => state.landing.changingTable)
   const searchResults = useSelector((state) => state.search.searchResults)
-
-  //const [ allResults, setAllResults ] = useState([]) //this will change to a dispatch to update global instead
+  //component state
   const [filteredResults, setFilteredResults] = useState([]);
   //fetch request data
   const {
@@ -26,6 +25,7 @@ const Results = () => {
     isLoading,
     isSuccess,
     isError,
+    // eslint-disable-next-line
     error,
   } = useGetLavsQuery(gpsCoordinates);
 
@@ -33,8 +33,10 @@ let temp
 
 useEffect(() => {
   if(isLoading) {
+    // eslint-disable-next-line
     temp = <p>loading....</p>
   } else if(isError) {
+    // eslint-disable-next-line
     temp = <p>Error City</p>
   } else if(isSuccess) {
     dispatch(updateSearchResults(results))
@@ -44,6 +46,7 @@ useEffect(() => {
 
 useEffect(() => {
   setFilteredResults(filter(searchResults))
+  // eslint-disable-next-line
 }, [searchResults])
 
 const createCards = () => {
@@ -65,8 +68,6 @@ const filter = (results) => {
   return results;
 }
 
-
-
   return (
     <>
       <ResultsHeader />
@@ -77,73 +78,8 @@ const filter = (results) => {
         </div>
       </section>
     </>
-
-    // <>
-    //   <ResultsHeader />
-    //   <section className='cards-display'>
-    //     <div className="cards-container">
-    //       {isError && <p>error city</p>}
-    //       {isLoading && <p>loading....</p>}
-    //       {filteredResults && content}
-    //     </div>
-    //   </section>
-    // </>
-
-    // <>
-    //   <ResultsHeader />
-    //   <section className='cards-display'>
-    //     <div className="cards-container">
-    //       {content}
-    //     </div>
-    //   </section>
-    // </>
   )
 
 }
 
 export default Results
-
-
-
-
-
-
-
-// useEffect(() => {
-//   //trigger a re-get if gpsCoordinates change
-//   setFilteredResults(filter(results))
-// }, [ gpsCoordinates, adaAccessible, unisex, changingTable ])
-
-// useEffect(() => {
-//   content = filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
-// }, [filteredResults])
-
-// useEffect(() => {
-//   setFilteredResults(filter(results))
-// }, [results])
-
-
-// content = filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
-
-// if (isSuccess) {
-//   setFilteredResults(filter(results))
-//   const boop = filteredResults
-//   content = boop.map((result) => <ResultCard key={result.id} data={result} />)
-//   //put links around individual cards
-//   // content = filteredResults.map((result) => <ResultCard key={result.id} data={result} />);
-// } 
-// let temp;
-// // display logic
-// if (isLoading) {
-//   //loading page is later problem
-//   temp = <h2>Loading ...</h2>;
-// } else if (isError) {
-//   //Rae is making error page
-//   temp = <h2>Error city</h2>
-// } else if (isSuccess) {
-    // setFilteredResults(filter(results))
-  // const copy = filteredResults
-  // content = filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
-  //put links around individual cards
-  // content = filteredResults.map((result) => <ResultCard key={result.id} data={result} />);
-//}

@@ -28,7 +28,9 @@ $opaque: rgb(234, 245, 246, .83);
 
 @mixin highlightBackground {
   background-color: $opaque;
-  border-radius: 20px;
+  border-radius: 15px;
+  //I changed this from 20 to 15 to make it a little more square 
+  //I thought it looked better witht he squared edges of the cards, but we can change it back if folks want
 }
 
 @mixin pillButton {
