@@ -1,7 +1,7 @@
 let convert = require('convert-zip-to-gps');
 
 export const zipConverter = (zipcode) => {
-  if (!convert.zipConvert(zipcode)) {
+  if (!(convert.zipConvert(zipcode) && validateZip(zipcode))) {
     return false;
   }
   const coordinates = convert.zipConvert(zipcode).split(',');
@@ -23,9 +23,5 @@ export const reformatDate = (bathroom) => {
 };
 
 export const validateZip = zip => {
-  if (/^\d{5}$/.test(zip)) {
-    return true;
-  } else {
-    return false;
-  }
+  return (/^\d{5}$/.test(zip));
 }

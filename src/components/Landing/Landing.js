@@ -20,7 +20,6 @@ export default function Landing() {
   const navigate = useNavigate();
 
   const locationFetchSuccess = (position) => {
-    console.log(position.coords.latitude, position.coords.longitude);
     setCurrentCoords({ 'lat':`${position.coords.latitude}`, 'long':`${position.coords.longitude}`})
   };
   
@@ -50,13 +49,8 @@ export default function Landing() {
   }
 
   const checkInputs = () => {
-    console.log("zipcode", validateZip(zipcode))
-    if (!(currentCoords || zipcode)) {
-      setError("Please select current location or enter a zipcode before searching.");
-      setTimeout(() => {setError('')}, 2500);
-      return;
-    } else if (!(validateZip(zipcode) && zipConverter(zipcode))) {
-      setError("Please enter a valid zipcode or use current location option.");
+    if (!(currentCoords || zipConverter(zipcode))) {
+      setError("Please select current location or enter a valid zipcode before searching.");
       setTimeout(() => {setError('')}, 2500);
       return;
     } else {
