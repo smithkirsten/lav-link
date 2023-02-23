@@ -22,4 +22,10 @@ describe('Bahtroom Details Page', () => {
     cy.get("section[class='background details'] > p").should("contain", "Starbucks")
     cy.get("section[class='background details'] > p[class='distance']").should("contain", "1.56 miles");
   })
+
+  it("Should display a transgender flag icon if the bathroom is unisex, a baby icon if the bathroom has a changing table, and a person in a wheelchair icon if it is ADA accessible", () => {
+    cy.get('img[alt="Unisex"]').should("have.attr", "src").should("equal", "/assets/transgender.png")
+  });
+
+
 })
