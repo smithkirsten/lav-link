@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import ResultsHeader from '../ResultsHeader/ResultsHeader'
+import ResultsHeader from "../ResultsHeader/ResultsHeader";
 import ResultCard from "../ResultCard/ResultCard";
-import './Results.css'
-import { useDispatch, useSelector } from 'react-redux'
+import "./Results.css";
+import { useDispatch, useSelector } from "react-redux";
 import { useGetLavsQuery } from "../../apicalls";
 import { updateSearchResults } from "./searchSlice";
-
-
 
 const Results = () => {
   //global state data
@@ -71,10 +69,11 @@ const filter = (results) => {
   return (
     <>
       <ResultsHeader />
-      <section className='cards-display'>
+      <section className="cards-display">
         <div className="cards-container">
           {temp}
           {filteredResults && createCards()}
+          {isLoading && <p>loading....</p>}
         </div>
       </section>
     </>
