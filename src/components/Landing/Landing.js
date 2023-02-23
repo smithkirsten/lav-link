@@ -59,7 +59,7 @@ export default function Landing() {
     }
   }
 
-  const errorModal = () => {
+  const errorMessageDisplay = () => {
     if (error) {
       return (
         <div className="error-div">
@@ -102,7 +102,7 @@ export default function Landing() {
           value={zipcode}
           onChange={(event) => setZipcode(event.target.value)}
         />
-        {errorModal()}
+        {errorMessageDisplay()}
         <section className="filter-section">
           <div className="ada-filter">
             <input
