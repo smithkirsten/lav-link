@@ -9,12 +9,12 @@ const Details = () => {
   const bathroom = useSelector((state) => state.result.selectedBathroom);
   return (
     <section className="Details-page">
-      <NavLink to={'/results'} >
+      <NavLink to={"/results"}>
         <button className="back-to-main-button">Back to All Results</button>
       </NavLink>
       <section className="top">
         <section className="background details">
-          <p>{`${bathroom.name}`}</p>
+          <p className="name">{`${bathroom.name}`}</p>
           <p className="distance">{`${roundDistance(bathroom)} miles`}</p>
           <div className="icon-container">
             {bathroom.accessible && (
@@ -58,9 +58,9 @@ const Details = () => {
           <p className="comment">{`Comments: ${bathroom.comment}`}</p>
         )}
         <div className="votes">
-          <p>{`Upvotes: ${bathroom.upvote}`}</p>
-          <p>{`Downvotes: ${bathroom.downvote}`}</p>
-          <p>{`Last Updated: ${reformatDate(bathroom)}`}</p>
+          <p className="upvotes">{`Upvotes: ${bathroom.upvote}`}</p>
+          <p className="downvotes">{`Downvotes: ${bathroom.downvote}`}</p>
+          <p className="update">{`Last Updated: ${reformatDate(bathroom)}`}</p>
         </div>
       </section>
     </section>

@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import ResultsHeader from '../ResultsHeader/ResultsHeader'
+import ResultsHeader from "../ResultsHeader/ResultsHeader";
 import ResultCard from "../ResultCard/ResultCard";
-import './Results.css'
-import { useDispatch, useSelector } from 'react-redux'
+import "./Results.css";
+import { useDispatch, useSelector } from "react-redux";
 import { useGetLavsQuery } from "../../apicalls";
 import { updateSearchResults } from "./searchSlice";
-
-
 
 const Results = () => {
   //global state data
