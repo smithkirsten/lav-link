@@ -5,6 +5,7 @@ import './Results.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useGetLavsQuery } from "../../apicalls";
 import { updateSearchResults } from "./searchSlice";
+import { cleanData } from "../../util";
 
 
 
@@ -22,7 +23,7 @@ const Results = () => {
   const [filteredResults, setFilteredResults] = useState([]);
   //fetch request data
   const {
-    data: results,
+    data,
     isLoading,
     isSuccess,
     isError,
@@ -40,7 +41,7 @@ useEffect(() => {
     // eslint-disable-next-line
     temp = <p>Error City</p>
   } else if(isSuccess) {
-    dispatch(updateSearchResults(results))
+    dispatch(updateSearchResults(data))
     //setAllResults(results)
   }
 })
