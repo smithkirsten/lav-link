@@ -32,13 +32,7 @@ const Results = () => {
 let temp
 
 useEffect(() => {
-  if(isLoading) {
-    // eslint-disable-next-line
-    temp = <p>loading....</p>
-  } else if(isError) {
-    // eslint-disable-next-line
-    temp = <p>Error City</p>
-  } else if(isSuccess) {
+  if (isSuccess) {
     dispatch(updateSearchResults(results))
     //setAllResults(results)
   }
@@ -47,7 +41,7 @@ useEffect(() => {
 useEffect(() => {
   setFilteredResults(filter(searchResults))
   // eslint-disable-next-line
-}, [searchResults])
+}, )
 
 const createCards = () => {
   return filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
@@ -71,14 +65,15 @@ const filter = (results) => {
   return (
     <>
       <ResultsHeader />
-      <section className='cards-display'>
+      <section className="cards-display">
         <div className="cards-container">
-          {temp}
-          {filteredResults && createCards()}
+          {isSuccess && createCards()}
+          {isLoading && <p>Loading...</p>}
+          {isError && <p>ERROR</p>}
         </div>
       </section>
     </>
-  )
+  );
 
 }
 
