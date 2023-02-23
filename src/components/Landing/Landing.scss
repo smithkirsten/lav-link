@@ -79,11 +79,24 @@
   margin-bottom: 1vh;
 }
 
-p {
+.landing-copy {
   font-size: 4vmin;
 }
 
-label {
-  font-size: 3.5vmin;
+.landing-labels {
+  font-size: 3.7vmin;
 }
 
+.error-div {
+  width: 45vw;
+  text-align: center;
+  height: fit-content;
+  background-color: $highlightSalmon;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.landing-error-message {
+  font-size: 3vmin;
+  font-weight: 700;
+}

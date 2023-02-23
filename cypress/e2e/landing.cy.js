@@ -49,6 +49,17 @@ describe('template spec', () => {
     cy.get('article[class="result-card"]').eq(2).should('contain', 'Mod Pizza')
   })
 
+  it('Should show an error message to the user if they do not select current location or enter a zipcode', () => {
+    cy.get('button[name="searchButton"]').click()
+    cy.get('p[class="landing-error-message"]').should('contain', 'Please select current location or enter a valid zipcode before searching.')
+  })
+
+  it('Should show an error message to the user if they enter an invalid zipcode', () => {
+    cy.get('input[name="zipcodeInput"]').type('999999')
+    cy.get('button[name="searchButton"]').click()
+    cy.get('p[class="landing-error-message"]').should('contain', 'Please select current location or enter a valid zipcode before searching.')
+  })
+
   // We will need a similar test to above with current location selection once we have it
   // That will be interesting with the stub because the request will vary depending on where the person is that runs it
   // Assert that first three contain text that they each should
