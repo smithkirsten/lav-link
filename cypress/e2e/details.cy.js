@@ -19,13 +19,33 @@ describe('Bahtroom Details Page', () => {
   })
 
   it('Should display the name of the bathroom and how far it is', () => {
-    cy.get("section[class='background details'] > p").should("contain", "Starbucks")
-    cy.get("section[class='background details'] > p[class='distance']").should("contain", "1.56 miles");
+    cy.get("p[class='name']").invoke("text").should("eq", "Starbucks");
+    cy.get("p[class='distance']").invoke("text").should("eq", "1.56 miles")
   })
 
   it("Should display a transgender flag icon if the bathroom is unisex, a baby icon if the bathroom has a changing table, and a person in a wheelchair icon if it is ADA accessible", () => {
     cy.get('img[alt="Unisex"]').should("have.attr", "src").should("equal", "/assets/transgender.png")
   });
 
+  it("Should display the address and additional directions if there are any", () => {
+    cy.get('div[class="address"]').invoke("text").should("eq", "101 W Main StBarrington, IL");
+    cy.get('p[class="directions"]')
+      .invoke("text")
+      .should("eq","Directions: On far side from Lake Cook Rd; left bathroom has an infant changing table and right bathroom has a urinal."
+      );
+  });
+
+   it("Should display additional comments if there are any, the date it was last updated, and the number of downvotes and upvotes", () => {
+     cy.get('p[class="comment"]').invoke("text").should("eq","Comments: You can go in through the back (from the large parking lot) and end up right by the restrooms.");
+     cy.get('p[class="update"]').invoke("text").should("eq", "Last Updated: 1/16/2017");
+     cy.get('p[class="upvotes"]').invoke("text").should("eq", "Upvotes: 1");
+     cy.get('p[class="downvotes"]').invoke("text").should("eq", "Downvotes: 0");
+   });
+
+    it("Should have a go back button that takes the user back to the all results page", () => {
+      cy.get('button[class="back-to-main-button"]').invoke("text").should("eq", "Back to All Results");
+    });
+
+   // Add tests for map!!!!!!!
 
 })
