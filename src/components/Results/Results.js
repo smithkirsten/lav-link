@@ -47,7 +47,6 @@ useEffect(() => {
 }, [searchResults])
 
 const createCards = () => {
-  console.log("cypyy", filteredResults)
   return filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
 }
 

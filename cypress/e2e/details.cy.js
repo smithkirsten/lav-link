@@ -1,4 +1,4 @@
-import results from '../fixtures/getResult'
+import results from '../fixtures/stubbedResults'
 
 describe('Bahtroom Details Page', () => {
   beforeEach(() => {
@@ -15,9 +15,11 @@ describe('Bahtroom Details Page', () => {
     cy.visit("http://localhost:3000");
     cy.get('input[class="zipcode-input"]').type("60010")
     cy.get('button[class="search-button"]').click()
+    cy.get('article').eq(0).click()
   })
 
-  it('passes', () => {
-    cy.get("div")
+  it('Should display the name of the bathroom and how far it is', () => {
+    cy.get("section[class='background details'] > p").should("contain", "Starbucks")
+    cy.get("section[class='background details'] > p[class='distance']").should("contain", "1.56 miles");
   })
 })
