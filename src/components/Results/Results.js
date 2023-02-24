@@ -5,6 +5,9 @@ import "./Results.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetLavsQuery } from "../../apicalls";
 import { updateSearchResults } from "./searchSlice";
+import ResultsMap from "../ResultsMap/ResultsMap";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+
 
 const Results = () => {
   //global state data
@@ -62,13 +65,20 @@ const filter = (results) => {
 
   return (
     <>
-      <ResultsHeader />
-      <section className="cards-display">
-        <div className="cards-container">
-          {isSuccess && createCards()}
-          {isLoading && <p>Loading...</p>}
-          {isError && <p>ERROR</p>}
-        </div>
+      <section className="results-page">
+        <section className="results-header-and-cards">
+          <ResultsHeader />
+          <section className="cards-display">
+            <div className="cards-container">
+              {isSuccess && createCards()}
+              {isLoading && <p>Loading...</p>}
+              {isError && <p>ERROR</p>}
+            </div>
+          </section>
+        </section>
+        <section className="results-map">
+          <ResultsMap />
+        </section>
       </section>
     </>
   );

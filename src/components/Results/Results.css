@@ -7,10 +7,24 @@
   border-radius: 15px;
   justify-content: space-evenly;
   height: 58vh;
-  width: 90vw;
+  width: 50vw;
 }
 
 .cards-container {
   overflow-y: scroll;
   height: 50vh;
 }/*# sourceMappingURL=Results.css.map */
+
+.results-map {
+  height: 90vh;
+  width: 30vw;
+  margin-top: auto;
+   margin-bottom: auto;
+}
+
+.results-page {
+  display: flex;
+  height: fit-content;
+  justify-content: space-evenly;
+  width: 100vw;
+}
