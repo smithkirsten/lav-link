@@ -12,6 +12,11 @@ export const zipConverter = (zipcode) => {
   }
 }
 
+export const geoConverter = (lat, long) => {
+  //only looks up zipcodes in the us
+  return reverse.lookup(lat, long, 'us')
+}
+
 export const roundDistance = (bathroom) => {
   const rounded = bathroom.distance.toFixed(2)
   return rounded
