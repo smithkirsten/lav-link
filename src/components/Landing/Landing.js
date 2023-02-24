@@ -73,7 +73,7 @@ export default function Landing() {
       return null;
     }
   }
-
+  let isDisabled = currentLocation ? true : false
   return (
     <section className="landing-main">
       <section className="landing-content">
@@ -104,6 +104,7 @@ export default function Landing() {
           maxLength={5}
           value={zipcode}
           onChange={(event) => setZipcode(event.target.value)}
+          disabled={isDisabled}
         />
         {errorMessageDisplay()}
         <section className="filter-section">
