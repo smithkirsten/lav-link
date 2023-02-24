@@ -66,7 +66,7 @@ const filter = (results) => {
       <section className="cards-display">
         <div className="cards-container">
           {isSuccess && createCards()}
-          {isLoading && <p>Loading...</p>}
+          {isLoading && <img src="/assets/spinnerblue.gif" alt="loading" className="loading-spinner"/>}
           {isError && <p>ERROR</p>}
         </div>
       </section>
