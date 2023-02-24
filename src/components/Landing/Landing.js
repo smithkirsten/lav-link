@@ -37,6 +37,7 @@ export default function Landing() {
       return;
     }
     setCurrentLocation(true);
+    setZipcode('');
     navigator.geolocation.getCurrentPosition(locationFetchSuccess, locationFetchFailure);
   }
 
