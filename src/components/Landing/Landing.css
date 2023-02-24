@@ -105,6 +105,7 @@
   border: none;
   border-radius: 50px;
   border: none;
+  cursor: pointer;
   height: 40px;
   width: 35vmin;
   margin-bottom: 1vh;

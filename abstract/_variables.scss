@@ -38,6 +38,7 @@ $opaque: rgb(234, 245, 246, .83);
   border: none;
   border-radius: 50px;
   border: none;
+  cursor: pointer;
 }
 
 @mixin pillHighlight($radius) {

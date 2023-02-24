@@ -47,10 +47,13 @@
 }
 
 .details-map {
+  border-radius: 0;
   width: 55vw;
   text-align: center;
-  display: flex;
-  justify-content: flex-end;
+  @include centered(row, center);
+  background-color: $borderYellow;
+  // display: flex;
+  // justify-content: flex-end;
 }
 
 .back-to-main-button {
@@ -88,7 +91,7 @@
 
 .votes {
   @include pillHighlight(10px);
-  // padding: 0 2%;
+  padding: 2%;
 }
 
 
