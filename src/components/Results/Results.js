@@ -42,7 +42,7 @@ useEffect(() => {
 }, )
 
 const createCards = () => {
-  return filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
+  return filteredResults.length ? filteredResults.map((result) => <ResultCard key={result.id} data={result} />) : <p className='no-match'>💩no restrooms matched your criteria💩</p>
 }
 
 const filter = (results) => {
