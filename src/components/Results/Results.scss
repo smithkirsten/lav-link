@@ -11,3 +11,7 @@
   overflow-y: scroll;
   height: 50vh;
 }
+
+.no-match {
+  @include errorBorder(20px)
+}

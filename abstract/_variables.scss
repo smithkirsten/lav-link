@@ -44,5 +44,12 @@ $opaque: rgb(234, 245, 246, .83);
 @mixin pillHighlight($radius) {
   border: 2px solid $highlightSalmon;
   border-radius: $radius;
+  padding: 5%;
+}
+
+@mixin errorBorder($radius) {
+  border: 3px solid $borderYellow;
+  border-radius: $radius;
+  padding: 4%;
 }
 

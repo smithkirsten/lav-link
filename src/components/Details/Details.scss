@@ -72,6 +72,11 @@
   align-items: center;
 }
 
+.name {
+  font-weight: bold;
+  font-size: 20px;
+}
+
 .address {
   @include pillHighlight(55px);
   max-width: 40vw;

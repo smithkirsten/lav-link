@@ -51,6 +51,7 @@
 .current-location-button {
   border: 2px solid #FFA69E;
   border-radius: 22px;
+  padding: 5%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -120,12 +121,13 @@
 }
 
 .error-div {
+  border: 3px solid #F6C28B;
+  border-radius: 40px;
+  padding: 4%;
   width: 45vw;
   text-align: center;
   height: -moz-fit-content;
   height: fit-content;
-  background-color: #FFA69E;
-  border-radius: 5px;
   margin-top: 10px;
 }
 
