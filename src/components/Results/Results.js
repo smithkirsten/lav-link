@@ -28,16 +28,8 @@ const Results = () => {
     error,
   } = useGetLavsQuery(gpsCoordinates);
 
-let temp
-
 useEffect(() => {
-  if(isLoading) {
-    // eslint-disable-next-line
-    temp = <p>loading....</p>
-  } else if(isError) {
-    // eslint-disable-next-line
-    temp = <p>Error City</p>
-  } else if(isSuccess) {
+  if(isSuccess) {
     dispatch(updateSearchResults(data))
     //setAllResults(results)
   }
@@ -46,7 +38,7 @@ useEffect(() => {
 useEffect(() => {
   setFilteredResults(filter(searchResults))
   // eslint-disable-next-line
-})
+}, [searchResults])
 
 const createCards = () => {
   return filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
