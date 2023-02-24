@@ -13,4 +13,10 @@
 .cards-container {
   overflow-y: scroll;
   height: 50vh;
+}
+
+.no-match {
+  border: 3px solid #F6C28B;
+  border-radius: 20px;
+  padding: 4%;
 }/*# sourceMappingURL=Results.css.map */
