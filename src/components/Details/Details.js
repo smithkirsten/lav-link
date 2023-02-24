@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { roundDistance, reformatDate } from "../../util";
 import { NavLink } from "react-router-dom";
 import DetailMap from "../DetailMap/DetailMap";
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api'
+// import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api'
 
 
 

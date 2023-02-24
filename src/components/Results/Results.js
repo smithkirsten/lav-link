@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import ResultsHeader from "../ResultsHeader/ResultsHeader";
+import ResultsHeader from '../ResultsHeader/ResultsHeader'
 import ResultCard from "../ResultCard/ResultCard";
-import "./Results.css";
-import { useDispatch, useSelector } from "react-redux";
+import './Results.css'
+import { useDispatch, useSelector } from 'react-redux'
 import { useGetLavsQuery } from "../../apicalls";
 import { updateSearchResults } from "./searchSlice";
 import ResultsMap from "../ResultsMap/ResultsMap";
@@ -18,11 +18,12 @@ const Results = () => {
   const unisex = useSelector((state) => state.landing.unisex)
   const changingTable = useSelector((state) => state.landing.changingTable)
   const searchResults = useSelector((state) => state.search.searchResults)
-  //component state
+
+  //const [ allResults, setAllResults ] = useState([]) //this will change to a dispatch to update global instead
   const [filteredResults, setFilteredResults] = useState([]);
   //fetch request data
   const {
-    data: results,
+    data,
     isLoading,
     isSuccess,
     isError,
@@ -30,11 +31,9 @@ const Results = () => {
     error,
   } = useGetLavsQuery(gpsCoordinates);
 
-let temp
-
 useEffect(() => {
-  if (isSuccess) {
-    dispatch(updateSearchResults(results))
+  if(isSuccess) {
+    dispatch(updateSearchResults(data))
     //setAllResults(results)
   }
 })
@@ -42,7 +41,11 @@ useEffect(() => {
 useEffect(() => {
   setFilteredResults(filter(searchResults))
   // eslint-disable-next-line
-}, )
+}, [searchResults])
+
+useEffect(() => {
+  setFilteredResults(filter(searchResults))
+}, [gpsCoordinates, adaAccessible, unisex, changingTable])
 
 const createCards = () => {
   return filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
@@ -63,22 +66,16 @@ const filter = (results) => {
   return results;
 }
 
+
   return (
     <>
-      <section className="results-page">
-        <section className="results-header-and-cards">
-          <ResultsHeader />
-          <section className="cards-display">
-            <div className="cards-container">
-              {isSuccess && createCards()}
-              {isLoading && <p>Loading...</p>}
-              {isError && <p>ERROR</p>}
-            </div>
-          </section>
-        </section>
-        <section className="results-map">
-          <ResultsMap />
-        </section>
+      <ResultsHeader />
+      <section className="cards-display">
+        <div className="cards-container">
+          {isSuccess && createCards()}
+          {isLoading && <img src="/assets/spinnerblue.gif" alt="loading" className="loading-spinner"/>}
+          {isError && <p>ERROR</p>}
+        </div>
       </section>
     </>
   );

@@ -1,4 +1,5 @@
 let convert = require('convert-zip-to-gps');
+const reverse = require('reverse-geocode')
 
 export const zipConverter = (zipcode) => {
   if (!(convert.zipConvert(zipcode) && validateZip(zipcode))) {
@@ -9,6 +10,11 @@ export const zipConverter = (zipcode) => {
     lat: coordinates[0],
     long: coordinates[1],
   }
+}
+
+export const geoConverter = (lat, long) => {
+  //only looks up zipcodes in the us
+  return reverse.lookup(lat, long, 'us')
 }
 
 export const roundDistance = (bathroom) => {
