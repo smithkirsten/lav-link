@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import ResultsHeader from "../ResultsHeader/ResultsHeader";
+import ResultsHeader from '../ResultsHeader/ResultsHeader'
 import ResultCard from "../ResultCard/ResultCard";
-import "./Results.css";
-import { useDispatch, useSelector } from "react-redux";
+import './Results.css'
+import { useDispatch, useSelector } from 'react-redux'
 import { useGetLavsQuery } from "../../apicalls";
 import { updateSearchResults } from "./searchSlice";
 
@@ -15,11 +15,12 @@ const Results = () => {
   const unisex = useSelector((state) => state.landing.unisex)
   const changingTable = useSelector((state) => state.landing.changingTable)
   const searchResults = useSelector((state) => state.search.searchResults)
-  //component state
+
+  //const [ allResults, setAllResults ] = useState([]) //this will change to a dispatch to update global instead
   const [filteredResults, setFilteredResults] = useState([]);
   //fetch request data
   const {
-    data: results,
+    data,
     isLoading,
     isSuccess,
     isError,
@@ -27,11 +28,9 @@ const Results = () => {
     error,
   } = useGetLavsQuery(gpsCoordinates);
 
-let temp
-
 useEffect(() => {
-  if (isSuccess) {
-    dispatch(updateSearchResults(results))
+  if(isSuccess) {
+    dispatch(updateSearchResults(data))
     //setAllResults(results)
   }
 })
@@ -39,12 +38,10 @@ useEffect(() => {
 useEffect(() => {
   setFilteredResults(filter(searchResults))
   // eslint-disable-next-line
-}, )
+}, [searchResults])
 
 const createCards = () => {
-  return filteredResults.length ? 
-    filteredResults.map((result) => <ResultCard key={result.id} data={result} />) : 
-    <p className='no-match'>💩no restrooms matched your criteria💩</p>
+  return filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
 }
 
 const filter = (results) => {
@@ -61,6 +58,7 @@ const filter = (results) => {
   }
   return results;
 }
+
 
   return (
     <>
