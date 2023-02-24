@@ -56,14 +56,10 @@ const filter = (results) => {
   //make more dynamic... pass in an array of what to filter instead of referencing the global variables?
     //if filters are passed it, can move filter function to util file
   if(adaAccessible){
-    console.log('filtering for ada')
     results = results.filter(result => result.accessible)
-    console.log(results)
   }
   if(unisex) {
-    console.log('filtering for unisex')
     results = results.filter(result => result.unisex)
-    console.log(results)
   }
   if(changingTable) {
     results = results.filter(result => result.changing_table)
