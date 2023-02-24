@@ -40,6 +40,10 @@ useEffect(() => {
   // eslint-disable-next-line
 }, [searchResults])
 
+useEffect(() => {
+  setFilteredResults(filter(searchResults))
+}, [gpsCoordinates, adaAccessible, unisex, changingTable])
+
 const createCards = () => {
   return filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
 }
