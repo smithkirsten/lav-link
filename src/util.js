@@ -1,4 +1,5 @@
 let convert = require('convert-zip-to-gps');
+const reverse = require('reverse-geocode')
 
 export const zipConverter = (zipcode) => {
   if (!(convert.zipConvert(zipcode) && validateZip(zipcode))) {
