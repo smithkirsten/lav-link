@@ -88,7 +88,7 @@
 }
 
 .error-div {
-  @include errorBorder(40px);
+  @include errorBorder(50px);
   width: 45vw;
   text-align: center;
   height: fit-content;
