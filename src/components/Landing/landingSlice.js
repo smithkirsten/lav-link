@@ -10,7 +10,7 @@ const initialState = {
   unisex: false,
   changingTable: false,
 };
-
+//if currentLocation
 export const landingSlice = createSlice({
   name: "landing",
   initialState,
@@ -18,7 +18,7 @@ export const landingSlice = createSlice({
     updateFilters: (state, action) => {
       state.currentLocation = action.payload.currentLocation;
       state.currentCoords = action.payload.currentCoords;
-      state.zipcode = action.payload.zipcode;
+      state.zipcode = action.payload.currentLocation ? '' : action.payload.zipcode;
       state.gpsCoordinates = action.payload.currentCoords || zipConverter(action.payload.zipcode);
       state.adaAccessible = action.payload.adaAccessible;
       state.unisex = action.payload.unisex;
