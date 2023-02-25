@@ -3,7 +3,7 @@ import "./Landing.css";
 import { useNavigate } from "react-router-dom";
 import { updateFilters } from './landingSlice'
 import { useDispatch } from 'react-redux'
-import { validateZip, zipConverter } from "../../util";
+import { zipConverter } from "../../util";
 
 
 
