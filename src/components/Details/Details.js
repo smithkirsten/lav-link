@@ -1,7 +1,7 @@
 import React from "react";
 import "./Details.css";
 import { useSelector } from "react-redux";
-import { roundDistance, reformatDate } from "../../util";
+import { createMapLink } from "../../util";
 import { NavLink } from "react-router-dom";
 import DetailMap from "../DetailMap/DetailMap";
 
@@ -10,11 +10,7 @@ import DetailMap from "../DetailMap/DetailMap";
 const Details = () => {
 
   const bathroom = useSelector((state) => state.result.selectedBathroom);
-  const mapLink = () => {
-    const searchName = bathroom.name.replaceAll(' ', '+');
-    const searchCity = bathroom.city.replaceAll(' ', '+');
-    return `https://www.google.com/maps/dir/?api=1&destination=${searchName}%2C${searchCity}%2C${bathroom.state}`;
-  }
+  const mapLink = createMapLink(bathroom);
 
   return (
     <section className="Details-page">
@@ -25,7 +21,7 @@ const Details = () => {
         <section className="background details">
           <p className="name">{`${bathroom.name}`}</p>
           <p className="distance">{`${bathroom.distance} miles`}</p>
-          <a href={mapLink()} alt={`Link to ${bathroom.name} directions`} target="_blank" rel="noopener noreferrer">
+          <a href={mapLink} alt={`Link to ${bathroom.name} directions`} target="_blank" rel="noopener noreferrer">
             <button className="directions-button" >Directions</button>
           </a>
           <div className="icon-container">
@@ -53,7 +49,7 @@ const Details = () => {
           </div>
         </section>
         <section className="background details-map">
-          <DetailMap bathroom={bathroom} />
+          <DetailMap bathroom={bathroom} link={mapLink} />
         </section>
       </section>
       <summary className="background summary">

@@ -3,12 +3,12 @@ import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api'
 import PropTypes from 'prop-types'
 
 const containerStyle = {
-  "width": '98%',
+  "width": '54vw',
   "height": '98%',
   "borderRadius": '15px'
 };
 
-export default function DetailMap({ bathroom }) {
+export default function DetailMap({ bathroom, link }) {
   const center =  {lat: bathroom.latitude, lng: bathroom.longitude}
 
   const { isLoaded } = useJsApiLoader({
@@ -16,12 +16,10 @@ export default function DetailMap({ bathroom }) {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
   })
 
+  // eslint-disable-next-line
   const [map, setMap] = useState(null)
 
   const onLoad = useCallback(map => {
-    // This is just an example of getting and using the map instance!!! don't just blindly copy!
-    // const bounds = new window.google.maps.LatLngBounds(center);
-    // map.fitBounds(bounds);
     setMap(map)
   }, [])
 
@@ -35,11 +33,12 @@ export default function DetailMap({ bathroom }) {
         mapTypeControl: false,
       }}
     >
-      <Marker position={center} />
+      <Marker position={center} onClick={() => window.open(link, '_blank', 'noreferrer')}/>
     </GoogleMap>
   ) : <></>
 }
 
 DetailMap.propType = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
+  link: PropTypes.string.isRequired
 }
