@@ -44,5 +44,27 @@
     "approved": true,
     "distance": 1.5877167496570903,
     "bearing": "75.167186115505"
-  }
+  },{
+    "id": 54981,
+    "name": "Harper College Building M",
+    "street": "Algonquin rd",
+    "city": "Palatine",
+    "state": "IL",
+    "accessible": true,
+    "unisex": true,
+    "directions": "Just past front desk to the left by the vending machines",
+    "comment": "You need to have a gym membership or be present with a member",
+    "latitude": 42.0808415,
+    "longitude": -88.0817222,
+    "created_at": "2020-01-24T19:42:12.492Z",
+    "updated_at": "2020-04-14T21:00:26.277Z",
+    "downvote": 0,
+    "upvote": 0,
+    "country": "US",
+    "changing_table": true,
+    "edit_id": 54981,
+    "approved": true,
+    "distance": 6.2163649063128465,
+    "bearing": "128.367711870834"
+    }
 ]
