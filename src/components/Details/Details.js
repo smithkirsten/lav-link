@@ -1,7 +1,7 @@
 import React from "react";
 import "./Details.css";
 import { useSelector } from "react-redux";
-import { roundDistance, reformatDate } from "../../util";
+// import { roundDistance, reformatDate } from "../../util";
 import { NavLink } from "react-router-dom";
 import DetailMap from "../DetailMap/DetailMap";
 

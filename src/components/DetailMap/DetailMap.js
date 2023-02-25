@@ -15,13 +15,11 @@ export default function DetailMap({ bathroom }) {
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
   })
-
+  
+  // eslint-disable-next-line
   const [map, setMap] = useState(null)
 
   const onLoad = useCallback(map => {
-    // This is just an example of getting and using the map instance!!! don't just blindly copy!
-    // const bounds = new window.google.maps.LatLngBounds(center);
-    // map.fitBounds(bounds);
     setMap(map)
   }, [])
 

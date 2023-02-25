@@ -3,7 +3,7 @@ import ResultsHeader from '../ResultsHeader/ResultsHeader'
 import ResultCard from "../ResultCard/ResultCard";
 import ResultsMap from "../ResultsMap/ResultsMap";
 import './Results.css'
-import { useDispatch, useSelector, shallowEqual } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useGetLavsQuery } from "../../apicalls";
 import { updateSearchResults } from "./searchSlice";
 import { cleanData } from '../../util'
@@ -12,22 +12,18 @@ import { cleanData } from '../../util'
 
 
 const Results = () => {
-  //global state data
-  //add currentCoordinates
   const customEqual = (oldValue, newValue) => {
-    //a custom equality function built to check whether the data from the cleanData function is the same as the data in state
-    return JSON.stringify(oldValue) == JSON.stringify(newValue)
+    return JSON.stringify(oldValue) === JSON.stringify(newValue)
   }
   const dispatch = useDispatch();
   const gpsCoordinates = useSelector((state) => state.landing.gpsCoordinates)
   const adaAccessible = useSelector((state) => state.landing.adaAccessible)
   const unisex = useSelector((state) => state.landing.unisex)
   const changingTable = useSelector((state) => state.landing.changingTable)
-  //added equality function as secong parameter
   const searchResults = useSelector((state) => (state.search.searchResults), customEqual)
 
   const [filteredResults, setFilteredResults] = useState([]);
-  //fetch request data
+
   const {
     data,
     isLoading,
@@ -44,7 +40,6 @@ useEffect(() => {
   }
 })
 
-//added a useCallBack so that t only runs when there has been a change in the dependecy data
 const filter = useCallback((results) => {
   if(adaAccessible){
     results = results.filter(result => result.accessible)
@@ -86,7 +81,6 @@ const createCards = () => {
       </section>
     </>
   );
-
 }
 
 export default Results
