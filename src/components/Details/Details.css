@@ -40,7 +40,9 @@
   border: none;
   cursor: pointer;
   width: 21vw;
-  height: 5vh;
+  height: 6vh;
+  min-width: 83px;
+  max-width: 200px;
 }
 
 .icon-container {
@@ -56,13 +58,15 @@
 
 .details-map {
   border-radius: 15px;
-  width: 55vw;
+  width: 54.5vw;
+  height: 44vh;
+  margin-top: 0.5vh;
   text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #F6C28B;
+  box-shadow: 0px 0px 0px 4px #F6C28B;
 }
 
 .back-to-main-button {
@@ -79,6 +83,7 @@
   height: 22vh;
   width: 95vw;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
@@ -101,6 +106,8 @@
 
 .directions {
   max-width: 45vw;
+  max-height: 18vh;
+  overflow: scroll;
 }
 
 .comment {
@@ -111,6 +118,12 @@
   border: 2px solid #FFA69E;
   border-radius: 10px;
   padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: -moz-fit-content;
+  height: fit-content;
   padding: 2%;
 }
 

@@ -48,7 +48,7 @@ const Details = () => {
             )}
           </div>
         </section>
-        <section className="background details-map">
+        <section className="details-map">
           <DetailMap bathroom={bathroom} link={mapLink} />
         </section>
       </section>
