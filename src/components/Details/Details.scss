@@ -35,6 +35,12 @@
   padding: 10px
 }
 
+.directions-button {
+  @include pillButton;
+  width: 21vw;
+  height: 5vh;
+}
+
 .icon-container {
   display: flex;
   flex-direction: column;

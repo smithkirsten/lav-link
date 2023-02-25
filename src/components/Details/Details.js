@@ -24,7 +24,7 @@ const Details = () => {
           <p className="name">{`${bathroom.name}`}</p>
           <p className="distance">{`${roundDistance(bathroom)} miles`}</p>
           {/* Wrap button below in link */}
-          {/* <button className="directions-button" onClick={}>Directions</button> */}
+          <button className="directions-button" >Directions</button>
           <div className="icon-container">
             {bathroom.accessible && (
               <img
