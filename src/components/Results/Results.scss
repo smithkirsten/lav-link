@@ -15,3 +15,8 @@
 .no-match {
   @include errorBorder(20px)
 }
+
+.results-map-section {
+  height: 50vh;
+  width: 40vw;
+}

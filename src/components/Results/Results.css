@@ -19,4 +19,9 @@
   border: 3px solid #F6C28B;
   border-radius: 20px;
   padding: 4%;
+}
+
+.results-map-section {
+  height: 50vh;
+  width: 40vw;
 }/*# sourceMappingURL=Results.css.map */
