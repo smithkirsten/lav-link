@@ -69,9 +69,6 @@ const filter = (results) => {
   return (
     <>
       <section className="results-section">
-        <section className="results-map-section">
-          <ResultsMap filteredResults={filteredResults}/>
-        </section>
         <div>
           <ResultsHeader />
           <section className="cards-display">
@@ -82,6 +79,9 @@ const filter = (results) => {
             </div>
           </section>
         </div>
+        <section className="results-map-section">
+          <ResultsMap filteredResults={filteredResults}/>
+        </section>
       </section>
     </>
   );

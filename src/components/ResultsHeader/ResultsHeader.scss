@@ -1,7 +1,7 @@
 @use '../../../abstract/variables' as *;
 
 .results-header {
-  margin: 5px;
+  margin-bottom: 5px;
   height: 40vh;
   width: 40vw;
   @include highlightBackground;
@@ -37,5 +37,12 @@
     @include pillButton;
     height: 4vh;
     width: 25vw;
+  }
+}
+
+@media only screen and (max-width: 836px) {
+  .results-header {
+    width: 95vw;
+    margin-bottom: 1vh;
   }
 }

@@ -2,8 +2,9 @@ import React, { useState, useCallback } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api'
 
 const containerStyle = {
-  width: '96%',
-  height: '96%'
+  "width": '98%',
+  "height": '98%',
+  "borderRadius": '15px'
 };
 
 export default function DetailMap({ bathroom }) {

@@ -6,8 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { selectBathroom } from '../ResultCard/resultSlice';
 
 const containerStyle = {
-  width: '100%',
-  height: '100%'
+  "width": '98%',
+  "height": '99%',
+  "borderRadius": '15px'
 };
 
 export default function ResultsMap({ filteredResults }) {
@@ -39,6 +40,7 @@ export default function ResultsMap({ filteredResults }) {
         navigate('/results/details');
       }}
       title={result.name}
+      key={result.id}
     />) 
   }
 

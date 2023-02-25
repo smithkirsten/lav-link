@@ -15,4 +15,10 @@
 }
 .result-card img {
   height: 5vh;
+}
+
+@media only screen and (max-width: 836px) {
+  .result-card {
+    width: 90vw;
+  }
 }/*# sourceMappingURL=ResultCard.css.map */
