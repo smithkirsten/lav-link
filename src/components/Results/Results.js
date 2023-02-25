@@ -71,13 +71,13 @@ const createCards = () => {
             <div className="cards-container">
               {isSuccess && createCards()}
               {isLoading && <img src="/assets/spinnerblue.gif" alt="loading" className="loading-spinner"/>}
-              {isError && <p>ERROR</p>}
+              {isError && <p>Whoops! Something went wrong. Please try a new zipcode.</p>}
             </div>
           </section>
         </div>
-        <section className="results-map-section">
+        {isSuccess && <section className="results-map-section">
           <ResultsMap filteredResults={filteredResults}/>
-        </section>
+        </section>}
       </section>
     </>
   );
