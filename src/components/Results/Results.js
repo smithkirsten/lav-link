@@ -3,7 +3,7 @@ import ResultsHeader from '../ResultsHeader/ResultsHeader'
 import ResultCard from "../ResultCard/ResultCard";
 import ResultsMap from "../ResultsMap/ResultsMap";
 import './Results.css'
-import { useDispatch, useSelector, shallowEqual } from 'react-redux'
+import { useDispatch, useSelector} from 'react-redux'
 import { useGetLavsQuery } from "../../apicalls";
 import { updateSearchResults } from "./searchSlice";
 import { cleanData } from '../../util'
@@ -11,6 +11,7 @@ import { cleanData } from '../../util'
 
 const Results = () => {
   const customEqual = (oldValue, newValue) => {
+    // eslint-disable-next-line
     return JSON.stringify(oldValue) == JSON.stringify(newValue)
   }
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ const Results = () => {
   const searchResults = useSelector((state) => (state.search.searchResults), customEqual)
 
   const [filteredResults, setFilteredResults] = useState([]);
-  
+
   const {
     data,
     isLoading,
