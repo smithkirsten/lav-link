@@ -75,9 +75,9 @@ const createCards = () => {
             </div>
           </section>
         </div>
-        <section className="results-map-section">
+        {!isError && <section className="results-map-section">
           <ResultsMap filteredResults={filteredResults}/>
-        </section>
+        </section>}
       </section>
     </>
   );
