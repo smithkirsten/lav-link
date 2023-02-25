@@ -19,7 +19,7 @@ const Details = () => {
       <section className="top">
         <section className="background details">
           <p className="name">{`${bathroom.name}`}</p>
-          <p className="distance">{`${roundDistance(bathroom)} miles`}</p>
+          <p className="distance">{`${bathroom.distance} miles`}</p>
           <div className="icon-container">
             {bathroom.accessible && (
               <img
