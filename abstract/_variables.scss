@@ -50,6 +50,6 @@ $opaque: rgb(234, 245, 246, .83);
 @mixin errorBorder($radius) {
   border: 3px solid $borderYellow;
   border-radius: $radius;
-  padding: 4%;
+  padding: 5px;
 }
 

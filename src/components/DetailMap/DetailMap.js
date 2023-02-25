@@ -2,8 +2,9 @@ import React, { useState, useCallback } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api'
 
 const containerStyle = {
-  width: '96%',
-  height: '96%'
+  "width": '98%',
+  "height": '98%',
+  "borderRadius": '15px'
 };
 
 export default function DetailMap({ bathroom }) {
@@ -18,8 +19,8 @@ export default function DetailMap({ bathroom }) {
 
   const onLoad = useCallback(map => {
     // This is just an example of getting and using the map instance!!! don't just blindly copy!
-    const bounds = new window.google.maps.LatLngBounds(center);
-    map.fitBounds(bounds);
+    // const bounds = new window.google.maps.LatLngBounds(center);
+    // map.fitBounds(bounds);
     setMap(map)
   }, [])
 
@@ -27,7 +28,7 @@ export default function DetailMap({ bathroom }) {
     <GoogleMap
       mapContainerStyle={containerStyle}
       onLoad={onLoad}
-      zoom={1}
+      zoom={15}
       center={center}
       options={{
         mapTypeControl: false,

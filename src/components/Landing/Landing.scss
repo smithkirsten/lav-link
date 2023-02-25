@@ -38,6 +38,7 @@
   @include pillHighlight(22px);
   @include centered(row, space-evenly);
   background-color: rgba(255, 255, 255, 0);
+  padding: 0px;
   height: 8vmin;
   width: 42vmin;
 }
@@ -89,11 +90,9 @@
 
 .error-div {
   @include errorBorder(50px);
-  width: 45vw;
+  width: 65vw;
   text-align: center;
   height: fit-content;
-  // background-color: $highlightSalmon;
-  // border-radius: 5px;
   margin-top: 10px;
 }
 
