@@ -52,14 +52,12 @@
   text-align: center;
   @include centered(row, center);
   background-color: $borderYellow;
-  // display: flex;
-  // justify-content: flex-end;
 }
 
 .back-to-main-button {
   @include pillButton;
-  height: 2.5vh;
   margin: 5px;
+  padding: 5px 10px;
 }
 
 // bottom
