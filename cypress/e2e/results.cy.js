@@ -46,4 +46,12 @@ describe("All Results Page", () => {
     cy.get(".result-card").first().contains('Jewel-Osco')
     cy.get(".result-card").eq(1).contains('Harper College Building M')
   })
+
+  it('Should display appropriate results if unisex preference is clicked', () => {
+    cy.get('input[name="unisex"]').click();
+    cy.get('.changeButton').click()
+    cy.get(".result-card").first().contains('Starbucks')
+    cy.get(".result-card").eq(1).contains('Harper College Building M')
+  })
+
 })
