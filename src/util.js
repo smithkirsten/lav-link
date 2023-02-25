@@ -17,10 +17,10 @@ export const geoConverter = (lat, long) => {
   return reverse.lookup(lat, long, 'us')
 }
 
-export const roundDistance = (bathroom) => {
-  const rounded = bathroom.distance.toFixed(2)
-  return rounded
-}
+// export const roundDistance = (bathroom) => {
+//   const rounded = bathroom.distance.toFixed(2)
+//   return rounded
+// }
 
 export const reformatDate = (bathroom) => {
   const date = bathroom["updated_at"];
@@ -44,7 +44,7 @@ export const cleanData = data => {
       accessible: data.accessible,
       unisex: data.unisex,
       directions: data.directions,
-      distance: data.distance,
+      distance: (+data.distance).toFixed(2),
       comment: data.comment,
       latitude: data.latitude,
       longitude: data.longitude,
