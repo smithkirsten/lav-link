@@ -23,5 +23,16 @@ describe("All Results Page", () => {
     cy.get('.showing').should('be.visible')
   })
 
+  it("Should display all inputs, icons and search button", () => {
+    cy.get('label[class="input-label"]').should("be.visible");
+    cy.get('input[name="zipcode"]').should("be.visible");
+    cy.get('img[alt="wheelchair icon"]').should("be.visible");
+    cy.get('input[name="adaAccessible"]').should("be.visible");
+    cy.get('img[alt="unisex icon"]').should("be.visible");
+    cy.get('input[name="unisex"]').should("be.visible");
+    cy.get('img[alt="changing table icon"]').should("be.visible");
+    cy.get('input[name="changingTable"]').should("be.visible");
+    cy.get('.changeButton').should("be.visible");
+  });
 
 })
