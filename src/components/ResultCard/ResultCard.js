@@ -7,13 +7,13 @@ import PropTypes from 'prop-types';
 
 const ResultCard = ({ data }) => {
   const dispatch = useDispatch();
+  console.log('result card props: ', data)
   return (
     <NavLink to={'/results/details'} onClick={() => dispatch(selectBathroom(data))}>
       <article className="result-card">
         <img src="/assets/toilet.png" alt="toilet icon" />
         <p className="result-name">{data.name}</p>
         <p className="result-distance">{(data.distance).toFixed(2)} miles away</p>
-        {/* <p className="result-upvote">{data.upvote} ⬆️ </p> */}
       </article>
     </NavLink>
   );
