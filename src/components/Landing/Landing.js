@@ -27,7 +27,7 @@ export default function Landing() {
   const locationFetchFailure = () => {
     setError("There was an error using your current location. Please try again or enter zip.");
     setCurrentLocation(false);
-    setTimeout(() => {setError('')}, 2500);
+    setTimeout(() => {setError('')}, 3000);
   };
 
   const getUserLocation = () => {
@@ -52,9 +52,13 @@ export default function Landing() {
   }
 
   const checkInputs = () => {
-    if (!(currentCoords || zipConverter(zipcode))) {
-      setError("Please select current location or enter a valid zipcode before searching.");
-      setTimeout(() => {setError('')}, 2500);
+    if (!zipConverter(zipcode) && zipcode) {
+      setError("Please enter a valid zipcode before searching.");
+      setTimeout(() => {setError('')}, 3000);
+      return;
+    } else if (!currentCoords && !zipConverter(zipcode)) {
+      setError("Please enter zipcode or select current location.");
+      setTimeout(() => {setError('')}, 3000);
       return;
     } else {
       dispatch(updateFilters({ currentLocation, currentCoords, zipcode, adaAccessible, unisex, changingTable }));
