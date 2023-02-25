@@ -1,24 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import ResultsHeader from '../ResultsHeader/ResultsHeader'
 import ResultCard from "../ResultCard/ResultCard";
 import ResultsMap from "../ResultsMap/ResultsMap";
 import './Results.css'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 import { useGetLavsQuery } from "../../apicalls";
 import { updateSearchResults } from "./searchSlice";
+import { cleanData } from '../../util'
 
 
 const Results = () => {
   //global state data
   //add currentCoordinates
+  const customEqual = (oldValue, newValue) => {
+    //a custom equality function built to check whether the data from the cleanData function is the same as the data in state
+    return JSON.stringify(oldValue) == JSON.stringify(newValue)
+  }
   const dispatch = useDispatch();
   const gpsCoordinates = useSelector((state) => state.landing.gpsCoordinates)
   const adaAccessible = useSelector((state) => state.landing.adaAccessible)
   const unisex = useSelector((state) => state.landing.unisex)
   const changingTable = useSelector((state) => state.landing.changingTable)
-  const searchResults = useSelector((state) => state.search.searchResults)
+  //added equality function as secong parameter
+  const searchResults = useSelector((state) => (state.search.searchResults), customEqual)
 
-  //const [ allResults, setAllResults ] = useState([]) //this will change to a dispatch to update global instead
   const [filteredResults, setFilteredResults] = useState([]);
   //fetch request data
   const {
@@ -30,29 +35,15 @@ const Results = () => {
     error,
   } = useGetLavsQuery(gpsCoordinates);
 
+
 useEffect(() => {
   if(isSuccess) {
-    dispatch(updateSearchResults(data))
-    //setAllResults(results)
+    dispatch(updateSearchResults(cleanData(data)))
   }
 })
 
-useEffect(() => {
-  setFilteredResults(filter(searchResults))
-  // eslint-disable-next-line
-}, [searchResults])
-
-useEffect(() => {
-  setFilteredResults(filter(searchResults))
-}, [gpsCoordinates, adaAccessible, unisex, changingTable])
-
-const createCards = () => {
-  return filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
-}
-
-const filter = (results) => {
-  //make more dynamic... pass in an array of what to filter instead of referencing the global variables?
-    //if filters are passed it, can move filter function to util file
+//added a useCallBack so that t only runs when there has been a change in the dependecy data
+const filter = useCallback((results) => {
   if(adaAccessible){
     results = results.filter(result => result.accessible)
   }
@@ -63,8 +54,16 @@ const filter = (results) => {
     results = results.filter(result => result.changing_table)
   }
   return results;
-}
+}, [adaAccessible, unisex, changingTable])
 
+
+useEffect(() => {
+  setFilteredResults(filter(searchResults))
+}, [gpsCoordinates, adaAccessible, unisex, changingTable, filter, searchResults])
+
+const createCards = () => {
+  return filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
+}
 
   return (
     <>
