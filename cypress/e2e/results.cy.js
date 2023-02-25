@@ -1,6 +1,12 @@
 import results from "../fixtures/stubbedResults";
 
 describe("All Results Page", () => {
+  it('Should show a loading image while waiting for results', () => {
+    cy.intercept('GET', 'https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=30&offset=0&lat=42.146494&lng=%20-88.164651', { fixture: "noResults.json" })
+    cy.visit("http://localhost:3000/results");
+    cy.get('.loading-spinner').should('be.visible')
+  })
+    
   beforeEach(() => {
     cy.intercept(
       {
