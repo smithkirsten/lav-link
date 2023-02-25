@@ -62,8 +62,8 @@
 
 .back-to-main-button {
   @include pillButton;
-  height: 2.5vh;
   margin: 5px;
+  padding: 5px 10px;
 }
 
 // bottom

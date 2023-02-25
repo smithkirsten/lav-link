@@ -71,8 +71,8 @@
   border-radius: 50px;
   border: none;
   cursor: pointer;
-  height: 2.5vh;
   margin: 5px;
+  padding: 5px 10px;
 }
 
 .summary, .conclusion {
