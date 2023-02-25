@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api'
+import PropTypes from 'prop-types'
 
 const containerStyle = {
   width: '96%',
@@ -36,4 +37,8 @@ export default function DetailMap({ bathroom }) {
       <Marker position={center} />
     </GoogleMap>
   ) : <></>
+}
+
+DetailMap.propType = {
+  data: PropTypes.object.isRequired
 }
