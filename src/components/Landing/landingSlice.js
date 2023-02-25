@@ -10,7 +10,7 @@ const initialState = {
   unisex: false,
   changingTable: false,
 };
-//if currentLocation
+
 export const landingSlice = createSlice({
   name: "landing",
   initialState,
