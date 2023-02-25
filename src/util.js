@@ -19,7 +19,6 @@ export const zipConverter = (zipcode) => {
 }
 
 export const geoConverter = (lat, long) => {
-  //only looks up zipcodes in the us
   return reverse.lookup(lat, long, 'us')
 }
 
