@@ -35,4 +35,8 @@ describe("All Results Page", () => {
     cy.get('.changeButton').should("be.visible");
   });
 
+
+  it("Should display the all of the bathroom results", () => {
+    cy.get(".result-card").should('have.length', 3)
+  })
 })
