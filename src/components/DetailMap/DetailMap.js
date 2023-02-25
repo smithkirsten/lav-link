@@ -3,19 +3,22 @@ import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api'
 import PropTypes from 'prop-types'
 
 const containerStyle = {
-  "width": '98%',
-  "height": '98%',
+  "width": '100%',
+  "height": '100%',
   "borderRadius": '15px'
 };
 
-export default function DetailMap({ bathroom }) {
+export default function DetailMap({ bathroom, link }) {
+  // eslint-disable-next-line
+  const [map, setMap] = useState(null)
+
   const center =  {lat: bathroom.latitude, lng: bathroom.longitude}
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
   })
-  
+
   // eslint-disable-next-line
   const [map, setMap] = useState(null)
 
@@ -33,11 +36,12 @@ export default function DetailMap({ bathroom }) {
         mapTypeControl: false,
       }}
     >
-      <Marker position={center} />
+      <Marker position={center} onClick={() => window.open(link, '_blank', 'noreferrer')}/>
     </GoogleMap>
   ) : <></>
 }
 
 DetailMap.propType = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
+  link: PropTypes.string.isRequired
 }

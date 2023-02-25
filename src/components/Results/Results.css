@@ -22,16 +22,15 @@
 }
 
 .results-map-section {
-  height: 98.5vh;
+  height: 97.8vh;
   width: 50vw;
   border-radius: 15px;
-  background-color: #F6C28B;
   text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #F6C28B;
+  box-shadow: 0px 0px 0px 4px #F6C28B;
 }
 
 .results-section {

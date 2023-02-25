@@ -1,6 +1,12 @@
 let convert = require('convert-zip-to-gps');
 const reverse = require('reverse-geocode')
 
+export const createMapLink = (bathroom) => {
+  const searchName = bathroom.name.replaceAll(' ', '+');
+  const searchCity = bathroom.city.replaceAll(' ', '+');
+  return `https://www.google.com/maps/dir/?api=1&destination=${searchName}%2C${searchCity}%2C${bathroom.state}`;
+}
+
 export const zipConverter = (zipcode) => {
   if (!(convert.zipConvert(zipcode) && validateZip(zipcode))) {
     return false;
