@@ -54,4 +54,12 @@ describe("All Results Page", () => {
     cy.get(".result-card").eq(1).contains('Harper College Building M')
   })
 
+  it('Should display appropriate results if changing table preference is clicked', () => {
+    cy.get('input[name="changingTable"]').click();
+    cy.get('.changeButton').click()
+    cy.get(".result-card").contains('Harper College Building M')
+  })
+
+  // Add map test
+  // Add test that click into details page
 })
