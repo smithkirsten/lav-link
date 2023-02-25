@@ -11,8 +11,11 @@ import DetailMap from "../DetailMap/DetailMap";
 const Details = () => {
 
   const bathroom = useSelector((state) => state.result.selectedBathroom);
-  // const mapLink = encodeURL component for google maps url
-  // https://www.google.com/maps/search/?api=1&query=pizza+seattle+wa%City+Hall%2C+New+York%2C+NY
+  const mapLink = () => {
+    const searchName = bathroom.name.replaceAll(' ', '+');
+    const searchCity = bathroom.city.replaceAll(' ', '+');
+    return `https://www.google.com/maps/dir/?api=1&destination=${searchName}%2C${searchCity}%2C${bathroom.state}`;
+  }
 
   return (
     <section className="Details-page">
@@ -23,8 +26,9 @@ const Details = () => {
         <section className="background details">
           <p className="name">{`${bathroom.name}`}</p>
           <p className="distance">{`${roundDistance(bathroom)} miles`}</p>
-          {/* Wrap button below in link */}
-          <button className="directions-button" >Directions</button>
+          <a href={mapLink()} alt={`Link to ${bathroom.name} directions`}>
+            <button className="directions-button" >Directions</button>
+          </a>
           <div className="icon-container">
             {bathroom.accessible && (
               <img
