@@ -93,6 +93,7 @@ export default function Landing() {
         <div className="current-location-button">
           <input
             name="currentLocation"
+            id="currentLocation"
             type="checkbox"
             checked={currentLocation}
             onChange={() => getUserLocation()}
@@ -115,34 +116,34 @@ export default function Landing() {
           <div className="ada-filter">
             <input
               name="adaAccessible"
+              id="adaAccessible"
               type="checkbox"
               checked={adaAccessible}
               onChange={(event) => setAdaAccessible(event.target.checked)}
             />
-            {/* eslint-disable-next-line */}
-            <img className="wheelchair-icon" src="/assets/wheelchair.png" />
+            <img className="wheelchair-icon" src="/assets/wheelchair.png" alt="wheelchair icon" />
             <label className="landing-labels" htmlFor="adaAccessible">ada accessible</label>
           </div>
           <div className="unisex-filter">
             <input
               name="unisex"
+              id="unisex"
               type="checkbox"
               checked={unisex}
               onChange={(event) => setUnisex(event.target.checked)}
             />
-            {/* eslint-disable-next-line */}
-            <img className="unisex-icon" src="/assets/transgender.png" />
+            <img className="unisex-icon" src="/assets/transgender.png" alt="unisex icon" />
             <label className="landing-labels" htmlFor="unisex">unisex</label>
           </div>
           <div className="changing-table-filter">
             <input
               name="changingTable"
+              id="changingTable"
               type="checkbox"
               checked={changingTable}
               onChange={(event) => setChangingTable(event.target.checked)}
             />
-            {/* eslint-disable-next-line */}
-            <img className="baby-icon" src="/assets/baby.png" />
+            <img className="baby-icon" src="/assets/baby.png" alt="changing table icon" />
             <label className="landing-labels" htmlFor="changingTable">changing table</label>
           </div>
         </section>

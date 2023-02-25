@@ -84,7 +84,7 @@
 }
 
 .address {
-  @include pillHighlight(55px);
+  @include pillHighlight(10px);
   max-width: 40vw;
   padding: 1vh 2vw;
   p {
