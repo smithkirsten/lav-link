@@ -39,4 +39,11 @@ describe("All Results Page", () => {
   it("Should display the all of the bathroom results", () => {
     cy.get(".result-card").should('have.length', 3)
   })
+
+  it('Should display appropriate results if ADA preference is clicked', () => {
+    cy.get('input[name="adaAccessible"]').click();
+    cy.get('.changeButton').click()
+    cy.get(".result-card").first().contains('Jewel-Osco')
+    cy.get(".result-card").eq(1).contains('Harper College Building M')
+  })
 })
