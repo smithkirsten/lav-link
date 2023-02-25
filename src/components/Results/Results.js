@@ -6,8 +6,7 @@ import './Results.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useGetLavsQuery } from "../../apicalls";
 import { updateSearchResults } from "./searchSlice";
-import ResultsMap from "../ResultsMap/ResultsMap";
-import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+
 
 
 

@@ -7,41 +7,17 @@
   border-radius: 15px;
   justify-content: space-evenly;
   height: 58vh;
-<<<<<<< HEAD
-  width: 50vw;
-=======
   width: 40vw;
->>>>>>> 81259abc61729bdfc18feffc5147f6f1d9cc8240
 }
 
 .cards-container {
   overflow-y: scroll;
   height: 50vh;
-}/*# sourceMappingURL=Results.css.map */
-
-.results-map {
-  height: 90vh;
-  width: 30vw;
-  margin-top: auto;
-   margin-bottom: auto;
 }
-
-.results-page {
-  display: flex;
-  height: fit-content;
-  justify-content: space-evenly;
-  width: 100vw;
-}
-
 
 .no-match {
   border: 3px solid #F6C28B;
   border-radius: 20px;
-<<<<<<< HEAD
-  padding: 4%;
-}/*# sourceMappingURL=Results.css.map */
-
-=======
   padding: 5px;
 }
 
@@ -71,6 +47,7 @@
 @media only screen and (max-width: 836px) {
   .results-section {
     flex-direction: column;
+    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     margin-bottom: 1vh;
@@ -85,4 +62,3 @@
     margin-top: 1vh;
   }
 }/*# sourceMappingURL=Results.css.map */
->>>>>>> 81259abc61729bdfc18feffc5147f6f1d9cc8240
