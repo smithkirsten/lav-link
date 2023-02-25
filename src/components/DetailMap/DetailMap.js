@@ -19,9 +19,6 @@ export default function DetailMap({ bathroom, link }) {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
   })
 
-  // eslint-disable-next-line
-  const [map, setMap] = useState(null)
-
   const onLoad = useCallback(map => {
     setMap(map)
   }, [])
