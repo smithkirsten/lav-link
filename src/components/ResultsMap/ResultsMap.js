@@ -1,4 +1,4 @@
-import React, { useState, useCallback, createElement } from "react";
+import React, { useState, useCallback } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import { useSelector, useDispatch } from "react-redux";
 import PropTypes from 'prop-types';
@@ -11,11 +11,12 @@ const containerStyle = {
 };
 
 export default function ResultsMap({ filteredResults }) {
+  // eslint-disable-next-line
   const [map, setMap] = useState(null);
 
   const coordinates = useSelector((state) => state.landing.gpsCoordinates)
 
-  const center = { lat: parseInt(coordinates.lat), lng: parseInt(coordinates.long) };
+  const center = { lat: +(coordinates.lat), lng: +(coordinates.long) };
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -45,7 +46,7 @@ export default function ResultsMap({ filteredResults }) {
     <GoogleMap
       mapContainerStyle={containerStyle}
       onLoad={onLoad}
-      zoom={12}
+      zoom={13}
       center={center}
       options={{
         mapTypeControl: false,

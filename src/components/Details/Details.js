@@ -11,6 +11,9 @@ import DetailMap from "../DetailMap/DetailMap";
 const Details = () => {
 
   const bathroom = useSelector((state) => state.result.selectedBathroom);
+  // const mapLink = encodeURL component for google maps url
+  // https://www.google.com/maps/search/?api=1&query=pizza+seattle+wa%City+Hall%2C+New+York%2C+NY
+
   return (
     <section className="Details-page">
       <NavLink to={"/results"}>
@@ -20,6 +23,8 @@ const Details = () => {
         <section className="background details">
           <p className="name">{`${bathroom.name}`}</p>
           <p className="distance">{`${roundDistance(bathroom)} miles`}</p>
+          {/* Wrap button below in link */}
+          {/* <button className="directions-button" onClick={}>Directions</button> */}
           <div className="icon-container">
             {bathroom.accessible && (
               <img

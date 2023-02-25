@@ -3,7 +3,7 @@
 .results-header {
   margin: 5px;
   height: 40vh;
-  width: 90vw;
+  width: 40vw;
   @include highlightBackground;
   @include centered(column, center);
   justify-content: space-around;
