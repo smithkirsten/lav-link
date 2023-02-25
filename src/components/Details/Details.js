@@ -24,7 +24,7 @@ const Details = () => {
       <section className="top">
         <section className="background details">
           <p className="name">{`${bathroom.name}`}</p>
-          <p className="distance">{`${roundDistance(bathroom)} miles`}</p>
+          <p className="distance">{`${bathroom.distance} miles`}</p>
           <a href={mapLink()} alt={`Link to ${bathroom.name} directions`} target="_blank" rel="noopener noreferrer">
             <button className="directions-button" >Directions</button>
           </a>
@@ -72,7 +72,7 @@ const Details = () => {
         <div className="votes">
           <p className="upvotes">{`Upvotes: ${bathroom.upvote}`}</p>
           <p className="downvotes">{`Downvotes: ${bathroom.downvote}`}</p>
-          <p className="update">{`Last Updated: ${reformatDate(bathroom)}`}</p>
+          <p className="update">{`Last Updated: ${bathroom.updated_at}`}</p>
         </div>
       </section>
     </section>

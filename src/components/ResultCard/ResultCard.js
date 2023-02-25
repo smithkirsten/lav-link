@@ -12,8 +12,7 @@ const ResultCard = ({ data }) => {
       <article className="result-card">
         <img src="/assets/toilet.png" alt="toilet icon" />
         <p className="result-name">{data.name}</p>
-        <p className="result-distance">{(data.distance).toFixed(2)} miles away</p>
-        {/* <p className="result-upvote">{data.upvote} ⬆️ </p> */}
+        <p className="result-distance">{data.distance} miles away</p>
       </article>
     </NavLink>
   );
