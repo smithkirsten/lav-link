@@ -4,7 +4,7 @@
   @include highlightBackground;
   justify-content: space-evenly;
   height: 58vh;
-  width: 90vw;
+  width: 40vw;
 }
 
 .cards-container {
@@ -17,6 +17,14 @@
 }
 
 .results-map-section {
-  height: 50vh;
-  width: 40vw;
+  height: 95vh;
+  width: 50vw;
+}
+
+.results-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }

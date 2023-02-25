@@ -68,7 +68,7 @@ const filter = (results) => {
 
   return (
     <>
-      <section>
+      <section className="results-section">
         <section className="results-map-section">
           <ResultsMap filteredResults={filteredResults}/>
         </section>
