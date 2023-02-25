@@ -18,7 +18,10 @@ describe("All Results Page", () => {
   
   });
 
-  it("Should display the all of the bathgroom results", () => {
-    cy.get("div")
+  it("Should display logo", () => {
+    cy.get('.heading').should('be.visible')
+    cy.get('.showing').should('be.visible')
   })
+
+
 })
