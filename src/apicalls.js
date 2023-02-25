@@ -1,7 +1,5 @@
-// import { useSelector } from 'react-redux'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-// const gps = useSelector((state) => state.landing.gpsCoordinates.value)
 
 export const apiSlice = createApi({
   reducerPath: "api",
