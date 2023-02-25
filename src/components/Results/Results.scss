@@ -4,7 +4,7 @@
   @include highlightBackground;
   justify-content: space-evenly;
   height: 58vh;
-  width: 90vw;
+  width: 40vw;
 }
 
 .cards-container {
@@ -14,4 +14,40 @@
 
 .no-match {
   @include errorBorder(20px)
+}
+
+.results-map-section {
+  height: 98.5vh;
+  width: 50vw;
+  border-radius: 15px;
+  background-color: $borderYellow;
+  text-align: center;
+  @include centered(row, center);
+  background-color: $borderYellow;
+}
+
+.results-section {
+  @include centered(row, space-evenly);
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+@media only screen and (max-width: 836px) {
+  .results-section {
+    flex-direction: column;
+    height: fit-content;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+
+  .cards-display {
+    width: 95vw;
+  }
+
+  .results-map-section {
+    width: 95vw;
+    height: 80vh;
+    margin-top: 1vh;
+  }
 }

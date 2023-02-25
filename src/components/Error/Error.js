@@ -6,13 +6,13 @@ export default function Error() {
   return (
     <section className="error-page">
       <div className="error-content">
-        <div>
-          <h1>Lav Link</h1>
-          <p>find safer relief near you</p>
-        </div>
-        <p className="poop-emoji">💩</p>
+        <section className="landing-header">
+          <h1 className="site-title">Lav Link</h1>
+          <p className="landing-copy">find safer relief near you</p>
+          <p className="poop-emoji">💩</p>
+        </section>
         <p className="not-found">Page Not Found</p>
-        <NavLink to={'/'}>
+        <NavLink to={"/"}>
           <button className="return-to-main-button">Back To Main</button>
         </NavLink>
       </div>
