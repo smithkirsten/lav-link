@@ -9,10 +9,16 @@
   justify-content: space-between;
   background-color: #FDF5FB;
   height: 7vh;
-  width: 40vw;
+  width: 38vw;
   margin: 1em;
   padding: 5px;
 }
 .result-card img {
   height: 5vh;
+}
+
+@media only screen and (max-width: 836px) {
+  .result-card {
+    width: 90vw;
+  }
 }/*# sourceMappingURL=ResultCard.css.map */

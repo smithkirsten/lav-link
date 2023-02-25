@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import ResultsHeader from '../ResultsHeader/ResultsHeader'
 import ResultCard from "../ResultCard/ResultCard";
+import ResultsMap from "../ResultsMap/ResultsMap";
 import './Results.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useGetLavsQuery } from "../../apicalls";
 import { updateSearchResults } from "./searchSlice";
 import ResultsMap from "../ResultsMap/ResultsMap";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+
 
 
 const Results = () => {
@@ -69,13 +71,20 @@ const filter = (results) => {
 
   return (
     <>
-      <ResultsHeader />
-      <section className="cards-display">
-        <div className="cards-container">
-          {isSuccess && createCards()}
-          {isLoading && <img src="/assets/spinnerblue.gif" alt="loading" className="loading-spinner"/>}
-          {isError && <p>ERROR</p>}
+      <section className="results-section">
+        <div>
+          <ResultsHeader />
+          <section className="cards-display">
+            <div className="cards-container">
+              {isSuccess && createCards()}
+              {isLoading && <img src="/assets/spinnerblue.gif" alt="loading" className="loading-spinner"/>}
+              {isError && <p>ERROR</p>}
+            </div>
+          </section>
         </div>
+        <section className="results-map-section">
+          <ResultsMap filteredResults={filteredResults}/>
+        </section>
       </section>
     </>
   );

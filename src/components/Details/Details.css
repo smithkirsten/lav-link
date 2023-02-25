@@ -33,6 +33,16 @@
   padding: 10px;
 }
 
+.directions-button {
+  background-color: #31C6E0;
+  border: none;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  width: 21vw;
+  height: 5vh;
+}
+
 .icon-container {
   display: flex;
   flex-direction: column;
@@ -45,7 +55,7 @@
 }
 
 .details-map {
-  border-radius: 0;
+  border-radius: 15px;
   width: 55vw;
   text-align: center;
   display: flex;
