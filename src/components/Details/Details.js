@@ -64,7 +64,7 @@ const Details = () => {
         <div className="votes">
           <p className="upvotes">{`Upvotes: ${bathroom.upvote}`}</p>
           <p className="downvotes">{`Downvotes: ${bathroom.downvote}`}</p>
-          <p className="update">{`Last Updated: ${reformatDate(bathroom)}`}</p>
+          <p className="update">{`Last Updated: ${bathroom.updated_at}`}</p>
         </div>
       </section>
     </section>
