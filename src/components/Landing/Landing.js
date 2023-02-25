@@ -5,9 +5,6 @@ import { updateFilters } from './landingSlice'
 import { useDispatch } from 'react-redux'
 import { zipConverter } from "../../util";
 
-
-
-
 export default function Landing() {
   const [currentLocation, setCurrentLocation] = useState(false);
   const [currentCoords, setCurrentCoords] = useState("")

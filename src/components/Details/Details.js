@@ -5,10 +5,7 @@ import { createMapLink } from "../../util";
 import { NavLink } from "react-router-dom";
 import DetailMap from "../DetailMap/DetailMap";
 
-
-
 const Details = () => {
-
   const bathroom = useSelector((state) => state.result.selectedBathroom);
   const mapLink = createMapLink(bathroom);
 

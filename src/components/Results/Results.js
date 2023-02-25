@@ -10,10 +10,7 @@ import { cleanData } from '../../util'
 
 
 const Results = () => {
-  //global state data
-  //add currentCoordinates
   const customEqual = (oldValue, newValue) => {
-    //a custom equality function built to check whether the data from the cleanData function is the same as the data in state
     return JSON.stringify(oldValue) == JSON.stringify(newValue)
   }
   const dispatch = useDispatch();
@@ -21,11 +18,10 @@ const Results = () => {
   const adaAccessible = useSelector((state) => state.landing.adaAccessible)
   const unisex = useSelector((state) => state.landing.unisex)
   const changingTable = useSelector((state) => state.landing.changingTable)
-  //added equality function as secong parameter
   const searchResults = useSelector((state) => (state.search.searchResults), customEqual)
 
   const [filteredResults, setFilteredResults] = useState([]);
-  //fetch request data
+  
   const {
     data,
     isLoading,
@@ -42,7 +38,6 @@ useEffect(() => {
   }
 })
 
-//added a useCallBack so that t only runs when there has been a change in the dependecy data
 const filter = useCallback((results) => {
   if(adaAccessible){
     results = results.filter(result => result.accessible)
@@ -62,7 +57,8 @@ useEffect(() => {
 }, [gpsCoordinates, adaAccessible, unisex, changingTable, filter, searchResults])
 
 const createCards = () => {
-  return filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
+  const cards = filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
+  return cards;
 }
 
   return (

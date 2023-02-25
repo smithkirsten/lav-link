@@ -9,15 +9,15 @@ const containerStyle = {
 };
 
 export default function DetailMap({ bathroom, link }) {
+  // eslint-disable-next-line
+  const [map, setMap] = useState(null)
+
   const center =  {lat: bathroom.latitude, lng: bathroom.longitude}
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
   })
-
-  // eslint-disable-next-line
-  const [map, setMap] = useState(null)
 
   const onLoad = useCallback(map => {
     setMap(map)

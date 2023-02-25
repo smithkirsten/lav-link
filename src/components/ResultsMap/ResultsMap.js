@@ -14,9 +14,7 @@ const containerStyle = {
 export default function ResultsMap({ filteredResults }) {
   // eslint-disable-next-line
   const [map, setMap] = useState(null);
-
   const coordinates = useSelector((state) => state.landing.gpsCoordinates)
-
   const center = { lat: +(coordinates.lat), lng: +(coordinates.long) };
 
   const dispatch = useDispatch();
@@ -26,7 +24,6 @@ export default function ResultsMap({ filteredResults }) {
     id: "google-map-script",
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
-
 
   const onLoad = useCallback((map) => {
     setMap(map);
