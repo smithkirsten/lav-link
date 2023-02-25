@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { selectBathroom } from '../ResultCard/resultSlice';
 
 const containerStyle = {
-  "width": '98%',
-  "height": '99%',
+  "width": '100%',
+  "height": '100%',
   "borderRadius": '15px'
 };
 
