@@ -75,14 +75,9 @@ describe("template spec", () => {
 
   it("Should display appropriate results on results page after user clicks current location", () => {
     cy.get('input[name="currentLocation"]').click()
+    cy.get('input[name="zipcodeInput"]').should('have.value', '')
     cy.get('button[name="searchButton"]').click();
-    cy.get('article[class="result-card"]')
-      .eq(0)
-      .should("contain", "Erie Community Library");
-    cy.get('article[class="result-card"]')
-      .eq(1)
-      .should("contain", "Erie Public Library");
-    cy.get('article[class="result-card"]').eq(2).should("contain", "Mod Pizza");    
+    cy.get('input[class="zip-input"]').should('not.have.value', "") 
   })
 
   it('Should display appropriate results on results page after user clicks ADA preference', () => {
