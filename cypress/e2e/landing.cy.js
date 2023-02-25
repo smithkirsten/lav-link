@@ -98,4 +98,17 @@ describe("template spec", () => {
     cy.get('article[class="result-card"]').eq(2).should("contain", "Mod Pizza");
   })
 
+  it('Should display appropriate results on results page after user clicks unisex preference', () => {
+    cy.get('input[name="zipcodeInput"]').type("80516");
+    cy.get('input[name="unisex"]').click()
+    cy.get('button[name="searchButton"]').click();
+    cy.get('article[class="result-card"]')
+      .eq(0)
+      .should("contain", "Erie Community Library");
+    cy.get('article[class="result-card"]')
+      .eq(1)
+      .should("contain", "Erie Public Library");
+    cy.get('article[class="result-card"]').eq(2).should("contain", "Mod Pizza");
+  })
+
 });
