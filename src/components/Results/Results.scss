@@ -17,13 +17,12 @@
 }
 
 .results-map-section {
-  height: 98.5vh;
+  height: 97.8vh;
   width: 50vw;
   border-radius: 15px;
-  background-color: $borderYellow;
   text-align: center;
   @include centered(row, center);
-  background-color: $borderYellow;
+  box-shadow: 0px 0px 0px 4px $borderYellow;
 }
 
 .results-section {
