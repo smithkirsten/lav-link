@@ -1,6 +1,6 @@
 <div align="center">
 
-
+<img src="https://user-images.githubusercontent.com/113261334/221386582-8a049597-9571-49ce-b800-ce30b7f3bd69.png" width="120" height="120">
   
 # Lav Link
   
@@ -73,7 +73,8 @@ Lav link is an application that allows users to search for bathrooms via zipcode
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
  
- 
+ ![ezgif com-video-to-gif](https://user-images.githubusercontent.com/113261334/221386610-b01bd089-a587-49bf-bd4d-c2ef6916606f.gif)
+
 
   
 
@@ -160,5 +161,4 @@ Lav link is an application that allows users to search for bathrooms via zipcode
 
 ## Sources
 
-- [MDN](https://developer.mozilla.org/en-US/)
-- [W3Schools](https://www.w3schools.com/)
+[MDN](https://developer.mozilla.org/en-US/) · [W3Schools](https://www.w3schools.com/) · [Redux Toolkit Docs](https://redux-toolkit.js.org/)
