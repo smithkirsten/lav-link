@@ -83,7 +83,7 @@ const createCards = () => {
                 />
               )}
               {isError && (
-                <p>Whoops! Something went wrong. Please try a new zipcode.</p>
+                <p className="server-error">Whoops! Something went wrong. Please try a new zipcode.</p>
               )}
             </div>
           </section>

@@ -1,6 +1,6 @@
 import noResults from "../fixtures/noResults";
 
-describe("No Results Found Testing", () => {
+describe("No Results Found", () => {
   beforeEach(() => {
     cy.intercept(
       {
@@ -23,5 +23,5 @@ describe("No Results Found Testing", () => {
     cy.get("p[class='no-bathrooms']").should(
       "contain","No bathrooms found. Please adjust your search criteria and try again.");
   });
-  
+
 });
