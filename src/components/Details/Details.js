@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 import "./Details.css";
 import { useSelector } from "react-redux";
 // import { roundDistance, reformatDate } from "../../util";
