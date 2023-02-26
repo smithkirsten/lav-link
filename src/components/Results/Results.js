@@ -69,7 +69,7 @@ const createCards = () => {
             <div className="cards-container">
               {isSuccess && createCards()}
               {isLoading && <img src="/assets/spinnerblue.gif" alt="loading" className="loading-spinner"/>}
-              {isError && <p>ERROR</p>}
+              {isError && <p>There was an error. <br/>Please re-enter your search in the form and try again</p>}
             </div>
           </section>
         </div>
