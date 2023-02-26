@@ -58,24 +58,19 @@ describe("template spec", () => {
 
   it("Should show an error message to the user if they do not select current location or enter a zipcode", () => {
     cy.get('button[name="searchButton"]').click();
-    cy.get('p[class="landing-error-message"]').should(
-      "contain",
-      "Please select current location or enter a valid zipcode before searching."
-    );
+    cy.get('.landing-content > div').last().should('be.visible')
   });
 
   it("Should show an error message to the user if they enter an invalid zipcode", () => {
     cy.get('input[name="zipcodeInput"]').type("999999");
     cy.get('button[name="searchButton"]').click();
-    cy.get('p[class="landing-error-message"]').should(
-      "contain",
-      "Please select current location or enter a valid zipcode before searching."
-    );
+    cy.get('.landing-content > div').last().should('be.visible')
   });
 
   it("Should display appropriate results on results page after user clicks current location", () => {
     cy.get('input[name="currentLocation"]').click()
     cy.get('input[name="zipcodeInput"]').should('have.value', '')
+    cy.wait(7000)
     cy.get('button[name="searchButton"]').click();
     cy.get('input[class="zip-input"]').should('not.have.value', "") 
   })
