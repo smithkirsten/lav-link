@@ -18,7 +18,7 @@ describe('Bahtroom Details Page', () => {
     cy.get("article").eq(0).click();
   });
 
-  it("Should display the name of the bathroom and how far it is", () => {
+  it("Should display the name of the bathroom and how many miles away it is", () => {
     cy.get("p[class='name']").invoke("text").should("eq", "Starbucks");
     cy.get("p[class='distance']").invoke("text").should("eq", "1.56 miles");
   });
@@ -29,7 +29,13 @@ describe('Bahtroom Details Page', () => {
       .should("equal", "/assets/transgender.png");
   });
 
-  it("Should display the address and additional directions if there are any", () => {
+  it("Should not display a transgender flag icon if the bathroom is not unisex, should not display a baby icon if the bathroom does not have a changing table, and should not display a person in a wheelchair icon if it is not ADA accessible", () => {
+    cy.get('img[alt="wheelchair"]').should("not.exist")
+    cy.get('img[alt="Changing table"]').should("not.exist");
+     
+  });
+
+  it("Should display the bathroom's address and additional directions if there are any", () => {
     cy.get('div[class="address"]')
       .invoke("text")
       .should("eq", "101 W Main StBarrington, IL");
@@ -41,7 +47,7 @@ describe('Bahtroom Details Page', () => {
       );
   });
 
-  it("Should display additional comments if there are any, the date it was last updated, and the number of downvotes and upvotes", () => {
+  it("Should display additional comments if there are any, the date the bathroom information was last updated, and the number of downvotes and upvotes", () => {
     cy.get('p[class="comment"]')
       .invoke("text")
       .should(
@@ -57,8 +63,12 @@ describe('Bahtroom Details Page', () => {
 
   it("Should display a map showing the bathroom's location", () => {
     cy.get("iframe").should("be.visible");
-    cy.get("[aria-label='Map']");
- 
+    cy.get("[aria-label='Map']").should("be.visible");
+    cy.get("div > a")
+      .should("have.attr", "href")
+      .should(
+        "eq", "https://maps.google.com/maps?ll=42.154218,-88.136069&z=15&t=m&hl=en-US&gl=US&mapclient=apiv3"
+      );
   });
 
   it("Should open google maps when a user clicks on the bathroom marker", () => {
@@ -86,11 +96,10 @@ describe('Bahtroom Details Page', () => {
     });
   })
 
-
   it("Should have a go back button that takes the user back to the all results page", () => {
-    cy.get('button[class="back-to-main-button"]')
-      .invoke("text")
-      .should("eq", "Back to All Results");
+    cy.get('button[class="back-to-main-button"]').should("contain", "Back to All Results")
+    .click()
+    cy.get(".result-card").should("have.length", 3);
   });
 
 })
