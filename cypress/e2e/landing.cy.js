@@ -109,4 +109,14 @@ describe("template spec", () => {
       .eq(0)
       .should("contain", "Erie Community Library");
   })
+
+  it('Should be redirected to error page if user goes to unrecognized url and have the ability to return to main page', () => {
+    cy.visit('http://localhost:3000/abc')
+    cy.get('.site-title').should('be.visible')
+    cy.get('.landing-copy').should('be.visible')
+    cy.get('.poop-emoji').should('be.visible')
+    cy.get('.not-found').should('be.visible')
+    cy.get('.return-to-main-button').click()
+    cy.url('http://localhost:3000/')
+  })
 });
