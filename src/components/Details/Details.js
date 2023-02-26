@@ -1,19 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Details.css";
 import { useSelector } from "react-redux";
 // import { roundDistance, reformatDate } from "../../util";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import DetailMap from "../DetailMap/DetailMap";
 
 
 
 const Details = () => {
-
+  const navigate = useNavigate();
   const bathroom = useSelector((state) => state.result.selectedBathroom);
+
+  // useEffect(() => {
+  //   console.log('bathroom: ', bathroom)
+  //   if(!bathroom) {
+  //     navigate('/');
+  //   }
+  // }, []) **THIS seemed like what I actually wanted to do, but even though I could see there was no bathroom on page mount, 
+  //it was skipping right to the below function. 
+  //So I put the condition in there and it worked
+
   const mapLink = () => {
-    const searchName = bathroom.name.replaceAll(' ', '+');
-    const searchCity = bathroom.city.replaceAll(' ', '+');
-    return `https://www.google.com/maps/dir/?api=1&destination=${searchName}%2C${searchCity}%2C${bathroom.state}`;
+    if(!bathroom) {
+      navigate('/');
+    } else {
+      const searchName = bathroom.name.replaceAll(' ', '+');
+      const searchCity = bathroom.city.replaceAll(' ', '+');
+      return `https://www.google.com/maps/dir/?api=1&destination=${searchName}%2C${searchCity}%2C${bathroom.state}`;
+    }
   }
 
   return (
