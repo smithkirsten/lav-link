@@ -1,6 +1,6 @@
 import results from '../fixtures/stubbedResults'
 
-describe('Bahtroom Details Page', () => {
+describe('Bathroom Details Page', () => {
   beforeEach(() => {
     cy.intercept(
       {
@@ -97,8 +97,8 @@ describe('Bahtroom Details Page', () => {
   })
 
   it("Should have a go back button that takes the user back to the all results page", () => {
-    cy.get('button[class="back-to-main-button"]').should("contain", "Back to All Results")
-    .click()
+    cy.get('button[class="back-to-main-button"]').should("contain", "Back to All Results").click()
+    
     cy.get(".result-card").should("have.length", 3);
   });
 
