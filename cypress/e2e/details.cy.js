@@ -61,25 +61,31 @@ describe('Bahtroom Details Page', () => {
  
   });
 
-  it("Should redirect users if they click on the bathroom marker on the map", () => {
-    const newUrl ="https://www.google.com/maps/dir/?api=1&destination=Starbucks%2CBarrington%2CIL"
-      // "https://www.google.com/maps/dir/38.6789517,-90.2385387/Starbucks,+101+W+Main+St,+Barrington,+IL+60010/@40.3725428,-91.2054429,7z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x880fa0da431f1207:0xa882b0db6c890dba!2m2!1d-88.136336!2d42.154071"
-
+  it("Should open google maps when a user clicks on the bathroom marker", () => {
     cy.window().then((win) => {
-      cy.stub(win, 'open').as('windowOpen')})
-      cy.get("area").click({ force: true })
-       cy.get('@windowOpen').should('be.calledWith', newUrl);
-        cy.window().then(win => {
-          win.location.href = newUrl;
-        });
+      cy.stub(win, 'open').as('windowOpen');  
+    }); 
 
-        
-          
-       
-      
+    cy.get("area").click({ force: true });
+
+    cy.get('@windowOpen').should('be.calledWith', 'https://www.google.com/maps/dir/?api=1&destination=Starbucks%2CBarrington%2CIL', '_blank', 'noreferrer');
   })
 
-  //"https://maps.gstatic.com/mapfiles/openhand_8_8.cur"
+  it("Should open google maps when a user clicks on the directions button", () => {
+    cy.intercept("GET", "https://www.google.com/maps/dir/*").as(
+      "googleMaps"
+    );
+
+    cy.get("section[class='background details'] > a").click();
+
+    cy.wait("@googleMaps").then((intercept) => {
+      expect(intercept.response.statusCode).to.eq(200);
+      expect(intercept.request.url).to.eq(
+        "https://www.google.com/maps/dir/?api=1&destination=Starbucks%2CBarrington%2CIL"
+      );
+    });
+  })
+
 
   it("Should have a go back button that takes the user back to the all results page", () => {
     cy.get('button[class="back-to-main-button"]')
@@ -87,5 +93,4 @@ describe('Bahtroom Details Page', () => {
       .should("eq", "Back to All Results");
   });
 
-  // Add tests for map!!!!!!!
 })
