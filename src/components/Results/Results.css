@@ -46,6 +46,7 @@
 @media only screen and (max-width: 836px) {
   .results-section {
     flex-direction: column;
+    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     margin-bottom: 1vh;

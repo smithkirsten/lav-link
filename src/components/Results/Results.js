@@ -9,6 +9,8 @@ import { updateSearchResults } from "./searchSlice";
 import { cleanData } from '../../util'
 
 
+
+
 const Results = () => {
   const customEqual = (oldValue, newValue) => {
     // eslint-disable-next-line

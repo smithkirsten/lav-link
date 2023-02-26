@@ -74,6 +74,10 @@
   font-size: 3.5vmin;
 }
 
+.zipcode-input:-ms-input-placeholder {
+  font-size: 3.5vmin;
+}
+
 .zipcode-input::placeholder {
   font-size: 3.5vmin;
 }
@@ -127,6 +131,7 @@
   padding: 5px;
   width: 65vw;
   text-align: center;
+  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin-top: 10px;
