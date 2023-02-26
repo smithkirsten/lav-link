@@ -41,7 +41,6 @@ describe("All Results Page", () => {
     cy.get('.changeButton').should("be.visible");
   });
 
-
   it("Should display the all of the bathroom results", () => {
     cy.get(".result-card").should('have.length', 3)
   })
@@ -66,6 +65,24 @@ describe("All Results Page", () => {
     cy.get(".result-card").contains('Harper College Building M')
   })
 
-  // Add map test
-  // Add test that click into details page
+   it("Should display a map showing the bathroom locations", () => {
+     cy.get("iframe").should("be.visible");
+
+     cy.get("[aria-label='Map']").should("be.visible");
+
+     cy.get("a").eq(3)
+       .should("have.attr", "href")
+       .should("eq", "https://maps.google.com/maps?ll=42.146494,-88.164651&z=13&t=m&hl=en-US&gl=US&mapclient=apiv3");
+
+      cy.get("a").eq(5)
+      .should("have.attr", "href")
+      .should("eq", "https://www.google.com/maps/@42.146494,-88.164651,13z/data=!10m1!1e1!12b1?source=apiv3&rapsrc=apiv3");
+   });
+
+   it("Should display the bathroom's details when you click a bathroom's marker on the map", () => {
+    cy.get("area").eq(0).click({ force: true });
+    cy.get("p[class='name']").should("contain", "Starbucks")
+   });
+
+  
 })
