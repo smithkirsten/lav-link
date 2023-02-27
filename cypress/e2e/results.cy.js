@@ -69,11 +69,11 @@ describe("All Results Page", () => {
 
     cy.get("[aria-label='Map']").should("be.visible");
 
-    cy.get("a").eq(3)
+    cy.get("a").eq(4)
       .should("have.attr", "href")
       .should("eq", "https://maps.google.com/maps?ll=42.146494,-88.164651&z=13&t=m&hl=en-US&gl=US&mapclient=apiv3");
 
-    cy.get("a").eq(5)
+    cy.get("a").eq(6)
     .should("have.attr", "href")
     .should("eq", "https://www.google.com/maps/@42.146494,-88.164651,13z/data=!10m1!1e1!12b1?source=apiv3&rapsrc=apiv3");
   });

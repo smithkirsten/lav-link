@@ -33,12 +33,12 @@ export default function DetailMap({ bathroom, link }) {
         mapTypeControl: false,
       }}
     >
-      <Marker position={center} onClick={() => window.open(link, '_blank', 'noreferrer')}/>
+      <Marker position={center} onClick={() => window.open(link.current, '_blank', 'noreferrer')}/>
     </GoogleMap>
   ) : <></>
 }
 
 DetailMap.propType = {
   data: PropTypes.object.isRequired,
-  link: PropTypes.string.isRequired
+  link: PropTypes.object.isRequired
 }
