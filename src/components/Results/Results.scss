@@ -37,8 +37,8 @@
   margin: 7px;
 
   p {
+    @include errorBorder(10px);
     font-size: 22px;
-    font-weight: 700;
   }
 }
 
