@@ -61,7 +61,10 @@ useEffect(() => {
 
 const createCards = () => {
   const cards = filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
-  return cards;
+    if (cards.length > 0) {
+      return cards
+    }
+    return <p className="no-bathrooms">No bathrooms found. Please adjust your search criteria and try again.</p>
 }
 
   return (
@@ -71,15 +74,25 @@ const createCards = () => {
           <ResultsHeader />
           <section className="cards-display">
             <div className="cards-container">
-              {isSuccess && createCards()}
-              {isLoading && <img src="/assets/spinnerblue.gif" alt="loading" className="loading-spinner"/>}
-              {isError && <p>Whoops! Something went wrong. Please try a new zipcode.</p>}
+              {(isSuccess && createCards())}
+              {isLoading && (
+                <img
+                  src="/assets/spinnerblue.gif"
+                  alt="loading"
+                  className="loading-spinner"
+                />
+              )}
+              {isError && (
+                <p className="server-error">Whoops! Something went wrong. Please try a new zipcode.</p>
+              )}
             </div>
           </section>
         </div>
-        {!isError && <section className="results-map-section">
-          <ResultsMap filteredResults={filteredResults}/>
-        </section>}
+        {!isError && (
+          <section className="results-map-section">
+            <ResultsMap filteredResults={filteredResults} />
+          </section>
+        )}
       </section>
     </>
   );
