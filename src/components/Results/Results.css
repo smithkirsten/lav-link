@@ -12,7 +12,7 @@
 
 .cards-container {
   overflow-y: scroll;
-  height: 50vh;
+  height: 53vh;
 }
 
 .no-match {
@@ -46,7 +46,6 @@
 @media only screen and (max-width: 836px) {
   .results-section {
     flex-direction: column;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     margin-bottom: 1vh;
@@ -54,6 +53,7 @@
   }
   .cards-display {
     width: 95vw;
+    height: 45vh;
   }
   .results-map-section {
     width: 95vw;
