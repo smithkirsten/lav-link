@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./Details.css";
 import { useSelector } from "react-redux";
 import { createMapLink } from "../../util";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import DetailMap from "../DetailMap/DetailMap";
 
 const Details = () => {
   const bathroom = useSelector((state) => state.result.selectedBathroom);
-  const mapLink = createMapLink(bathroom);
+  const navigate = useNavigate();
+  const mapLink = useRef(null);
+
+  useEffect(() => {
+    if (!bathroom) {
+      navigate('/')
+    } else {
+      mapLink.current = createMapLink(bathroom);
+    }
+    // eslint-disable-next-line
+  }, [bathroom])
 
   return (
     <section className="Details-page">

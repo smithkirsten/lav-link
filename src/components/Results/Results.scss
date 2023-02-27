@@ -9,7 +9,7 @@
 
 .cards-container {
   overflow-y: scroll;
-  height: 50vh;
+  height: 53vh;
 }
 
 .no-match {
@@ -32,6 +32,23 @@
   height: 100vh;
 }
 
+.results-error {
+  @include centered(column, center);
+  margin: 7px;
+
+  p {
+    @include errorBorder(10px);
+    font-size: 22px;
+  }
+}
+
+.error-button {
+  @include pillButton;
+  height: 4vh;
+  width: 25vw;
+  margin: 15px;
+}
+
 @media only screen and (max-width: 836px) {
   .results-section {
     flex-direction: column;
@@ -42,6 +59,7 @@
 
   .cards-display {
     width: 95vw;
+    height: 45vh;
   }
 
   .results-map-section {

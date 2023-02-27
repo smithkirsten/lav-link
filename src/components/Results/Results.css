@@ -12,7 +12,7 @@
 
 .cards-container {
   overflow-y: scroll;
-  height: 50vh;
+  height: 53vh;
 }
 
 .no-match {
@@ -43,10 +43,34 @@
   height: 100vh;
 }
 
+.results-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 7px;
+}
+.results-error p {
+  border: 3px solid #F6C28B;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 22px;
+}
+
+.error-button {
+  background-color: #31C6E0;
+  border: none;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  height: 4vh;
+  width: 25vw;
+  margin: 15px;
+}
+
 @media only screen and (max-width: 836px) {
   .results-section {
     flex-direction: column;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     margin-bottom: 1vh;
@@ -54,6 +78,7 @@
   }
   .cards-display {
     width: 95vw;
+    height: 45vh;
   }
   .results-map-section {
     width: 95vw;

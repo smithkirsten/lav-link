@@ -7,9 +7,7 @@ import { useDispatch, useSelector} from 'react-redux'
 import { useGetLavsQuery } from "../../apicalls";
 import { updateSearchResults } from "./searchSlice";
 import { cleanData } from '../../util'
-
-
-
+import { NavLink } from "react-router-dom";
 
 const Results = () => {
   const customEqual = (oldValue, newValue) => {
@@ -74,17 +72,17 @@ const createCards = () => {
           <ResultsHeader />
           <section className="cards-display">
             <div className="cards-container">
-              {(isSuccess && createCards())}
-              {isLoading && (
-                <img
-                  src="/assets/spinnerblue.gif"
-                  alt="loading"
-                  className="loading-spinner"
-                />
-              )}
-              {isError && (
-                <p className="server-error">Whoops! Something went wrong. Please try a new zipcode.</p>
-              )}
+              {isSuccess && createCards()}
+              {isLoading && <img src="/assets/spinnerblue.gif" alt="loading" className="loading-spinner"/>}
+              {isError && 
+                <div className="results-error">
+                  <p>Whoops! Something went wrong. Please try a new zipcode
+                  or return home to use your current location.</p>
+                  <NavLink to={'/'}>
+                    <button className="error-button" >return home</button>
+                  </NavLink>
+                </div>
+              }
             </div>
           </section>
         </div>
