@@ -32,6 +32,23 @@
   height: 100vh;
 }
 
+.results-error {
+  @include centered(column, center);
+  margin: 7px;
+
+  p {
+    font-size: 22px;
+    font-weight: 700;
+  }
+}
+
+.error-button {
+  @include pillButton;
+  height: 4vh;
+  width: 25vw;
+  margin: 15px;
+}
+
 @media only screen and (max-width: 836px) {
   .results-section {
     flex-direction: column;
