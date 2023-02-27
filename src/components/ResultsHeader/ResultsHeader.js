@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import './ResultsHeader.css'
 import { updateFilters } from "../Landing/landingSlice";
@@ -13,7 +14,9 @@ const ResultsHeader = () => {
 
   return (
     <header className="results-header">
-      <h1 className="heading">LavLink</h1>
+      <NavLink to={"/"} className="logo-link" >
+        <h1 className="heading">LavLink</h1>
+      </NavLink>
       <p className="showing">showing results for...</p>
       <form className="filterForm">
         <div>

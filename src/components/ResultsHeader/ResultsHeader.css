@@ -54,6 +54,11 @@
   width: 25vw;
 }
 
+.logo-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 836px) {
   .results-header {
     width: 95vw;
