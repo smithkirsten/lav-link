@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Details.css";
 import { useSelector } from "react-redux";
 import { createMapLink } from "../../util";
@@ -8,15 +8,16 @@ import DetailMap from "../DetailMap/DetailMap";
 const Details = () => {
   const bathroom = useSelector((state) => state.result.selectedBathroom);
   const navigate = useNavigate();
-  let mapLink;
+  const mapLink = useRef(null);
 
   useEffect(() => {
     if (!bathroom) {
       navigate('/')
     } else {
-      mapLink = createMapLink(bathroom);
+      mapLink.current = createMapLink(bathroom);
     }
-  }, [])
+    // eslint-disable-next-line
+  }, [bathroom])
 
   return (
     <section className="Details-page">
