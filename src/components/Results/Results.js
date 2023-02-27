@@ -59,7 +59,10 @@ useEffect(() => {
 
 const createCards = () => {
   const cards = filteredResults.map((result) => <ResultCard key={result.id} data={result} />)
-  return cards;
+    if (cards.length > 0) {
+      return cards
+    }
+    return <p className="no-bathrooms">No bathrooms found. Please adjust your search criteria and try again.</p>
 }
 
   return (
@@ -83,9 +86,11 @@ const createCards = () => {
             </div>
           </section>
         </div>
-        {!isError && <section className="results-map-section">
-          <ResultsMap filteredResults={filteredResults}/>
-        </section>}
+        {!isError && (
+          <section className="results-map-section">
+            <ResultsMap filteredResults={filteredResults} />
+          </section>
+        )}
       </section>
     </>
   );
