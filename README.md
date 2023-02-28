@@ -38,7 +38,7 @@
 
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
 
-Lav link is an application that allows users to search for bathrooms via zipcode or current location. Additionally users are allowed to filter through specific bathroom needs, such as: ADA accessible, transfriendly bathrooms, and changing tables. Upon searching with provided location and bathroom criteria, users will be directed to a results page where a list of bathrooms are provided that are sorted by closest distance to bathroom. Users can either change preferences from the results page or click on a bathroom to view that bathrooms details page. The details page will show a user the name, distance, address, directions, a list of icons that represent the bathroom criteria that that bathroom provides, and a map with the location of the bathroom.
+Lav Link is an application that allows users to search for bathrooms via zip code or current location. Additionally users are allowed to filter through specific bathroom needs, such as: ADA accessible, unisex bathrooms, and changing tables. Upon searching with provided location and bathroom criteria, users will be directed to a results page where a list of bathrooms are provided that are sorted by their proximity to the user's current location. Users can either change preferences from the results page or click on a bathroom to view that bathrooms details page. The details page will show a user the name, distance, address, directions, and a list of icons that represent the bathroom criteria that that bathroom provides. The user is provided with a map with the location of the bathroom and can click a button or the map pin to obtain directions to the selected bathroom from their current location. 
 
  
   
@@ -97,6 +97,7 @@ Lav link is an application that allows users to search for bathrooms via zipcode
   <img src="https://img.shields.io/badge/-CSS3-315780?logo=css3&style=for-the-badge" width="100" height="30"/>
   <img src="https://img.shields.io/badge/-sass-c69?logo=sass&logoColor=white&style=for-the-badge" width="100" height="30"/>  
   <img src="https://img.shields.io/badge/-npm-c12127?logo=npm&logoColor=white&style=for-the-badge" width="80"  height="30"/>
+  <img src="https://img.shields.io/badge/-google%20maps%20api-1a73e8?logo=google&logoColor=white&style=for-the-badge" width="160"  height="30"/>
 </div>
 
 ---
