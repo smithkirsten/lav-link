@@ -68,6 +68,12 @@ Lav link is an application that allows users to search for bathrooms via zipcode
    ```
 
 ---
+  
+## Deployed Link
+
+[Click here to view deployed link on Vercel](https://lav-link-smithkirsten.vercel.app/)
+
+---
 
 ## Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
