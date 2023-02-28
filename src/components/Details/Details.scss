@@ -107,6 +107,7 @@
   @include centered(column, center);
   height: fit-content;
   padding: 2%;
+  margin-right: 10px;
 }
 
 @media screen and (min-width: 720px) {

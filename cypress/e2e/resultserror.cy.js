@@ -15,7 +15,7 @@ describe("Server Error", () => {
   });
 
   it("Should let the user know if something went wrong during their request", () => {
-    cy.get("p[class='server-error']").should("contain","Whoops! Something went wrong. Please try a new zipcode");
+    cy.get("div[class='results-error']").should("contain","Whoops! Something went wrong. Please try a new zipcode");
   });
   
 });

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import "./Details.css";
 import { useSelector } from "react-redux";
 import { createMapLink } from "../../util";
@@ -8,13 +8,13 @@ import DetailMap from "../DetailMap/DetailMap";
 const Details = () => {
   const bathroom = useSelector((state) => state.result.selectedBathroom);
   const navigate = useNavigate();
-  const mapLink = useRef(null);
+  const [mapLink, setMapLink] = useState('');
 
   useEffect(() => {
     if (!bathroom) {
       navigate('/')
     } else {
-      mapLink.current = createMapLink(bathroom);
+      setMapLink(createMapLink(bathroom));
     }
     // eslint-disable-next-line
   }, [bathroom])
