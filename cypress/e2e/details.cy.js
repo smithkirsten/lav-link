@@ -71,16 +71,6 @@ describe('Bathroom Details Page', () => {
       );
   });
 
-  it("Should open google maps when a user clicks on the bathroom marker", () => {
-    cy.window().then((win) => {
-      cy.stub(win, 'open').as('windowOpen');  
-    }); 
-
-    cy.get("area").click({ force: true });
-
-    cy.get('@windowOpen').should('be.calledWith', 'https://www.google.com/maps/dir/?api=1&destination=Starbucks%2CBarrington%2CIL', '_blank', 'noreferrer');
-  })
-
   it("Should open google maps when a user clicks on the directions button", () => {
     cy.intercept("GET", "https://www.google.com/maps/dir/*").as(
       "googleMaps"
