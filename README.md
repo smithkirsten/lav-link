@@ -72,7 +72,7 @@ Lav Link is an application that allows users to search for bathrooms via zip cod
   
 ## Deployed Link
 
-[Click here to view deployed link on Vercel](https://lav-link-smithkirsten.vercel.app/)
+[Click here to view deployed app on Vercel](https://lav-link-smithkirsten.vercel.app/)
 
 ---
 
