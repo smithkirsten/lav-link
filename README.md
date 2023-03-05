@@ -38,7 +38,13 @@
 
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
 
-Lav Link is an application that allows users to search for bathrooms via zip code or current location. Additionally users are allowed to filter through specific bathroom needs, such as: ADA accessible, unisex bathrooms, and changing tables. Upon searching with provided location and bathroom criteria, users will be directed to a results page where a list of bathrooms are provided that are sorted by their proximity to the user's current location. Users can either change preferences from the results page or click on a bathroom to view that bathrooms details page. The details page will show a user the name, distance, address, directions, and a list of icons that represent the bathroom criteria that that bathroom provides. The user is provided with a map with the location of the bathroom and can click a button or the map pin to obtain directions to the selected bathroom from their current location. 
+Finding a bathroom in public can be tricky, but for people with particular accessibility needs, it can be a nightmare!
+
+LavLink allows a user to search for public restrooms in their area that meet their criteria. Users can stipulate whether they need a wheelchair accessible bathroom, a unisex bathroom, or a restroom with a changing table. This ensures that trans people, caregivers, and people with mobility equipment know exactly where they need to go when they need to go!
+
+LavLink users can use their current location to find restrooms in their immediate area, or plan ahead by entering a zip code to search. They are provided with a list of results along with a map showing each one. By clicking on a listed restroom or map marker, they are redirected to a page to view further information about the bathroom (address, map, comments, upvotes, etc.) and a way to leave the app to pull up directions to the restroom from their current location.
+
+A mobile-first design means this app is designed to work on any phone, but has a responsive design for those with larger screen needs
 
  
   
