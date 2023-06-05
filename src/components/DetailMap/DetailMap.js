@@ -33,7 +33,7 @@ export default function DetailMap({ bathroom, link }) {
         mapTypeControl: false,
       }}
     >
-      <Marker position={center} onClick={() => window.open(link, '_blank', 'noreferrer')}/>
+      <Marker title={'Location Marker'} position={center} onClick={() => window.open(link, '_blank', 'noreferrer')}/> 
     </GoogleMap>
   ) : <></>
 }
