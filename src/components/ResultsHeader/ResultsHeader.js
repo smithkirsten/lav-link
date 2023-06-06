@@ -33,31 +33,32 @@ const ResultsHeader = () => {
           ></input>
           <label htmlFor="adaAccessible" className="input-label">
             <img src="/assets/wheelchair.png" alt="wheelchair icon" />
+            <input
+             type="checkbox"
+             name="adaAccessible"
+              checked={adaAccessible}
+              onChange={(event) => setAdaAccessible(event.target.checked)}>
+            </input>
           </label>
-          <input
-            type="checkbox"
-            name="adaAccessible"
-            checked={adaAccessible}
-            onChange={(event) => setAdaAccessible(event.target.checked)}
-          ></input>
           <label htmlFor="unisex" className="input-label">
             <img src="/assets/transgender.png" alt="unisex icon" />
+            <input
+              type="checkbox"
+              name="unisex"
+              checked={unisex}
+              onChange={(event) => setUnisex(event.target.checked)}
+              >
+            </input>
           </label>
-          <input
-            type="checkbox"
-            name="unisex"
-            checked={unisex}
-            onChange={(event) => setUnisex(event.target.checked)}
-          ></input>
           <label htmlFor="changingTable" className="input-label">
             <img src="/assets/baby.png" alt="changing table icon"/>
+            <input
+              type="checkbox"
+              name="changingTable"
+              checked={changingTable}
+              onChange={(event) => setChangingTable(event.target.checked)}>
+            </input>
           </label>
-          <input
-            type="checkbox"
-            name="changingTable"
-            checked={changingTable}
-            onChange={(event) => setChangingTable(event.target.checked)}
-          ></input>
         </div>
         <button
           className="changeButton"
