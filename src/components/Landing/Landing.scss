@@ -1,102 +1,103 @@
 @use '../../../abstract/variables' as *;
 
 * {
-  @include bodyFont;
-  text-align: center;
+	@include bodyFont;
+	text-align: center;
 }
 
 .landing-main {
-  height: 100vh;
-  width: 100vw;
-  @include centered(column, center);
+	height: 100vh;
+	width: 100vw;
+	@include centered(column, center);
 }
 
 .landing-content {
-  @include centered(column, space-evenly);
-  @include highlightBackground;
-  height: 92vh;
-  width: 80vw;
+	@include centered(column, space-evenly);
+	@include highlightBackground;
+	height: 92vh;
+	width: 80vw;
 }
 
 .landing-header {
-  @include centered(column, center);
+	@include centered(column, center);
 }
 
 .site-title {
-  @include logoFont;
-  color: $mainTextNavy;
-  font-size: 15vmin;
+	@include logoFont;
+	color: $mainTextNavy;
+	font-size: 15vmin;
 }
 
 .landing-toilet-icon {
-  height: 15vmin;
-  margin-top: 2vh;
-  margin-bottom: 1vh;
+	height: 15vmin;
+	margin-top: 2vh;
+	margin-bottom: 1vh;
 }
 
 .current-location-button {
-  @include pillHighlight(22px);
-  @include centered(row, space-evenly);
-  background-color: rgba(255, 255, 255, 0);
-  padding: 0px;
-  height: 8vmin;
-  width: 42vmin;
+	@include pillHighlight(22px);
+	@include centered(row, space-evenly);
+	background-color: rgba(255, 255, 255, 0);
+	padding: 0px;
+	height: 6vmin;
+	width: 40vmin;
 }
 
 .zipcode-input {
-  border: none;
-  border-radius: 4px;
-  height: 5vmin;
-  width: 42vmin;
-  text-align: center;
+	border: none;
+	border-radius: 20px;
+	height: 5vmin;
+	width: 25vmin;
+	text-align: center;
 }
 
 .zipcode-input::placeholder {
-  font-size: 3.5vmin;
+	font-size: 2.5vmin;
 }
 
 .filter-section {
-  @include centered(row, space-evenly);
-  width: 75vw;
+	@include centered(row, space-evenly);
+	width: 75vw;
 }
 
 .wheelchair-icon,
 .unisex-icon,
 .baby-icon {
-  height: 6vh;
+	height: 6vh;
 }
 
 .unisex-filter,
 .changing-table-filter,
 .ada-filter {
-  @include centered(column, space-evenly);
-  height: 25vh;
+	@include centered(column, space-evenly);
+	height: 25vh;
 }
 
 .search-button {
-  @include pillButton;
-  height: 40px;
-  width: 35vmin;
-  margin-bottom: 1vh;
+	@include pillButton;
+	height: 40px;
+	width: 35vmin;
+	margin-bottom: 1vh;
+	background-color: white;
 }
 
 .landing-copy {
-  font-size: 4vmin;
+	font-size: 3vmin;
 }
 
 .landing-labels {
-  font-size: 3.7vmin;
+	font-size: 2.5vmin;
 }
 
 .error-div {
-  @include errorBorder(50px);
-  width: 65vw;
-  text-align: center;
-  height: fit-content;
-  margin-top: 10px;
+	@include errorBorder(50px);
+	width: 65vw;
+	text-align: center;
+	height: fit-content;
+	margin-top: 10px;
 }
 
 .landing-error-message {
-  font-size: 3vmin;
-  font-weight: 700;
+	font-size: 3vmin;
+	font-weight: 700;
 }

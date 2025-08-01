@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgba(234, 245, 246, 0.83);
+  background-color: rgba(205, 207, 207, 0.4);
   border-radius: 15px;
   justify-content: space-evenly;
   height: 58vh;
@@ -16,7 +16,7 @@
 }
 
 .no-match {
-  border: 3px solid #F6C28B;
+  border: 3px solid #6a6a6a;
   border-radius: 20px;
   padding: 5px;
 }
@@ -30,7 +30,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 0px 0px 4px #F6C28B;
+  box-shadow: 0px 0px 0px 4px #6a6a6a;
 }
 
 .results-section {
@@ -51,14 +51,14 @@
   margin: 7px;
 }
 .results-error p {
-  border: 3px solid #F6C28B;
+  border: 3px solid #6a6a6a;
   border-radius: 10px;
   padding: 5px;
   font-size: 22px;
 }
 
 .error-button {
-  background-color: #31C6E0;
+  background-color: #6a6a6a;
   border: none;
   border-radius: 50px;
   border: none;

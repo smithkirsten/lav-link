@@ -2,7 +2,7 @@
   margin-bottom: 5px;
   height: 40vh;
   width: 40vw;
-  background-color: rgba(234, 245, 246, 0.83);
+  background-color: rgba(205, 207, 207, 0.4);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -11,8 +11,8 @@
   justify-content: space-around;
 }
 .results-header h1 {
-  color: #034277;
-  font-family: "Dosis", sans-serif;
+  color: #292727;
+  font-family: "Inter", sans-serif;
   font-size: 70px;
   font-weight: 400;
 }
@@ -45,7 +45,7 @@
   width: 15vw;
 }
 .filterForm .changeButton {
-  background-color: #31C6E0;
+  background-color: #6a6a6a;
   border: none;
   border-radius: 50px;
   border: none;

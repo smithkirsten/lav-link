@@ -1,6 +1,6 @@
 * {
-  color: #034277;
-  font-family: "Dosis", sans-serif;
+  color: #292727;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
   text-align: center;
@@ -20,7 +20,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgba(234, 245, 246, 0.83);
+  background-color: rgba(205, 207, 207, 0.4);
   border-radius: 15px;
   height: 92vh;
   width: 80vw;
@@ -34,11 +34,11 @@
 }
 
 .site-title {
-  color: #034277;
-  font-family: "Dosis", sans-serif;
+  color: #292727;
+  font-family: "Inter", sans-serif;
   font-size: 70px;
   font-weight: 400;
-  color: #034277;
+  color: #292727;
   font-size: 15vmin;
 }
 
@@ -49,7 +49,7 @@
 }
 
 .current-location-button {
-  border: 2px solid #FFA69E;
+  border: 2px solid #6a6a6a;
   border-radius: 22px;
   padding: 5%;
   display: flex;
@@ -58,28 +58,24 @@
   align-items: center;
   background-color: rgba(255, 255, 255, 0);
   padding: 0px;
-  height: 8vmin;
-  width: 42vmin;
+  height: 6vmin;
+  width: 40vmin;
 }
 
 .zipcode-input {
   border: none;
-  border-radius: 4px;
+  border-radius: 20px;
   height: 5vmin;
-  width: 42vmin;
+  width: 25vmin;
   text-align: center;
 }
 
 .zipcode-input::-moz-placeholder {
-  font-size: 3.5vmin;
-}
-
-.zipcode-input:-ms-input-placeholder {
-  font-size: 3.5vmin;
+  font-size: 2.5vmin;
 }
 
 .zipcode-input::placeholder {
-  font-size: 3.5vmin;
+  font-size: 2.5vmin;
 }
 
 .filter-section {
@@ -107,7 +103,7 @@
 }
 
 .search-button {
-  background-color: #31C6E0;
+  background-color: #6a6a6a;
   border: none;
   border-radius: 50px;
   border: none;
@@ -115,23 +111,23 @@
   height: 40px;
   width: 35vmin;
   margin-bottom: 1vh;
+  background-color: white;
 }
 
 .landing-copy {
-  font-size: 4vmin;
+  font-size: 3vmin;
 }
 
 .landing-labels {
-  font-size: 3.7vmin;
+  font-size: 2.5vmin;
 }
 
 .error-div {
-  border: 3px solid #F6C28B;
+  border: 3px solid #6a6a6a;
   border-radius: 50px;
   padding: 5px;
   width: 65vw;
   text-align: center;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin-top: 10px;

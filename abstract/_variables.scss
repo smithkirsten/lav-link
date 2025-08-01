@@ -1,53 +1,52 @@
-$mainFont:'Dosis', sans-serif;
-$mainTextNavy: #034277;
-$highlightSalmon: #FFA69E;
-$borderYellow: #F6C28B;
-$buttonTeal: #31C6E0;
-$opaque: rgb(234, 245, 246, .83);
+$mainFont: 'Inter', sans-serif;
+$mainTextNavy: #292727;
+$highlightGray: #6a6a6a;
+$borderYellow: #6a6a6a;
+$buttonTeal: #6a6a6a;
+$opaque: rgba(205, 207, 207, 40%);
 
 @mixin centered($direction, $justifyContent) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justifyContent;
-  align-items: center;
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justifyContent;
+	align-items: center;
 }
 
 @mixin bodyFont {
-  color: $mainTextNavy;
-  font-family: $mainFont;
-  font-size: 16px;
-  font-weight: 400;
+	color: $mainTextNavy;
+	font-family: $mainFont;
+	font-size: 16px;
+	font-weight: 400;
 }
 
 @mixin logoFont {
-  color: $mainTextNavy;
-  font-family: $mainFont;
-  font-size: 70px;
-  font-weight: 400;
+	color: $mainTextNavy;
+	font-family: $mainFont;
+	font-size: 70px;
+	font-weight: 400;
 }
 
 @mixin highlightBackground {
-  background-color: $opaque;
-  border-radius: 15px;
+	background-color: $opaque;
+	border-radius: 15px;
 }
 
 @mixin pillButton {
-  background-color: $buttonTeal;
-  border: none;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
+	background-color: $buttonTeal;
+	border: none;
+	border-radius: 50px;
+	border: none;
+	cursor: pointer;
 }
 
 @mixin pillHighlight($radius) {
-  border: 2px solid $highlightSalmon;
-  border-radius: $radius;
-  padding: 5%;
+	border: 2px solid $highlightGray;
+	border-radius: $radius;
+	padding: 5%;
 }
 
 @mixin errorBorder($radius) {
-  border: 3px solid $borderYellow;
-  border-radius: $radius;
-  padding: 5px;
+	border: 3px solid $borderYellow;
+	border-radius: $radius;
+	padding: 5px;
 }
-
